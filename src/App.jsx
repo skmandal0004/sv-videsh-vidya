@@ -1,14 +1,28 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import NavbarComponents from './Components/NavbarComponents'
+import HeroComponents from './Components/Home/HeroComponents'
+import SignComponents from './Components/Home/SignComponents'
+import WhyComponents from './Components/Home/WhyComponents'
+import ReasonComponents from './Components/Home/ReasonComponents'
+import StudyComponents from './Components/Home/StudyComponents'
+import TrainingComponents from './Components/Home/TrainingComponents'
+import YoutubeComponents from './Components/Home/YoutubeComponents'
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-      
+     <NavbarComponents/> 
+     <HeroComponents/>
+     <SignComponents/>
+     <WhyComponents/>
+     <ReasonComponents/>
+     <StudyComponents/>
+     <TrainingComponents/>
+     <YoutubeComponents/>
     </>
   )
 }
