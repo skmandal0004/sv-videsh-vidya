@@ -7,6 +7,7 @@ import ReasonComponents from './Components/Home/ReasonComponents'
 import StudyComponents from './Components/Home/StudyComponents'
 import TrainingComponents from './Components/Home/TrainingComponents'
 import YoutubeComponents from './Components/Home/YoutubeComponents'
+import RatingComponents from './Components/Home/RatingComponents'
 
 
 
@@ -23,6 +24,7 @@ function App() {
      <StudyComponents/>
      <TrainingComponents/>
      <YoutubeComponents/>
+     <RatingComponents/>
     </>
   )
 }
