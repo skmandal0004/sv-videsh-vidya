@@ -17,7 +17,7 @@ function App() {
     <>
      <NavbarComponents/> 
      <HeroComponents/>
-     <SignComponents/>
+     {/* <SignComponents/> */}
      <WhyComponents/>
      <ReasonComponents/>
      <StudyComponents/>

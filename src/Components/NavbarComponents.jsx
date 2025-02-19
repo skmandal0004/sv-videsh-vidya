@@ -29,43 +29,37 @@ const NavbarComponents = () => {
 
   return (
     <header className="w-full bg-white shadow-sm relative z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center py-3 px-4 lg:px-8">
-        
-        {/* Search Bar (Left) */}
-        <div className="flex-grow max-w-lg">
-          <div className="flex items-center border-b border-gray-400 w-full">
-            <FaSearch className="text-gray-500 mx-2" />
-            <input
-              type="text"
-              placeholder="Search..."
-              className="w-32 py-2 px-2 outline-none bg-transparent text-gray-700"
-            />
-          </div>
-        </div>
+      <div className="flex items-center justify-between px-6 py-4 relative">
+  {/* Search Bar (Left) */}
+  <div className="flex-grow max-w-lg">
+    <div className="flex items-center border-b border-gray-400 w-60">
+      <FaSearch className="text-gray-500 mx-2" />
+      <input
+        type="text"
+        placeholder="Search..."
+        className="w-28 py-2 px-2 outline-none bg-transparent text-gray-700"
+      />
+    </div>
+  </div>
 
-        {/* Logo (Center) */}
-        <div className="flex items-center space-x-3">
-          <a href="https://yourwebsite.com">
-            <img 
-              src="https://static.wixstatic.com/media/edbce3_7aacc3e198e747b5ab6e7a81308ec95e~mv2.png/v1/fill/w_179,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo-1.png" 
-              alt="SV Videsh Vidya Logo" 
-              className="w-44 h-24 object-contain"
-            />
-          </a>
-          <div>
-            <h1 className="text-lg sm:text-xl font-bold text-gray-900">SV Videsh Vidya</h1>
-            <p className="text-sm text-gray-500">Study Abroad Consultants</p>
-          </div>
-        </div>
-
+  {/* Centered Logo with Text in a Row */}
+  <div className="absolute inset-x-0 top-1/2 transform -translate-y-1/2 flex items-center space-x-4 justify-center">
+    <a href="https://yourwebsite.com">
+      <img 
+        src="https://static.wixstatic.com/media/edbce3_7aacc3e198e747b5ab6e7a81308ec95e~mv2.png/v1/fill/w_179,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo-1.png" 
+        alt="SV Videsh Vidya Logo" 
+        className="w-44 h-24 object-contain"
+      />
+    </a>
+    <div>
+      <h1 className="text-lg sm:text-xl font-bold text-gray-900">SV Videsh Vidya</h1>
+      <p className="text-sm text-gray-500">Study Abroad Consultants</p>
+    </div>
+  </div>
+ 
         {/* Login & Social Icons (Right) */}
-        <div className="flex items-center space-x-6">
-          <button className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
-            <FaUser className="text-lg" />
-            <span className="hidden sm:inline">Log In</span>
-          </button>
-
-          <div className="flex space-x-3">
+        <div className="flex items-center space-x-8">
+          <div className="flex space-x-4 mr-8">
             <a href="#" className="text-gray-700 hover:text-blue-600"><FaFacebookF /></a>
             <a href="#" className="text-gray-700 hover:text-blue-600"><FaTwitter /></a>
             <a href="#" className="text-gray-700 hover:text-pink-600"><FaInstagram /></a>
