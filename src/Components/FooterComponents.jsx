@@ -68,25 +68,25 @@ const FooterComponents = () => {
 
         {/* Right Section - Map & Address */}
         <div>
-  <h3 className="text-purple-400 font-semibold mb-3">GET IN TOUCH</h3>
-  <p className="text-gray-300 leading-relaxed">
-    4, 1st Main Rd, 1st Cross, MICO Layout, BTM Stage 2, Bengaluru, Karnataka 560076
-  </p>
-  <div className="mt-6">
-    <iframe
-      className="w-full h-48 md:h-64 rounded-lg border-0"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9183961988515!2d77.60270472531879!3d12.912966237397004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae150318728565%3A0x90c3ec8ef1be5630!2sMico%20Layout%2C%20BTM%202nd%20Stage%2C%20BTM%20Layout%2C%20Bengaluru%2C%20Karnataka%20560076!5e0!3m2!1sen!2sin!4v1739989100972!5m2!1sen!2sin"
-      allowFullScreen=""
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-      title="Google Maps"
-    ></iframe>
-  </div>
-</div>
+          <h3 className="text-purple-400 font-semibold mb-3">GET IN TOUCH</h3>
+          <p className="text-gray-300 leading-relaxed">
+            4, 1st Main Rd, 1st Cross, MICO Layout, BTM Stage 2, Bengaluru, Karnataka 560076
+          </p>
+          <div className="mt-6">
+            <iframe
+              className="w-full h-48 md:h-64 rounded-lg border-0"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62226.753299987955!2d77.5790211!3d12.896654!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1503c3476f73%3A0xe51550942817954f!2sS%20V%20VIDESH%20VIDYA%2C%20Study%20Abroad%20(Australia%2C%20USA%2C%20UK%20%26%20Europe)%2C%20Online%20LIVE-%20IELTS%2C%20TOEFL%2C%20GRE%2C%20Duolingo%2C%20PTE%20%26%20German%20lang!5e0!3m2!1sen!2sin!4v1740039203090!5m2!1sen!2sin"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Google Maps"
+            ></iframe>
+          </div>
+        </div>
 
       </div>
 
-      
+
     </footer>
   );
 };
