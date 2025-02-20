@@ -1,30 +1,22 @@
-import { useState } from 'react'
-import NavbarComponents from './Components/NavbarComponents'
-import HeroComponents from './Components/Home/HeroComponents'
-import SignComponents from './Components/Home/SignComponents'
-import WhyComponents from './Components/Home/WhyComponents'
-import ReasonComponents from './Components/Home/ReasonComponents'
-import StudyComponents from './Components/Home/StudyComponents'
-import TrainingComponents from './Components/Home/TrainingComponents'
-import YoutubeComponents from './Components/Home/YoutubeComponents'
-
-
+import { useEffect } from 'react';
+import { HashRouter as Router, Routes, Route, useLocation, useNavigate, Navigate } from 'react-router-dom';
+import NavbarComponents from "./Components/NavbarComponents";
+import AboutComponents from "./Routes/About.jsx"
+import Home from "./Routes/Home.jsx"
+import FooterComponents from './Components/FooterComponents';
 
 function App() {
-  
-
   return (
-    <>
-     <NavbarComponents/> 
-     <HeroComponents/>
-     {/* <SignComponents/> */}
-     <WhyComponents/>
-     <ReasonComponents/>
-     <StudyComponents/>
-     <TrainingComponents/>
-     <YoutubeComponents/>
-    </>
-  )
+    <Router>
+      <NavbarComponents />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutComponents />} />
+        
+      </Routes>
+      <FooterComponents/>
+    </Router>
+  );
 }
 
-export default App
+export default App;
