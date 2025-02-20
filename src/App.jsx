@@ -7,6 +7,8 @@ import ServiceComponents from "./Routes/Services.jsx";
 import FooterComponents from './Components/FooterComponents';
 import Virtual from './Routes/Virtual.jsx';
 import Counselling from './Routes/Counselling.jsx';
+import Applications from './Routes/Applications.jsx';
+import Scholarships from './Routes/Scholarships';
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
         <Route path="/service" element={<ServiceComponents/>}/>
         <Route path="/virtual-coaching" element={<Virtual/>}/>
         <Route path="/counselling" element={<Counselling/>}/>
+        <Route path="/applications" element={<Applications/>}/>
+        <Route path="/internships" element={<Applications/>}/>
+        <Route path="/scholarships" element={<Scholarships/>}/>
 
       </Routes>
       <FooterComponents/>
