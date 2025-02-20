@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const StudyComponents = () => {
   return (
@@ -22,15 +23,31 @@ const StudyComponents = () => {
 
           {/* Right Side: Content */}
           <div className="md:w-1/2 flex flex-col justify-center items-center p-6">
+          <motion.div
+            className="text-center"
+            initial={{ y: 60, opacity: 0 }} // Start off-screen to the right
+            whileInView={{ y: 0, opacity: 1 }} // Animate when in viewport
+            transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
+            viewport={{ once: true, amount: 0.3 }} // Triggers when 30% of the component is visible
+          >
             <h3 className="text-2xl font-bold text-orange-500">Medicine</h3>
             <ul className="mt-2 space-y-2 text-gray-300 text-lg text-center">
               <li>Medical PG</li>
               <li>Nursing</li>
               <li>Dentistry</li>
             </ul>
+            </motion.div>
+            <motion.div
+            className="text-center"
+            initial={{ y: 60, opacity: 0 }} // Start off-screen to the right
+            whileInView={{ y: 0, opacity: 1 }} // Animate when in viewport
+            transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
+            viewport={{ once: true, amount: 0.5 }} // Triggers when 30% of the component is visible
+          >
             <button className="mt-4 px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg">
               Medicine
             </button>
+            </motion.div>
           </div>
         </div>
 
@@ -47,6 +64,13 @@ const StudyComponents = () => {
 
           {/* Right Side: Content */}
           <div className="md:w-1/2 flex flex-col justify-center items-center p-6">
+          <motion.div
+            className="text-center"
+            initial={{ y: 60, opacity: 0 }} // Start off-screen to the right
+            whileInView={{ y: 0, opacity: 1 }} // Animate when in viewport
+            transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
+            viewport={{ once: true, amount: 0.3 }} // Triggers when 30% of the component is visible
+          >
             <h3 className="text-2xl font-bold text-orange-500">Engineering</h3>
             <ul className="mt-2 space-y-2 text-gray-300 text-lg text-center">
               <li>B.Tech</li>
@@ -56,9 +80,18 @@ const StudyComponents = () => {
               <li>Other Engineering</li>
               <li>Courses</li>
             </ul>
+            </motion.div>
+            <motion.div
+            className="text-center"
+            initial={{ y: 60, opacity: 0 }} // Start off-screen to the right
+            whileInView={{ y: 0, opacity: 1 }} // Animate when in viewport
+            transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
+            viewport={{ once: true, amount: 0.5 }} // Triggers when 30% of the component is visible
+          >
             <button className="mt-4 px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg">
               Engineering
             </button>
+            </motion.div>
           </div>
         </div>
 
@@ -75,6 +108,13 @@ const StudyComponents = () => {
 
           {/* Right Side: Content */}
           <div className="md:w-1/2 flex flex-col justify-center items-center p-6">
+          <motion.div
+            className="text-center"
+            initial={{ y: 60, opacity: 0 }} // Start off-screen to the right
+            whileInView={{ y: 0, opacity: 1 }} // Animate when in viewport
+            transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
+            viewport={{ once: true, amount: 0.3 }} // Triggers when 30% of the component is visible
+          >
             <h3 className="text-2xl font-bold text-orange-500">Business and <br/> Management</h3>
             <ul className="mt-2 space-y-2 text-gray-300 text-lg text-center">
               <li>MBA</li>
@@ -82,9 +122,18 @@ const StudyComponents = () => {
               <li>Commerce</li>
               <li>Finance</li>
             </ul>
+            </motion.div>
+            <motion.div
+            className="text-center"
+            initial={{ y: 60, opacity: 0 }} // Start off-screen to the right
+            whileInView={{ y: 0, opacity: 1 }} // Animate when in viewport
+            transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
+            viewport={{ once: true, amount: 0.5 }} // Triggers when 30% of the component is visible
+          >
             <button className="mt-4 px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg">
             Business & Managment
             </button>
+            </motion.div>
           </div>
         </div>
 
