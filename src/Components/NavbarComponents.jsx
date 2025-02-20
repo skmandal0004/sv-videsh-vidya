@@ -17,14 +17,15 @@ const NavbarComponents = () => {
     },
     { 
       name: "Services", 
+      link: "/service",
       subMenu: [
-        { name: "Virtual Coaching", link: "/services/virtual-coaching" },
-        { name: "Counselling and Shortlisting", link: "/services/counselling" },
-        { name: "Applications and Admissions", link: "/services/applications" },
-        { name: "Internships (CPT)", link: "/services/internships" },
-        { name: "Scholarships and Loans", link: "/services/scholarships" },
-        { name: "VISA Guidance", link: "/services/visa-guidance" },
-        { name: "Post Landing Services", link: "/services/post-landing" },
+        { name: "Virtual Coaching", link: "virtual-coaching" },
+        { name: "Counselling and Shortlisting", link: "counselling" },
+        { name: "Applications and Admissions", link: "applications" },
+        { name: "Internships (CPT)", link: "internships" },
+        { name: "Scholarships and Loans", link: "scholarships" },
+        { name: "VISA Guidance", link: "visa-guidance" },
+        { name: "Post Landing Services", link: "post-landing" },
       ] 
     },
     { 
