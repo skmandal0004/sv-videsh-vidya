@@ -22,7 +22,7 @@ const ServiceComponents = () => {
           <Link to="/scholarships" className="bg-indigo-500 text-white px-6 py-3 w-10/12 mx-auto block text-lg rounded-md text-center hover:bg-white hover:text-black hover:border-2 hover:border-black">
             Scholarships and Loans
           </Link>
-          <Link to="/visa-guidance" className="bg-indigo-500 text-white px-6 py-3 w-10/12 mx-auto block text-lg rounded-md text-center hover:bg-white hover:text-black hover:border-2 hover:border-black">
+          <Link to="/visa" className="bg-indigo-500 text-white px-6 py-3 w-10/12 mx-auto block text-lg rounded-md text-center hover:bg-white hover:text-black hover:border-2 hover:border-black">
             VISA Guidance
           </Link>
           <Link to="/post-landing" className="bg-indigo-500 text-white px-6 py-3 w-10/12 mx-auto block text-lg rounded-md text-center hover:bg-white hover:text-black hover:border-2 hover:border-black">

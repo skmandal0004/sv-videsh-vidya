@@ -24,7 +24,7 @@ const NavbarComponents = () => {
         { name: "Applications and Admissions", link: "/applications" },
         { name: "Internships (CPT)", link: "/internships" },
         { name: "Scholarships and Loans", link: "/scholarships" },
-        { name: "VISA Guidance", link: "/visa-guidance" },
+        { name: "VISA Guidance", link: "/visa" },
         { name: "Post Landing Services", link: "/post-landing" },
       ],
     },
