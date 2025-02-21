@@ -1,14 +1,19 @@
 import React from "react";
 import { FaGraduationCap } from "react-icons/fa";
-import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import { BsChatDotsFill } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const FooterComponents = () => {
   return (
     <footer className="bg-[#1A1232] text-white py-12 px-6 md:px-16">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        
         {/* Left Section */}
-        <div>
+        <motion.div
+          initial={{ x: -60, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <div className="flex items-center gap-2 text-xl font-semibold mb-2">
             <FaGraduationCap className="text-purple-400 text-2xl" />
             <span>S V Videsh</span>
@@ -40,10 +45,15 @@ const FooterComponents = () => {
               enquiry@svvideshvidya.com
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Middle Section - Quick Navigation */}
-        <div>
+        <motion.div
+          initial={{ x: -60, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.6 }}
+        >
           <h3 className="text-purple-400 font-semibold mb-3">QUICK NAVIGATION</h3>
           <div className="grid grid-cols-2 gap-2">
             {[
@@ -64,10 +74,15 @@ const FooterComponents = () => {
               </a>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Section - Map & Address */}
-        <div>
+        <motion.div
+          initial={{ x: -60, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.9 }}
+        >
           <h3 className="text-purple-400 font-semibold mb-3">GET IN TOUCH</h3>
           <p className="text-gray-300 leading-relaxed">
             4, 1st Main Rd, 1st Cross, MICO Layout, BTM Stage 2, Bengaluru, Karnataka 560076
@@ -82,11 +97,8 @@ const FooterComponents = () => {
               title="Google Maps"
             ></iframe>
           </div>
-        </div>
-
+        </motion.div>
       </div>
-
-
     </footer>
   );
 };
