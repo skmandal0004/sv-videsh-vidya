@@ -2,9 +2,12 @@ import React from "react";
 
 const MasterComponents = () => {
   return (
-    <div className="w-full flex justify-center bg-white py-10 px-6 lg:px-20">
-      <div className="max-w-full w-full bg-gray-100 shadow-lg rounded-lg p-8">
-        
+    <div className="w-full flex flex-col items-center bg-white py-10 px-6 lg:px-20">
+  {/* Centered Heading */}
+  <h1 className="text-5xl font-bold text-black text-center mb-4 tracking-wider">FAQ</h1>
+  <h2 className="text-2xl font-bold text-black text-center mb-6 tracking-wide">Basics</h2>
+  {/* Content Container */}
+  <div className="max-w-full w-full bg-gray-100 shadow-lg rounded-lg p-8">
         {/* IELTS vs TOEFL Section */}
         <h2 className="text-3xl lg:text-4xl font-medium text-black text-center mb-6">
           Which is advisable? <span className="text-black">IELTS or TOEFL</span> for Pursuing Masters abroad?
