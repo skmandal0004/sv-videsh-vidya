@@ -1,106 +1,118 @@
 import React, { useState } from "react";
-import { FiUploadCloud } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { FaCloudUploadAlt } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 const MultiImageUploader = () => {
   const [selectedImages, setSelectedImages] = useState([]);
-  const [uploading, setUploading] = useState(false);
   const [message, setMessage] = useState("");
 
   const handleImageChange = (event) => {
-    const files = event.target.files;
-    if (files) {
-      setSelectedImages([...files]);
-    }
+    const files = Array.from(event.target.files);
+    setSelectedImages((prev) => [...prev, ...files]);
+  };
+
+  const handleRemoveImage = (index) => {
+    setSelectedImages(selectedImages.filter((_, i) => i !== index));
   };
 
   const handleUpload = async () => {
     if (selectedImages.length === 0) {
-      setMessage("Please select at least one image to upload.");
+      setMessage("Please select images to upload.");
       return;
     }
 
     const formData = new FormData();
     selectedImages.forEach((image) => {
-      formData.append("images[]", image); // Use 'images[]' for multiple files
+      formData.append("images[]", image);
     });
 
-    setUploading(true);
-    setMessage("");
-
     try {
-      const response = await fetch("http://localhost/your-api-path/api/upload.php", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "http://localhost/image-upload-api/upload.php",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const result = await response.json();
-
       if (result.success) {
-        setMessage("Images uploaded successfully!");
-        console.log(result.files); // Array of uploaded files
-        // You can display the uploaded images or update the UI
+        setMessage("Upload successful!");
+        setSelectedImages([]);
       } else {
-        setMessage(result.error || "Something went wrong.");
+        setMessage(result.error || "Upload failed.");
       }
     } catch (error) {
       setMessage("Error uploading images.");
-    } finally {
-      setUploading(false);
     }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-6 bg-gray-100 min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md"
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg"
       >
-        <h2 className="text-xl font-semibold text-center text-gray-700 mb-4">
+        <h2 className="text-xl font-semibold text-gray-700 mb-4 text-center">
           Upload Multiple Images
         </h2>
 
-        {/* Upload Box */}
-        <label className="cursor-pointer border-2 border-dashed border-gray-300 bg-gray-50 hover:bg-gray-100 transition flex flex-col items-center justify-center py-10 px-6 rounded-lg">
-          <FiUploadCloud className="text-gray-500 text-4xl mb-3" />
-          <span className="text-gray-600 font-medium">Click to Upload</span>
+        {/* Drag & Drop or Click to Upload */}
+        <label className="cursor-pointer w-full border-2 border-dashed border-gray-300 p-8 flex flex-col items-center justify-center rounded-lg hover:bg-gray-50 transition">
+          <FaCloudUploadAlt className="text-gray-500 text-4xl mb-2" />
+          <span className="text-gray-500">Click or Drag & Drop to Upload</span>
           <input
             type="file"
-            accept="image/*"
             multiple
-            onChange={handleImageChange}
-            disabled={uploading}
             className="hidden"
+            onChange={handleImageChange}
+            accept="image/*"
           />
         </label>
+
+        {/* Preview Selected Images */}
+        {selectedImages.length > 0 && (
+          <div className="mt-4">
+            <h3 className="text-gray-600 font-medium mb-2">Selected Images:</h3>
+            <div className="grid grid-cols-3 gap-2">
+              {selectedImages.map((image, index) => (
+                <motion.div
+                  key={index}
+                  className="relative group"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <img
+                    src={URL.createObjectURL(image)}
+                    alt="Preview"
+                    className="w-20 h-20 object-cover rounded-lg border"
+                  />
+                  <button
+                    className="absolute top-0 right-0 bg-red-500 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition"
+                    onClick={() => handleRemoveImage(index)}
+                  >
+                    <MdDelete className="text-sm" />
+                  </button>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Upload Button */}
         <button
           onClick={handleUpload}
-          disabled={uploading}
-          className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-400 transition"
+          className="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition"
         >
-          {uploading ? "Uploading..." : "Upload"}
+          Upload
         </button>
 
-        {/* Upload Message */}
-        {message && <p className="text-green-600 text-center mt-3">{message}</p>}
-
-        {/* Image Preview */}
-        {selectedImages.length > 0 && (
-          <div className="mt-4 grid grid-cols-3 gap-3">
-            {selectedImages.map((image, index) => (
-              <img
-                key={index}
-                src={URL.createObjectURL(image)}
-                alt={`preview-${index}`}
-                className="w-24 h-24 object-cover rounded-lg shadow-md"
-              />
-            ))}
-          </div>
-        )}
+        {/* Status Message */}
+        {message && <p className="mt-3 text-center text-gray-600">{message}</p>}
       </motion.div>
     </div>
   );
