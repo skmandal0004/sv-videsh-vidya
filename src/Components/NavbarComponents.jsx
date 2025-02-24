@@ -56,7 +56,6 @@ const NavbarComponents = () => {
     },
     { name: "Contact", link: "/contact" },
     { name: "FAQ", link: "/faq" },
-    { name: "Forum", link: "/forum" },
   ];
 
   const [openDropdown, setOpenDropdown] = useState(null);

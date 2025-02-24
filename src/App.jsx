@@ -13,6 +13,7 @@ import Visa from './Routes/Visa.jsx';
 import Post from './Routes/Post';
 import Contact from './Routes/Contact';
 import FAQ from './Routes/FAQ';
+import AdminPanel from './Routes/AdminSide.jsx'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/post-landing" element={<Post/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/faq" element={<FAQ/>}/>
+        <Route path="/admin-panel" element={<AdminPanel/>}/>
 
 
       </Routes>
