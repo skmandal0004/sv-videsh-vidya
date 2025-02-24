@@ -42,7 +42,7 @@ const NavbarComponents = () => {
     {
       name: "Trainings",
       subMenu: [
-        { name: "Online Training", link: "/online" },
+        { name: "Online Training", link: "https://training.svvideshvidya.com/" },
         { name: "Training Time Table", link: "/timetable" },
         { name: "Spoken English", link: "/spoken-english" },
         { name: "Duolingo", link: "/duolingo" },

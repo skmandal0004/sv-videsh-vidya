@@ -6,10 +6,11 @@ import { MdDelete } from "react-icons/md";
 const MultiImageUploader = () => {
   const [selectedImages, setSelectedImages] = useState([]);
   const [message, setMessage] = useState("");
+  const [textInput, setTextInput] = useState(""); // New Text Field State
 
   const handleImageChange = (event) => {
     const files = Array.from(event.target.files);
-    setSelectedImages((prev) => [...prev, ...files]);
+    setSelectedImages(files);
   };
 
   const handleRemoveImage = (index) => {
@@ -26,22 +27,21 @@ const MultiImageUploader = () => {
     selectedImages.forEach((image) => {
       formData.append("images[]", image);
     });
+    formData.append("textInput", textInput); // Append text input data
 
     try {
-      const response = await fetch(
-        "http://localhost/image-upload-api/upload.php",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const response = await fetch("http://localhost/image-upload-api/upload.php", {
+        method: "POST",
+        body: formData,
+      });
 
       const result = await response.json();
-      if (result.success) {
+      if (result.status === "success") {
         setMessage("Upload successful!");
         setSelectedImages([]);
+        setTextInput(""); // Clear text input
       } else {
-        setMessage(result.error || "Upload failed.");
+        setMessage(result.message || "Upload failed.");
       }
     } catch (error) {
       setMessage("Error uploading images.");
@@ -60,6 +60,15 @@ const MultiImageUploader = () => {
           Upload Multiple Images
         </h2>
 
+        {/* Text Input Field */}
+        <input
+          type="text"
+          placeholder="Add Month and Year"
+          value={textInput}
+          onChange={(e) => setTextInput(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+
         {/* Drag & Drop or Click to Upload */}
         <label className="cursor-pointer w-full border-2 border-dashed border-gray-300 p-8 flex flex-col items-center justify-center rounded-lg hover:bg-gray-50 transition">
           <FaCloudUploadAlt className="text-gray-500 text-4xl mb-2" />
@@ -75,31 +84,28 @@ const MultiImageUploader = () => {
 
         {/* Preview Selected Images */}
         {selectedImages.length > 0 && (
-          <div className="mt-4">
-            <h3 className="text-gray-600 font-medium mb-2">Selected Images:</h3>
-            <div className="grid grid-cols-3 gap-2">
-              {selectedImages.map((image, index) => (
-                <motion.div
-                  key={index}
-                  className="relative group"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.3 }}
+          <div className="mt-4 grid grid-cols-3 gap-2">
+            {selectedImages.map((image, index) => (
+              <motion.div
+                key={index}
+                className="relative group"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src={URL.createObjectURL(image)}
+                  alt="Preview"
+                  className="w-20 h-20 object-cover rounded-lg border"
+                />
+                <button
+                  className="absolute top-0 right-0 bg-red-500 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition"
+                  onClick={() => handleRemoveImage(index)}
                 >
-                  <img
-                    src={URL.createObjectURL(image)}
-                    alt="Preview"
-                    className="w-20 h-20 object-cover rounded-lg border"
-                  />
-                  <button
-                    className="absolute top-0 right-0 bg-red-500 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition"
-                    onClick={() => handleRemoveImage(index)}
-                  >
-                    <MdDelete className="text-sm" />
-                  </button>
-                </motion.div>
-              ))}
-            </div>
+                  <MdDelete className="text-sm" />
+                </button>
+              </motion.div>
+            ))}
           </div>
         )}
 
