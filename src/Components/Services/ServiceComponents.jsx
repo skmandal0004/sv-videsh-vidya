@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const ServiceComponents = () => {
   return (
     <div className="bg-indigo-500 py-10">
+      <h1 className="text-center text-5xl font-bold mb-8 tracking-wide">Services</h1>
       <div className="max-w-6xl mx-auto bg-white rounded-lg flex flex-col lg:flex-row shadow-lg">
         {/* Left Side - Buttons */}
         <div className="w-full lg:w-5/12 p-10 flex flex-col gap-7">
