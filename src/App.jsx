@@ -25,6 +25,7 @@ import SAT from './Routes/SAT';
 import GRE from './Routes/GRE';
 import German from './Routes/German';
 import French from './Routes/French';
+import PUC from './Routes/PUC';
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/faq" element={<FAQ/>}/>
         <Route path="/admin-panel" element={<AdminPanel/>}/>
-        <Route path="/admin-panel" element={<Trainings/>}/>
+        <Route path="/training" element={<Trainings/>}/>
         <Route path="/online" element={<Online/>}/>
         <Route path="/timetable" element={<Table/>}/>
         <Route path="/spoken-english" element={<Spoken/>}/>
@@ -55,6 +56,7 @@ function App() {
         <Route path="/gre" element={<GRE/>}/>
         <Route path="/german" element={<German/>}/>
         <Route path="/french" element={<French/>}/>
+        <Route path="/puc" element={<Trainings/>}/>
 
       </Routes>
       <FooterComponents/>
