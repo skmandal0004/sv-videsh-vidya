@@ -28,7 +28,7 @@ const TimeTable = () => {
           return (
             <div
               key={index}
-              className="flex justify-center items-center bg-gray-100 p-2 rounded-lg transition-all duration-500 ease-in-out transform hover:bg-[#1A152D] px-10 py-5"
+              className="flex justify-center items-center bg-gray-100 p-2 rounded-lg transition-all duration-500 ease-in-out transform hover:bg-white px-10 py-5"
             >
               {isPDF ? (
                 <iframe
