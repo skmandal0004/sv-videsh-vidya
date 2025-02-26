@@ -41,6 +41,7 @@ const NavbarComponents = () => {
     },
     {
       name: "Trainings",
+      link: "/training",
       subMenu: [
         { name: "Online Training", link: "https://training.svvideshvidya.com/" },
         { name: "Training Time Table", link: "/timetable" },
@@ -52,6 +53,7 @@ const NavbarComponents = () => {
         { name: "GRE", link: "/gre" },
         { name: "German Language", link: "/german" },
         { name: "French Language", link: "/french" },
+        { name: "PUC - Computer Science ( Offline )", link: "/puc" },
       ],
     },
     { name: "Contact", link: "/contact" },
