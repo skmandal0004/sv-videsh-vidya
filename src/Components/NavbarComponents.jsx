@@ -144,7 +144,7 @@ const NavbarComponents = () => {
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
-              <Link to={item.link || "#"} className="hover:text-blue-400 px-4 py-2 block">
+              <Link to={item.link || "#"} className="hover:text-[#1A152D] px-4 py-2 block hover:bg-[#846be6] hover:scale-110 transition-transform ease-in-out duration-300">
                 {item.name}
               </Link>
 
