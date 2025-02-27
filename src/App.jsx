@@ -32,7 +32,7 @@ function App() {
     <Router>
       <NavbarComponents />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<AboutComponents />} />
         <Route path="/service" element={<ServiceComponents/>}/>
         <Route path="/virtual-coaching" element={<Virtual/>}/>

@@ -13,7 +13,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const NavbarComponents = () => {
   const menuItems = [
-    { name: "Home", link: "/" },
+    { name: "Home", link: "/home" },
     {
       name: "About Us",
       link: "/about",
@@ -96,8 +96,10 @@ const NavbarComponents = () => {
         >
           {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
-        <div className="hidden md:flex flex-grow max-w-lg">
-          <div className="flex items-center border-b border-gray-400 w-60">
+
+        
+        <div className="hidden md:flex flex-grow max-w-sm">
+          <div className="flex items-center border-b border-gray-400 w-56 ml-4">
             <FaSearch className="text-gray-500 mx-2" />
             <input
               type="text"
@@ -106,33 +108,33 @@ const NavbarComponents = () => {
             />
           </div>
         </div>
-        {/* Logo */}
-        <div className="flex items-center space-x-3">
-          <a href="/">
-            <img
-              src="https://static.wixstatic.com/media/edbce3_7aacc3e198e747b5ab6e7a81308ec95e~mv2.png/v1/fill/w_179,h_86/logo.png"
-              alt="SV Videsh Vidya Logo"
-              className="w-36 h-auto"
-            />
-          </a>
-        </div>
+         
+         {/* Logo Section */}
+<div className="flex items-center space-x-2 ml-40"> 
+  <a href="/">
+    <img
+      src="https://static.wixstatic.com/media/edbce3_7aacc3e198e747b5ab6e7a81308ec95e~mv2.png/v1/fill/w_179,h_86/logo.png"
+      alt="SV Videsh Vidya Logo"
+      className="w-40 h-auto"
+    />
+  </a>
+  <div className="flex flex-col">
+    <h1 className="text-lg font-bold text-gray-900">SV Videsh Vidya</h1>
+    <p className="text-sm text-gray-500">Study Abroad Experts</p>
+  </div>
+</div>
 
-        {/* Social Icons (Hidden on Mobile) */}
-        <div className="hidden md:flex space-x-4">
-          <a href="#" className="text-gray-700 hover:text-blue-600">
-            <FaFacebookF />
-          </a>
-          <a href="#" className="text-gray-700 hover:text-blue-600">
-            <FaTwitter />
-          </a>
-          <a href="#" className="text-gray-700 hover:text-pink-600">
-            <FaInstagram />
-          </a>
-          <a href="#" className="text-gray-700 hover:text-red-600">
-            <FaYoutube />
-          </a>
+
+
+        {/* Social Icons */}
+        <div className="hidden md:flex space-x-6 mr-6 ml-auto">
+          <a href="#" className="text-gray-700 hover:text-blue-600 text-xl"><FaFacebookF /></a>
+          <a href="#" className="text-gray-700 hover:text-blue-600 text-xl "><FaTwitter /></a>
+          <a href="#" className="text-gray-700 hover:text-pink-600 text-xl"><FaInstagram /></a>
+          <a href="#" className="text-gray-700 hover:text-red-600 text-xl"><FaYoutube /></a>
         </div>
       </div>
+
 
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex bg-[#1A152D] text-white">
