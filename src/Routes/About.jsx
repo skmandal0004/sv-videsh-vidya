@@ -8,11 +8,11 @@ import GalleryComponents from "../Components/About/GalleryComponents";
 const About = () => {
   return (
     <div>
-        <AboutComponents/>
+      <AboutComponents />
       <MissionComponents />
-      <PrideComponents/>
-      <ParentsComponents/>
-      <GalleryComponents/>
+      <PrideComponents />
+      <ParentsComponents />
+      <GalleryComponents />
     </div>
   );
 };

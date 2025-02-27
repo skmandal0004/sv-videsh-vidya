@@ -86,7 +86,7 @@ const NavbarComponents = () => {
   };
 
   return (
-    <header className="w-full bg-white shadow-md sticky top-0 z-50">
+    <header className="w-full bg-white sticky top-0 z-50">
       <div className="flex items-center justify-between px-6 py-4 relative">
         {/* Mobile Menu Button */}
         <button
@@ -137,7 +137,7 @@ const NavbarComponents = () => {
 
 
       {/* Desktop Navigation */}
-      <nav className="hidden lg:flex bg-[#1A152D] text-white">
+      <nav className="hidden lg:flex bg-gradient-to-r from-[#1A152D] to-[#6B4EFF] text-white">
         <div className="max-w-7xl mx-auto flex justify-between items-center py-3 px-6">
           {menuItems.map((item, index) => (
             <div
@@ -146,7 +146,7 @@ const NavbarComponents = () => {
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
-              <Link to={item.link || "#"} className="hover:text-[#1A152D] px-4 py-2 block hover:bg-[#846be6] hover:scale-110 transition-transform ease-in-out duration-300">
+              <Link to={item.link || "#"} className="hover:text-[#1A152D] px-4 py-2 block hover:bg-yellow-300 hover:scale-110 transition-transform ease-in-out duration-300">
                 {item.name}
               </Link>
 
@@ -164,7 +164,7 @@ const NavbarComponents = () => {
                       <Link
                         key={subIndex}
                         to={subItem.link}
-                        className="block px-4 py-2 hover:bg-[#846be6] hover:scale-105 transition-transform ease-in-out duration-300 whitespace-nowrap"
+                        className="block px-4 py-2 hover:bg-yellow-300 hover:text-[#1A152D] hover:font-semibold hover:scale-105 transition-transform ease-in-out duration-300 whitespace-nowrap"
                       >
                         {subItem.name}
                       </Link>

@@ -1,121 +1,81 @@
 import React from "react";
-import { Carousel } from "@material-tailwind/react";
 import { motion } from "framer-motion";
 
-export function HeroComponents() {
+const HeroComponents = () => {
   return (
-    <section className="relative w-screen">
-      <Carousel
-        className="w-full"
-        autoplay={true}
-        loop={true}
-        prevArrow={({ handlePrev }) => (
-          <button
-            onClick={handlePrev}
-            className="absolute left-5 top-1/2 transform -translate-y-1/2 bg-black/50 p-3 rounded-full text-white hover:bg-black/70 transition"
-          >
-            ❮
+    <section className="relative w-full">
+      {/* Hero Section 1 */}
+      <div className="w-full bg-gradient-to-r from-[#1A152D] to-[#6B4EFF] text-white py-16 px-6 md:px-12">
+        <motion.div
+          className="max-w-5xl mx-auto text-center"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+            Study <span className="text-yellow-300">Abroad</span> Now!
+          </h1>
+          <p className="mt-4 text-lg md:text-xl">
+            Engineering | Arts & Management | Science
+          </p>
+          <p className="mt-2 text-lg md:text-xl font-semibold text-yellow-300">
+            Exclusive Online Training
+          </p>
+          <button className="mt-6 px-8 py-3 bg-yellow-400 text-black text-lg font-bold rounded-full hover:bg-yellow-500 transition">
+            Start Today
           </button>
-        )}
-        nextArrow={({ handleNext }) => (
-          <button
-            onClick={handleNext}
-            className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-black/50 p-3 rounded-full text-white hover:bg-black/70 transition"
-          >
-            ❯
-          </button>
-        )}
-      >
-        {/* Slide 1 */}
-        <div className="relative w-screen">
-          <img
-            src="https://static.wixstatic.com/media/edbce3_952ec33f10d447ae84b13f5ae79df62f~mv2.jpg"
-            alt="Study Abroad Opportunities"
-            className="w-full max-h-[550px] object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40" /> {/* Dark overlay */}
+        </motion.div>
+      </div>
 
-          <motion.div
-            className="absolute top-10 left-10 text-white text-left"
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            <h1 className="text-5xl font-bold bg-black/60 px-8 py-2 rounded-md">
-              Study <br />
-              Abroad Now!
-            </h1>
-          </motion.div>
-
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Engineering | Arts & Management | Science
-            </h2>
-            <h3 className="text-3xl font-medium">Exclusive Online Training</h3>
-            <button className="mt-6 px-6 py-3 bg-[#1A152D] hover:bg-[#2c244d] text-white text-lg font-semibold border-2 border-[#725ec4] shadow-lg transition">
-              Start Today
-            </button>
-          </div>
-        </div>
-
-        {/* Slide 2 */}
-        <div className="relative w-screen">
-          <img
-            src="https://static.wixstatic.com/media/edbce3_e7e79b78496643029d562e3706e7b6c9~mv2.png"
-            alt="Global Education Services"
-            className="w-full max-h-[550px] object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40" /> {/* Dark overlay */}
+      {/* Hero Section 2 - Image & Text Side by Side */}
+      <div className="w-full flex flex-col md:flex-row items-center justify-center py-16 px-6 md:px-12">
+        {/* Text Content */}
+        <div className="w-full md:w-1/2 text-center md:text-left">
           <motion.h2
-            className="absolute top-10 left-10 ml-10 text-4xl md:text-6xl font-bold text-white"
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            className="text-3xl md:text-5xl font-bold"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
             Explore Global Education
           </motion.h2>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col text-white text-center space-y-4">
-            <p className="text-xl md:text-2xl max-w-lg mx-auto">
-              Discover top-ranked universities worldwide <br />
-              and fulfill your dream of studying abroad.
-            </p>
-            <button className="w-40 bg-[#1A152D] hover:bg-[#2c244d] text-white text-md font-semibold border-2 border-[#725ec4] px-4 py-3 transition">
-              Contact Us
-            </button>
-          </div>
+          <p className="mt-4 text-lg md:text-xl max-w-lg mx-auto md:mx-0">
+            Discover top-ranked universities worldwide and fulfill your dream of studying abroad.
+          </p>
+          <button className="mt-6 px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition">
+            Contact Us
+          </button>
         </div>
 
-        {/* Slide 3 */}
-        <div className="relative w-screen">
+        {/* Image Section */}
+        <div className="w-full md:w-1/2 flex justify-center">
           <img
-            src="https://static.wixstatic.com/media/edbce3_6e2edf123eaf4db0b7f22d07ef444b11~mv2.jpg"
-            alt="Live Coaching Sessions"
-            className="w-full max-h-[550px] object-cover"
+            src="https://img.freepik.com/free-photo/tourist-park-ferris-wheel_23-2148570664.jpg?t=st=1740656064~exp=1740659664~hmac=6c762a9eda3baf7efa11c989800c98f1d8239f509bada3f79bc548232abc8d4a&w=1060"
+            alt="Global Education"
+            className="w-full max-w-md md:max-w-lg rounded-lg shadow-lg"
           />
-          <div className="absolute inset-0 bg-black/50" /> {/* Dark overlay */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center space-y-6">
-            <h3 className="text-2xl md:text-5xl font-semibold">
-              Pursue Your Dreams with Expert Faculties
-            </h3>
-            <p className="text-lg md:text-3xl mt-2">Join Our Online Live Coaching</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-xl md:text-2xl">
-              <span className="bg-purple-600 px-6 py-3 rounded-lg shadow-lg">IELTS</span>
-              <span className="bg-purple-600 px-6 py-3 rounded-lg shadow-lg">DUOLINGO</span>
-              <span className="bg-purple-600 px-6 py-3 rounded-lg shadow-lg">GRE</span>
-              <span className="bg-purple-600 px-6 py-3 rounded-lg shadow-lg">French</span>
-              <span className="bg-purple-600 px-6 py-3 rounded-lg shadow-lg">German</span>
-              <span className="bg-purple-600 px-6 py-3 rounded-lg shadow-lg">English</span>
-              <span className="bg-purple-600 px-6 py-3 rounded-lg shadow-lg">TOEFL</span>
-              <span className="bg-purple-600 px-6 py-3 rounded-lg shadow-lg">SAT</span>
-            </div>
-            <p className="mt-4 text-xl md:text-2xl font-semibold text-yellow-300">
-              Join GRE + TOEFL Combo Offer Today!
-            </p>
-          </div>
         </div>
-      </Carousel>
+      </div>
+
+      {/* Hero Section 3 - Grid Layout */}
+      <div className="w-full bg-[#6B4EFF] text-white py-16 px-6 md:px-12 text-center">
+        <h3 className="text-3xl md:text-5xl font-bold">
+          Pursue Your Dreams with Expert Faculties
+        </h3>
+        <p className="mt-4 text-lg md:text-xl">Join Our Online Live Coaching</p>
+        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-lg md:text-2xl">
+          {["IELTS", "DUOLINGO", "GRE", "French", "German", "English", "TOEFL", "SAT"].map((course) => (
+            <span key={course} className="bg-white text-[#1A152D] px-6 py-3 rounded-full shadow-lg">
+              {course}
+            </span>
+          ))}
+        </div>
+        <p className="mt-6 text-xl md:text-2xl font-semibold text-yellow-300">
+          Join GRE + TOEFL Combo Offer Today!
+        </p>
+      </div>
     </section>
   );
-}
+};
 
 export default HeroComponents;
