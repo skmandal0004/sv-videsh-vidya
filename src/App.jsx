@@ -25,7 +25,8 @@ import SAT from './Routes/SAT';
 import GRE from './Routes/GRE';
 import German from './Routes/German';
 import French from './Routes/French';
-import PUC from './Routes/PUC';
+import About from './Routes/About.jsx';
+import Students from './Routes/Students.jsx';
 
 function App() {
   return (
@@ -57,6 +58,8 @@ function App() {
         <Route path="/german" element={<German/>}/>
         <Route path="/french" element={<French/>}/>
         <Route path="/puc" element={<Trainings/>}/>
+        <Route path="/mission" element={<About/>}/>
+        <Route path="/students" element={<Students/>}/>
 
       </Routes>
       <FooterComponents/>
