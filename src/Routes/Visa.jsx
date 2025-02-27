@@ -1,8 +1,8 @@
 import React from 'react'
-import GuidanceComponents from '../Components/Visa/GuidanceComponents'
-import DocsComponents from '../Components/Visa/DocsComponents'
-import ApplyingComponents from '../Components/Visa/ApplyingComponents'
-import PreparingComponents from '../Components/Visa/PreparingComponents'
+import GuidanceComponents from '../Components/Services/Visa/GuidanceComponents'
+import DocsComponents from '../Components/Services/Visa/DocsComponents'
+import ApplyingComponents from '../Components/Services/Visa/ApplyingComponents'
+import PreparingComponents from '../Components/Services/Visa/PreparingComponents'
 
 const Visa = () => {
   return (

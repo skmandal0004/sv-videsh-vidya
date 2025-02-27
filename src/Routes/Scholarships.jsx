@@ -1,7 +1,7 @@
 import React from 'react'
-import ScholarComponents from '../Components/Scholarships/ScholarComponents'
-import OverseasComponents from '../Components/Scholarships/OverseasComponents'
-import AbroadComponents from '../Components/Scholarships/AbroadComponents'
+import ScholarComponents from '../Components/Services/Scholarships/ScholarComponents'
+import OverseasComponents from '../Components/Services/Scholarships/OverseasComponents'
+import AbroadComponents from '../Components/Services/Scholarships/AbroadComponents'
 
 const Scholarships = () => {
   return (

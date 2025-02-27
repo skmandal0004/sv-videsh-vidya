@@ -1,7 +1,7 @@
 import React from 'react'
-import VirtualComponents from '../Components/Virtual/VirtualComponents'
-import OnlineComponents from '../Components/Virtual/OnlineComponents'
-import LangComponents from '../Components/Virtual/LangComponents'
+import VirtualComponents from '../Components/Services/Virtual/VirtualComponents'
+import OnlineComponents from '../Components/Services/Virtual/OnlineComponents'
+import LangComponents from '../Components/Services/Virtual/LangComponents'
 
 const Virtual = () => {
   return (
