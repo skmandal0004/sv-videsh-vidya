@@ -4,7 +4,7 @@ const VisitComponents = () => {
   return (
     <div className="w-full bg-white text-black py-10">
           <h1 className="text-7xl font-bold  text-center tracking-wide text-black mb-6">
-          CONTACT US
+          CONTACT <span className="text-indigo-500">US</span>
           </h1>
 
       {/* Content Section */}
@@ -27,7 +27,7 @@ const VisitComponents = () => {
           {/* Email */}
           <div className="text-center mb-6">
             <h3 className="text-lg font-semibold mb-7">E-MAIL US</h3>
-            <p className="mb-6 font-bold underline">
+            <p className="mb-6 font-bold underline text-yellow-400">
               enquiry@svvideshvidya.com
             </p>
           </div>
@@ -35,8 +35,8 @@ const VisitComponents = () => {
           {/* Contact Numbers */}
           <div className="text-center mb-8">
             <h3 className="text-lg font-semibold mb-4">CALL OUR MAINLINE</h3>
-            <p className="mt-1 font-bold">+91 9739722211</p>
-            <p className="font-bold">+91 9739799996</p>
+            <p className="mt-1 font-bold text-yellow-400">+91 9739722211</p>
+            <p className="font-bold text-yellow-400">+91 9739799996</p>
           </div>
 
           {/* Office Hours */}
@@ -69,7 +69,7 @@ const VisitComponents = () => {
         <div className="w-full lg:w-1/2 h-auto">
   <iframe
     className="w-full h-full"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7777.836793574434!2d77.60012979160743!3d12.91296619958791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae150318728565%3A0x90c3ec8ef1be5630!2sMico%20Layout%2C%20BTM%202nd%20Stage%2C%20BTM%20Layout%2C%20Bengaluru%2C%20Karnataka%20560076!5e0!3m2!1sen!2sin!4v1740117283158!5m2!1sen!2sin"
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62226.753299987955!2d77.5790211!3d12.896654!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1503c3476f73%3A0xe51550942817954f!2sS%20V%20VIDESH%20VIDYA%2C%20Study%20Abroad%20(Australia%2C%20USA%2C%20UK%20%26%20Europe)%2C%20Online%20LIVE-%20IELTS%2C%20TOEFL%2C%20GRE%2C%20Duolingo%2C%20PTE%20%26%20German%20lang!5e0!3m2!1sen!2sin!4v1740039203090!5m2!1sen!2sin"
     allowFullScreen=""
     loading="lazy"
     referrerPolicy="no-referrer-when-downgrade"
