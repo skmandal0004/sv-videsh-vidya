@@ -40,7 +40,7 @@ const NavbarComponents = () => {
     {
       name: "Admissions",
       subMenu: [
-        { name: "Admissions List", link: "/admissions/list" },
+        { name: "Admissions List", link: "/applications" },
         { name: "Engineering", link: "/admissions/engineering" },
         { name: "Medical", link: "/admissions/medical" },
         { name: "Medicine PG (UK, USA)", link: "/admissions/medicine-pg" },
@@ -127,12 +127,12 @@ const NavbarComponents = () => {
 
 
         {/* Social Icons */}
-        <div className="hidden md:flex space-x-6 mr-6 ml-auto">
+        {/* <div className="hidden md:flex space-x-6 mr-6 ml-auto">
           <a href="#" className="text-gray-700 hover:text-blue-600 text-xl"><FaFacebookF /></a>
           <a href="#" className="text-gray-700 hover:text-blue-600 text-xl "><FaTwitter /></a>
           <a href="#" className="text-gray-700 hover:text-pink-600 text-xl"><FaInstagram /></a>
           <a href="#" className="text-gray-700 hover:text-red-600 text-xl"><FaYoutube /></a>
-        </div>
+        </div> */}
       </div>
 
 
@@ -146,7 +146,7 @@ const NavbarComponents = () => {
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
-              <Link to={item.link || "#"} className="hover:text-[#1A152D] px-4 py-2 block hover:bg-yellow-300 hover:scale-110 transition-transform ease-in-out duration-300">
+              <Link to={item.link || "#"} className="hover:text-[#1A152D] px-4 py-2 block hover:bg-yellow-300 hover:scale-110 font-semibold hover:font-bold transition-transform ease-in-out duration-300">
                 {item.name}
               </Link>
 

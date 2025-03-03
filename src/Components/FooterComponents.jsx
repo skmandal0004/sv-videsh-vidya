@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const FooterComponents = () => {
   return (
-    <footer className="bg-[#1A1232] text-white py-12 px-6 md:px-16">
+    <footer className="bg-gradient-to-r from-[#1A152D] to-[#6B4EFF] text-white py-12 px-6 md:px-16">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
         
         {/* Left Section */}

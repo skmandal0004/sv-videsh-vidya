@@ -1,142 +1,90 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaCheckCircle } from "react-icons/fa"; // Icons for bullet points
 
 const StudyComponents = () => {
+  const studyOptions = [
+    {
+      title: "Medicine",
+      image:
+        "https://static.wixstatic.com/media/2e2a49_c8de1e6e955d459aa01defe9f5971dad~mv2.jpg",
+      courses: ["Medical PG", "Nursing", "Dentistry"],
+      gradient: "from-orange-400 to-red-600",
+    },
+    {
+      title: "Engineering",
+      image:
+        "https://static.wixstatic.com/media/2e2a49_aa886e73007945ad8869ba20d9771c41~mv2.jpg",
+      courses: ["B.Tech", "MS", "Masters", "PDGM", "Other Engineering", "Courses"],
+      gradient: "from-blue-500 to-indigo-600",
+    },
+    {
+      title: "Business & Management",
+      image:
+        "https://static.wixstatic.com/media/2e2a49_c8de1e6e955d459aa01defe9f5971dad~mv2.jpg",
+      courses: ["MBA", "Arts", "Commerce", "Finance"],
+      gradient: "from-green-500 to-teal-600",
+    },
+  ];
+
   return (
-    <div className="bg-white py-12 px-6 md:px-20">
-      {/* Title */}
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10">
+    <div className="bg-gray-100 py-16 px-6 md:px-20">
+      {/* Section Title */}
+      <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-12">
         What to Study?
       </h2>
 
-      <div className="space-y-8">
-        {/* Medicine Section */}
-        <div className="flex flex-col md:flex-row bg-gray-900 text-white rounded-lg overflow-hidden">
-          {/* Left Side: Image */}
-          <div className="md:w-1/2">
-            <img
-              src="https://static.wixstatic.com/media/2e2a49_c8de1e6e955d459aa01defe9f5971dad~mv2.jpg/v1/fill/w_639,h_541,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/2e2a49_c8de1e6e955d459aa01defe9f5971dad~mv2.jpg"
-              alt="Medicine"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Right Side: Content */}
-          <div className="md:w-1/2 flex flex-col justify-center items-center p-6">
+      {/* Alternating Layout */}
+      <div className="space-y-16">
+        {studyOptions.map((option, index) => (
           <motion.div
-            className="text-center"
-            initial={{ y: 60, opacity: 0 }} // Start off-screen to the right
-            whileInView={{ y: 0, opacity: 1 }} // Animate when in viewport
-            transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
-            viewport={{ once: true, amount: 0.3 }} // Triggers when 30% of the component is visible
+            key={index}
+            className={`flex flex-col md:flex-row ${
+              index % 2 !== 0 ? "md:flex-row-reverse" : ""
+            } bg-white rounded-2xl shadow-lg overflow-hidden`}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
           >
-            <h3 className="text-2xl font-bold text-orange-500">Medicine</h3>
-            <ul className="mt-2 space-y-2 text-gray-300 text-lg text-center">
-              <li>Medical PG</li>
-              <li>Nursing</li>
-              <li>Dentistry</li>
-            </ul>
-            </motion.div>
-            <motion.div
-            className="text-center"
-            initial={{ y: 60, opacity: 0 }} // Start off-screen to the right
-            whileInView={{ y: 0, opacity: 1 }} // Animate when in viewport
-            transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
-            viewport={{ once: true, amount: 0.5 }} // Triggers when 30% of the component is visible
-          >
-            <button className="mt-4 px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg">
-              Medicine
-            </button>
-            </motion.div>
-          </div>
-        </div>
+            {/* Image */}
+            <div className="md:w-1/2 h-64 md:h-auto">
+              <img
+                src={option.image}
+                alt={option.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-        {/* Engineering Section */}
-        <div className="flex flex-col md:flex-row-reverse bg-gray-900 text-white rounded-lg overflow-hidden">
-          {/* Left Side: Image */}
-          <div className="md:w-1/2">
-            <img
-              src="https://static.wixstatic.com/media/2e2a49_aa886e73007945ad8869ba20d9771c41~mv2.jpg/v1/fill/w_641,h_574,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2e2a49_aa886e73007945ad8869ba20d9771c41~mv2.jpg"
-              alt="Engineering"
-              className="w-full h-full object-cover"
-            />
-          </div>
+            {/* Content */}
+            <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-center md:text-left">
+              {/* Gradient Title */}
+              <h3
+                className={`text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${option.gradient}`}
+              >
+                {option.title}
+              </h3>
 
-          {/* Right Side: Content */}
-          <div className="md:w-1/2 flex flex-col justify-center items-center p-6">
-          <motion.div
-            className="text-center"
-            initial={{ y: 60, opacity: 0 }} // Start off-screen to the right
-            whileInView={{ y: 0, opacity: 1 }} // Animate when in viewport
-            transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
-            viewport={{ once: true, amount: 0.3 }} // Triggers when 30% of the component is visible
-          >
-            <h3 className="text-2xl font-bold text-orange-500">Engineering</h3>
-            <ul className="mt-2 space-y-2 text-gray-300 text-lg text-center">
-              <li>B.Tech</li>
-              <li>MS</li>
-              <li>Masters</li>
-              <li>PDGM</li>
-              <li>Other Engineering</li>
-              <li>Courses</li>
-            </ul>
-            </motion.div>
-            <motion.div
-            className="text-center"
-            initial={{ y: 60, opacity: 0 }} // Start off-screen to the right
-            whileInView={{ y: 0, opacity: 1 }} // Animate when in viewport
-            transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
-            viewport={{ once: true, amount: 0.5 }} // Triggers when 30% of the component is visible
-          >
-            <button className="mt-4 px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg">
-              Engineering
-            </button>
-            </motion.div>
-          </div>
-        </div>
+              {/* Course List with Icons */}
+              <ul className="mt-4 space-y-3 text-gray-700 text-lg">
+                {option.courses.map((course, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <FaCheckCircle className="text-green-500 text-xl" />
+                    {course}
+                  </li>
+                ))}
+              </ul>
 
-        {/* Business Studies Section (New Section) */}
-        <div className="flex flex-col md:flex-row bg-gray-900 text-white rounded-lg overflow-hidden">
-          {/* Left Side: Image */}
-          <div className="md:w-1/2">
-            <img
-              src="https://static.wixstatic.com/media/2e2a49_c8de1e6e955d459aa01defe9f5971dad~mv2.jpg/v1/fill/w_639,h_596,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2e2a49_c8de1e6e955d459aa01defe9f5971dad~mv2.jpg"
-              alt="Business Studies"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Right Side: Content */}
-          <div className="md:w-1/2 flex flex-col justify-center items-center p-6">
-          <motion.div
-            className="text-center"
-            initial={{ y: 60, opacity: 0 }} // Start off-screen to the right
-            whileInView={{ y: 0, opacity: 1 }} // Animate when in viewport
-            transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
-            viewport={{ once: true, amount: 0.3 }} // Triggers when 30% of the component is visible
-          >
-            <h3 className="text-2xl font-bold text-orange-500">Business and <br/> Management</h3>
-            <ul className="mt-2 space-y-2 text-gray-300 text-lg text-center">
-              <li>MBA</li>
-              <li>Arts</li>
-              <li>Commerce</li>
-              <li>Finance</li>
-            </ul>
-            </motion.div>
-            <motion.div
-            className="text-center"
-            initial={{ y: 60, opacity: 0 }} // Start off-screen to the right
-            whileInView={{ y: 0, opacity: 1 }} // Animate when in viewport
-            transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
-            viewport={{ once: true, amount: 0.5 }} // Triggers when 30% of the component is visible
-          >
-            <button className="mt-4 px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg">
-            Business & Managment
-            </button>
-            </motion.div>
-          </div>
-        </div>
-
+              {/* Animated Button */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                className="mt-6 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 text-white font-semibold rounded-lg shadow-md transition-all"
+              >
+                Learn More
+              </motion.button>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </div>
   );

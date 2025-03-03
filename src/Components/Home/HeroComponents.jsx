@@ -59,21 +59,29 @@ const HeroComponents = () => {
 
       {/* Hero Section 3 - Grid Layout */}
       <div className="w-full bg-[#6B4EFF] text-white py-16 px-6 md:px-12 text-center">
-        <h3 className="text-3xl md:text-5xl font-bold">
-          Pursue Your Dreams with Expert Faculties
-        </h3>
-        <p className="mt-4 text-lg md:text-xl">Join Our Online Live Coaching</p>
-        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-lg md:text-2xl">
-          {["IELTS", "DUOLINGO", "GRE", "French", "German", "English", "TOEFL", "SAT"].map((course) => (
-            <span key={course} className="bg-white text-[#1A152D] px-6 py-3 rounded-full shadow-lg">
-              {course}
-            </span>
-          ))}
-        </div>
-        <p className="mt-6 text-xl md:text-2xl font-semibold text-yellow-300">
-          Join GRE + TOEFL Combo Offer Today!
-        </p>
-      </div>
+  <h3 className="text-3xl md:text-5xl font-bold">
+    Pursue Your Dreams with Expert Faculties
+  </h3>
+  <p className="mt-4 text-lg md:text-xl">Join Our Online Live Coaching</p>
+
+  {/* Course List with Auto Sizing */}
+  <div className="mt-6 flex flex-wrap justify-center gap-4">
+    {["IELTS", "DUOLINGO", "GRE", "French", "German", "English", "TOEFL", "SAT"].map((course) => (
+      <span
+        key={course}
+        className="bg-white text-[#1A152D] px-5 py-3 rounded-full shadow-lg text-sm md:text-lg font-semibold 
+                   flex items-center justify-center w-[140px] md:w-[160px] hover:bg-gray-200 transition"
+      >
+        {course}
+      </span>
+    ))}
+  </div>
+
+  <p className="mt-6 text-xl md:text-2xl font-semibold text-yellow-300">
+    Join GRE + TOEFL Combo Offer Today!
+  </p>
+</div>
+
     </section>
   );
 };
