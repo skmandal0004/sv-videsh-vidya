@@ -1,5 +1,5 @@
 import React from 'react'
-import RatingComponents from '../Components/Students/RatingComponents'
+import RatingComponents from '../Components/About/Students/RatingComponents'
 
 const Students = () => {
   return (

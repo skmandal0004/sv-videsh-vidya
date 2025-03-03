@@ -13,7 +13,6 @@ import FAQ from './Routes/FAQ';
 import AdminPanel from './Routes/AdminSide.jsx'
 import Trainings from './Routes/Trainings';
 import Online from './Routes/Online';
-import Table from './Routes/Table';
 import ShortlistComponents from './Components/Services/ShortlistComponents';
 import AdmissionComponents from './Components/Services/AdmissionComponents';
 import LandingComponents from './Components/Services/LandingComponents';
@@ -25,6 +24,7 @@ import SatComponents from './Components/Trainings/SatComponents';
 import GreComponents from './Components/Trainings/GreComponents';
 import GermanComponents from './Components/Trainings/GermanComponents';
 import FrenchComponents from './Components/Trainings/FrenchComponents';
+import Students from './Routes/Students';
 
 function App() {
   return (
@@ -46,7 +46,6 @@ function App() {
         <Route path="/admin-panel" element={<AdminPanel/>}/>
         <Route path="/training" element={<Trainings/>}/>
         <Route path="/online" element={<Online/>}/>
-        <Route path="/timetable" element={<Table/>}/>
         <Route path="/spoken-english" element={<SpokenComponents/>}/>
         <Route path="/duolingo" element={<DuolingoComponents/>}/>
         <Route path="/ielts" element={<ExamComponents/>}/>
@@ -56,7 +55,8 @@ function App() {
         <Route path="/german" element={<GermanComponents/>}/>
         <Route path="/french" element={<FrenchComponents/>}/>
         <Route path="/puc" element={<Trainings/>}/>
-        
+        <Route path="/students" element={<Students/>}/>
+
 
       </Routes>
       <FooterComponents/>
