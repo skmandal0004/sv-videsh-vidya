@@ -4,15 +4,15 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const ratings = [
   {
     text: "S V Videsh Vidya Enterprises\nRating: 5 out of 5",
-    author: "Sulekha",
+    author: " Sulekha",
   },
   {
-    text: "Excellent guidance and support for overseas education.",
-    author: "Google Reviews",
+    text: "S V Videsh Vidya Enterprises\nRating: 4.8 · 67 votes",
+    author: "  British School of language",
   },
   {
-    text: "Highly recommend for aspiring students!",
-    author: "JustDial",
+    text: "S V Videsh Vidya Enterprises\nRating: 4.7 · 88 votes",
+    author: " Justdial",
   },
 ];
 
@@ -39,10 +39,10 @@ const RatingComponents = () => {
 
       {/* Content */}
       <div className="text-center max-w-2xl">
-        <h2 className="text-red-500 font-bold text-lg md:text-xl">Ratings</h2>
+        <h2 className="text-red-500 font-bold text-lg md:text-3xl mb-12 mt-8">Ratings</h2>
         <p className="mt-2 whitespace-pre-line">{ratings[current].text}</p>
-        <div className="w-10 h-0.5 bg-white mx-auto my-3"></div>
-        <p className="italic text-lg">- {ratings[current].author}</p>
+        <div className="w-10 mt-6 mb-6 h-0.5 bg-white mx-auto my-3"></div>
+        <p className="italic text-lg mb-10">- {ratings[current].author}</p>
 
         {/* Dots */}
         <div className="flex justify-center mt-4 space-x-2">

@@ -19,9 +19,9 @@ const NavbarComponents = () => {
       link: "/about",
       subMenu: [
         { name: "Our Mission, Vision and Values", link: "/about/mission" },
-        { name: "Our Students Say", link: "/about/students" },
-        { name: "Testimonials", link: "/about/testimonials" },
-        { name: "Gallery", link: "/about/gallery" },
+        { name: "Our Students Say", link: "/students" },
+        { name: "Testimonials", link: "/testimonials" },
+        { name: "Gallery", link: "/gallery" },
       ],
     },
     {
