@@ -18,7 +18,7 @@ const TimeTable = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4 md:p-6">
-      <h2 className="text-3xl font-semibold text-gray-800 mb-6">
+      <h2 className="text-4xl font-extrabold text-indigo-600 mb-6">
         {title} {/* Dynamic title from API */}
       </h2>
 

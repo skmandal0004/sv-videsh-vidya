@@ -1,16 +1,36 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 const ScholarComponents = () => {
   return (
-    <div className="bg-white py-3">
-      <div className="max-w-full mx-auto px-12 ">
-      <h1 className="text-center font-bold text-5xl mb-8 mt-4">
-      Scholarships and Loans
-        </h1>
+    <div className="bg-gray-50 dark:bg-gray-900 py-6 px-4 md:px-12 transition-colors duration-300">
+      <div className="max-w-6xl mx-auto">
+        {/* Title */}
+        <motion.h1
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-8"
+        >
+          Scholarships & Loans
+        </motion.h1>
+
         {/* Scholarships Section */}
-        <div className="border border-gray-300 rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row">
-          {/* Left Image */}
-          <div className="w-full md:w-[50%]">
+        <motion.div
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="border border-gray-300 dark:border-gray-700 rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row"
+        >
+          {/* Image */}
+          <div className="w-full md:w-1/2">
             <img
               src="https://santamonicaedu.in/wp-content/uploads/2023/03/scholarships_in_canada.jpg"
               alt="Scholarships"
@@ -18,42 +38,44 @@ const ScholarComponents = () => {
             />
           </div>
 
-          {/* Right Content */}
-          <div className="w-full md:w-1/2 p-8 text-white bg-[#0F0C24] flex flex-col">
-            <h2 className="text-3xl font-bold text-red-500 mb-2 text-center">
+          {/* Content */}
+          <div className="w-full md:w-1/2 p-6 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-300">
+            <h2 className="text-3xl font-bold text-red-500 mb-3 text-center">
               Scholarships
             </h2>
-            <p className="leading-normal text-base">
-            Every year more than hundreds of thousands of dollars worth scholarships are distributed for International Students by various Universities/Colleges/Organizations. Most of these scholarships goes to the deserving ones based on numerous criteria described by the Funding Institute. For Indian students these scholarships can come in following ways.
+            <p className="text-base mb-3">
+              Every year, numerous scholarships are awarded to international
+              students based on various criteria. Indian students can apply for:
             </p>
-
-            <ul className="list-disc list-inside mt-2 mb-3 space-y-1">
+            <ul className="list-disc list-inside space-y-1">
               <li>Indian Student Overseas Education Scholarships</li>
               <li>International Students Study Abroad Scholarships</li>
-              <li>Indian Students Scholarship for Higher Studies in India</li>
+              <li>Scholarships for Higher Studies in India</li>
             </ul>
 
-            <p className="leading-normal text-base">              
-            The myth around scholarship is that only toppers from different spheres of life gets scholarship. But let’s not argue that toppers deserve these scholarships based on certain criteria. But Overseas Education Scholarships are not restricted to toppers alone. Most Study Abroad Student Scholarships fall under following four major types:​​
+            <p className="text-base mt-3">
+              Scholarships are not just for toppers. Most study abroad
+              scholarships fall under:
             </p>
-
-            <ul className="list-disc list-inside mt-2 mb-3 space-y-1">
-              <li>Need based Scholarships (for financially backward students mostly with good/decent academic records)</li>
-              <li>Student Specific Scholarships (generally based on caste, religion, gender or similar grounds)</li>
-              <li>University/College Scholarships (it can be Merit based or other criteria as mentioned by university)</li>
-              <li>Company Based Sponsorship (Professionals working in companies get full sponsorship in the pretext of coming back and joining the same company)
-                </li>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Need-based (for financially challenged students)</li>
+              <li>Student-specific (based on caste, gender, etc.)</li>
+              <li>University-based (merit or other criteria)</li>
+              <li>Company-sponsored (for employees returning post-study)</li>
             </ul>
-            <p className="leading-normal text-base">
-            The above mentioned types of scholarships cover almost 90% of total scholarships awarded to Study Abroad aspirants. Hence students seeking admission for overseas education mustn’t lose hope and do research thoroughly to take advantage of these wonderful scholarship options.
-            </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Education Loans Section */}
-        <div className="border border-gray-300 rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row-reverse">
-          {/* Left Image */}
-          <div className="w-full md:w-[50%]">
+        <motion.div
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="border border-gray-300 dark:border-gray-700 rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row-reverse mt-8"
+        >
+          {/* Image */}
+          <div className="w-full md:w-1/2">
             <img
               src="https://articlesmall.com/wp-content/uploads/2024/09/Education-Loan-1.jpg"
               alt="Education Loans"
@@ -61,39 +83,31 @@ const ScholarComponents = () => {
             />
           </div>
 
-          {/* Right Content */}
-          <div className="w-full md:w-1/2 p-8 text-white bg-[#0F0C24] flex flex-col">
-            <h2 className="text-3xl font-bold text-red-500 mb-2 text-center">
+          {/* Content */}
+          <div className="w-full md:w-1/2 p-6 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-300">
+            <h2 className="text-3xl font-bold text-red-500 mb-3 text-center">
               Education Loans
             </h2>
-            <p className="leading-normal text-base">
-            Education loans in India have come a long way from having conservative approach to more flexible one in recent years. Hard working Students generally have no problem paying back Education Loans after finishing their studies. Overseas Education Loans to Study Abroad help may families getting a substantial funding from both Public and Private sector banks. S V Videsh Vidya has partnered with Indian financial institutions to facilitate Education Loans for Study abroad purposes of Indian Students. We suggest banks based on their services, loan amount required and student’s family financial background and location. It’s faster to get Education loans these days but proper planning is required so as not to delay the University Admission process. Financial documents are must during Visa Interview and varies from country to country. We guide our students the right approach and timing to get these loans in order to secure I-20 from the University.
+            <p className="text-base mb-3">
+              Education loans in India have become more accessible. Loans cover:
             </p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Tuition fees</li>
+              <li>Accommodation & living expenses</li>
+              <li>Books & supplies</li>
+              <li>Travel & insurance costs</li>
+            </ul>
 
-            <p className="leading-normal text-base mt-2">
-            Most Overseas education loan cover the cost of following and are paid mostly to the University directly:​
+            <p className="text-base mt-3">
+              Loan options vary based on amount:
             </p>
-            <ul className="list-disc list-inside mt-2 mb-3 space-y-1">
-              <li>Tuition fee</li>
-              <li>Insurance fee</li>
-              <li>Cost of books & supplies</li>
-              <li>Accommodation costs</li>
-              <li>Living expenses</li>
-              <li>Travel and Transportation expenses</li>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Up to ₹4L: No guarantor needed</li>
+              <li>Up to ₹7.5L: Requires third-party guarantor</li>
+              <li>Above ₹7.5L: Needs guarantor & collateral</li>
             </ul>
-            <p className="leading-normal text-base mt-2">
-        Scholarships may not cover the expenses incurred as per the above list and hence timely procurement of Education loans goes a long way in maintaining the student finances in order :
-            </p>
-            <ul className="list-disc list-inside mt-2 mb-3 space-y-1">
-              <li>​Loans upto INR 4lacs doesn’t require a Guarantor or margin</li>
-              <li>​Loans upto INR 7.5lacs require a third party Guarantor but no collateral</li>
-              <li>Loans above INR 7.5lacs require a Guarantor as well as collateral (proof of any immovable property or asset)<br/>
-                Repayment of loans is dependent on banks or financial institution and generally starts after 6 months or 12 months of completion of the course. Grace period of Repayment of loans ranges from 5-15 yrs for loans above 7.5lacs but in some cases can be lower as well</li>
-               
-            </ul>
-            
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

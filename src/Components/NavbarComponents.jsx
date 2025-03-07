@@ -13,7 +13,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const NavbarComponents = () => {
   const menuItems = [
-    { name: "Home", link: "/home" },
+    { name: "Home", link: "/" },
     {
       name: "About Us",
       link: "/about",
@@ -53,7 +53,7 @@ const NavbarComponents = () => {
       link: "/training",
       subMenu: [
         { name: "Online Training", link: "https://training.svvideshvidya.com/" },
-        { name: "Training Time Table", link: "/timetable" },
+        { name: "Training Time Table", link: "/training-time-table" },
         { name: "Spoken English", link: "/spoken-english" },
         { name: "Duolingo", link: "/duolingo" },
         { name: "IELTS (Academic & General)", link: "/ielts" },
@@ -119,8 +119,8 @@ const NavbarComponents = () => {
     />
   </a>
   <div className="flex flex-col">
-    <h1 className="text-lg font-bold text-gray-900">SV Videsh Vidya</h1>
-    <p className="text-sm text-gray-500">Study Abroad Experts</p>
+    <h1 className="text-lg font-extrabold bg-gradient-to-r from-[#1A152D] to-[#4e60ff] text-transparent bg-clip-text">SV Videsh Vidya</h1>
+    <p className="text-xs font-semibold text-gray-500">Study Abroad Experts</p>
   </div>
 </div>
 
