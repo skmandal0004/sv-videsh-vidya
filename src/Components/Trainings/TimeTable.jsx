@@ -11,7 +11,7 @@ const TimeTable = () => {
       .then((res) => res.json())
       .then((data) => {
         setFiles(data.files || []);
-        setTitle(data.textInput || "Live Classes Schedule"); // Use fetched text or default
+        setTitle(data.textInput + " Live Classes Schedule" || "Live Classes Schedule"); // Use fetched text or default
       })
       .catch((err) => console.error("Error fetching files:", err));
   }, []);
