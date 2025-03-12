@@ -60,6 +60,10 @@ function App() {
         <Route path="/puc" element={<Trainings/>}/>
         <Route path="/students" element={<Students/>}/>
         <Route path="/training-time-table" element={<TrainingTimeTable/>}/>
+        <Route path="/admissions" element={<Admission />}/>
+        <Route path="/admission-list" element={<AdmissionList />}/>
+        <Route path="/engineering" element={<Engineering />}/>
+
 
       </Routes>
       <FooterComponents/>
