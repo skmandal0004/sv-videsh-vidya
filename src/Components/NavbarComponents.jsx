@@ -39,8 +39,9 @@ const NavbarComponents = () => {
     },
     {
       name: "Admissions",
+      link: "/admissions",
       subMenu: [
-        { name: "Admissions List", link: "/applications" },
+        { name: "Admissions List", link: "/admission-list" },
         { name: "Engineering", link: "/admissions/engineering" },
         { name: "Medical", link: "/admissions/medical" },
         { name: "Medicine PG (UK, USA)", link: "/admissions/medicine-pg" },
