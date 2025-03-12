@@ -11,14 +11,14 @@ const TimeTable = () => {
       .then((res) => res.json())
       .then((data) => {
         setFiles(data.files || []);
-        setTitle(data.textInput || "Live Classes Schedule"); // Use fetched text or default
+        setTitle(data.textInput + " Live Classes Schedule" || "Live Classes Schedule"); // Use fetched text or default
       })
       .catch((err) => console.error("Error fetching files:", err));
   }, []);
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4 md:p-6">
-      <h2 className="text-3xl font-semibold text-gray-800 mb-6">
+      <h2 className="text-4xl font-extrabold text-indigo-600 mb-6">
         {title} {/* Dynamic title from API */}
       </h2>
 

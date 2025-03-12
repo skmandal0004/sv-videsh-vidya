@@ -7,7 +7,7 @@ import GalleryComponents from "../Components/About/GalleryComponents";
 
 const About = () => {
   return (
-    <div>
+    <div className="bg-indigo-500">
       <AboutComponents />
       <MissionComponents />
       <PrideComponents />
