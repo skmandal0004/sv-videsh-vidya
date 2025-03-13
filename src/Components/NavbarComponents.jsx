@@ -143,12 +143,12 @@ const NavbarComponents = () => {
 
           {/* Search Dropdown Results */}
           {filteredResults.length > 0 && (
-            <ul className="absolute top-full left-0 mt-1 w-56 bg-white border border-gray-300 shadow-md rounded-md z-10">
+            <ul className="absolute top-full left-0 mt-1 w-56 bg-white opacity-80 hover:opacity-100 border border-gray-300 shadow-md rounded-md z-10">
               {filteredResults.map((result, index) => (
                 <li
                   key={index}
                   onClick={() => handleSelect(result.link)}
-                  className="px-4 py-2 cursor-pointer hover:bg-gray-200"
+                  className="px-4 py-2 cursor-pointer hover:bg-gray-50 "
                 >
                   {result.name}
                 </li>
@@ -176,6 +176,52 @@ const NavbarComponents = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile Navigation */}
+      {mobileMenuOpen && (
+        <nav className="lg:hidden absolute top-full left-0 w-full bg-[#1A152D] text-white shadow-lg">
+          <div className="flex flex-col py-4 px-6 space-y-2">
+            {menuItems.map((item, index) => (
+              <div key={index} className="relative">
+                <button
+                  onClick={() =>
+                    setMobileDropdown(mobileDropdown === index ? null : index)
+                  }
+                  className="flex justify-between w-full text-left py-2 font-semibold text-white hover:text-yellow-300"
+                >
+                  {item.name}
+                  {item.subMenu && (
+                    <span>{mobileDropdown === index ? "▲" : "▼"}</span>
+                  )}
+                </button>
+
+                {/* Mobile Dropdown Menu */}
+                <AnimatePresence>
+                  {item.subMenu && mobileDropdown === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="pl-4 space-y-2 overflow-hidden"
+                    >
+                      {item.subMenu.map((subItem, subIndex) => (
+                        <Link
+                          key={subIndex}
+                          to={subItem.link}
+                          className="block text-gray-300 hover:text-yellow-300 transition"
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+        </nav>
+      )}
 
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex bg-gradient-to-r from-[#1A152D] to-[#6B4EFF] text-white">
@@ -213,8 +259,12 @@ const NavbarComponents = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
+
+              
             </div>
           ))}
+
+          
         </div>
       </nav>
     </header>
