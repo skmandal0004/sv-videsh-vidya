@@ -26,6 +26,9 @@ import GermanComponents from './Components/Trainings/GermanComponents';
 import FrenchComponents from './Components/Trainings/FrenchComponents';
 import TrainingTimeTable from './Components/Trainings/TimeTable.jsx';
 import Students from './Routes/Students';
+import Admission from './Routes/Admission';
+import AdmissionList from './Routes/AdmissionList';
+import Engineering from './Routes/Engineering';
 
 function App() {
   return (
@@ -57,6 +60,10 @@ function App() {
         <Route path="/puc" element={<Trainings/>}/>
         <Route path="/students" element={<Students/>}/>
         <Route path="/training-time-table" element={<TrainingTimeTable/>}/>
+        <Route path="/admissions" element={<Admission />}/>
+        <Route path="/admission-list" element={<AdmissionList />}/>
+        <Route path="/engineering" element={<Engineering />}/>
+
 
       </Routes>
       <FooterComponents/>
