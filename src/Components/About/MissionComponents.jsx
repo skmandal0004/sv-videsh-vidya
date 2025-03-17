@@ -5,11 +5,11 @@ const MissionComponents = () => {
     <div className="flex flex-col md:flex-row w-full max-w-6xl mx-auto bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-200 transition-all duration-300">
       {/* Left Section - Content */}
       <div className="md:w-1/2 p-6 md:p-12 flex flex-col justify-center">
-        <h2 className="text-3xl font-bold mb-4 text-[#6B4EFF] dark:text-[#A89CFF]">
+        <h2 className="text-3xl font-bold mb-4 text-[#362783] dark:text-[#A89CFF]">
           Our Mission & Values
         </h2>
         <p className="text-lg mb-6 font-medium">
-          <span className="text-[#6B4EFF] dark:text-[#A89CFF] font-semibold">
+          <span className="bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text dark:text-[#A89CFF] font-semibold">
             "Your Trust is Our Strength"
           </span>
         </p>

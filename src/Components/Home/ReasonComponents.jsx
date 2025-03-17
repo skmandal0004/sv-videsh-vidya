@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import phoneIcon from '../../assets/phone.png'
 
 const reasons = [
   {
@@ -23,6 +24,9 @@ const reasons = [
 ];
 
 const ReasonComponents = () => {
+
+  const phoneNumber = "9523429869";
+
   return (
     <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-16 px-6 md:px-20">
       {/* Title Section */}
@@ -69,17 +73,19 @@ const ReasonComponents = () => {
 
       {/* Contact Us Button */}
       <motion.div
-        className="fixed bottom-6 right-6"
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <button className="flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
-          <span>💬</span>
-          <span>Contact Us</span>
-        </button>
-      </motion.div>
+      className="fixed bottom-6 right-6"
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      <a href={`tel:${phoneNumber}`} className="flex items-center space-x-3 bg-gradient-to-r from-indigo-500 via-blue-500 to-teal-500 text-white px-5 py-4 rounded-full shadow-xl hover:scale-110 transition-all transform">
+        {/* Phone Icon */}
+        <img src={phoneIcon} alt="Phone Icon" className="w-8 h-8" />
+        {/* Phone Number */}
+        <span className="text-xl font-semibold">Call Us</span>
+      </a>
+    </motion.div>
     </div>
   );
 };

@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
   FaSearch,
   FaBars,
   FaTimes,
@@ -13,11 +9,52 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const NavbarComponents = () => {
   const navigate = useNavigate();
+  const location = useLocation()
+
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
   const [query, setQuery] = useState(""); // Search input state
   const [filteredResults, setFilteredResults] = useState([]); // Search results
+
+  const handleGalleryClick = (e) => {
+    e.preventDefault(); // Prevent default link behavior
+
+    if (location.pathname === "/gallery") {
+      // Scroll immediately if already on About page
+      document.getElementById("gallery-section")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate first, then scroll after a short delay
+      navigate("/about");
+
+      setTimeout(() => {
+        const galleryElement = document.getElementById("gallery-section");
+        if (galleryElement) {
+          galleryElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 500); // Adjust delay if necessary
+    }
+  };
+
+  const handleTestimonialsClick = (e) => {
+    e.preventDefault();
+  
+    if (location.pathname === "/testimonials") {
+      // Scroll immediately if already on About page
+      document.getElementById("testimonials-section")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate first, then scroll after a short delay
+      navigate("/about");
+  
+      setTimeout(() => {
+        const galleryElement = document.getElementById("testimonials-section");
+        if (galleryElement) {
+          galleryElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 500); // Adjust delay if necessary
+    };
+  
+  }
 
   // Menu Items
   const menuItems = [
@@ -28,8 +65,8 @@ const NavbarComponents = () => {
       subMenu: [
         { name: "Our Mission, Vision and Values", link: "/about/mission" },
         { name: "Our Students Say", link: "/students" },
-        { name: "Testimonials", link: "/testimonials" },
-        { name: "Gallery", link: "/gallery" },
+        { name: "Testimonials", link: "/testimonials", onClick: handleTestimonialsClick, },
+        { name: "Gallery", link: "/gallery", onClick: handleGalleryClick, },
       ],
     },
     {
@@ -47,9 +84,8 @@ const NavbarComponents = () => {
     },
     {
       name: "Admissions",
-      link: "/admissions",
       subMenu: [
-        { name: "Admissions List", link: "/admission-list" },
+        { name: "Admissions List", link: "/applications" },
         { name: "Engineering", link: "/admissions/engineering" },
         { name: "Medical", link: "/admissions/medical" },
         { name: "Medicine PG (UK, USA)", link: "/admissions/medicine-pg" },
@@ -250,8 +286,9 @@ const NavbarComponents = () => {
                   >
                     {item.subMenu.map((subItem, subIndex) => (
                       <Link
-                        key={subIndex}
-                        to={subItem.link}
+                      key={subIndex}
+                      to={subItem.link}
+                      onClick={subItem.onClick}
                         className="block px-4 py-2 hover:bg-yellow-300 hover:text-[#1A152D] hover:font-semibold hover:scale-105 transition-transform ease-in-out duration-300 whitespace-nowrap"
                       >
                         {subItem.name}
