@@ -85,6 +85,7 @@ const NavbarComponents = () => {
     },
     {
       name: "Admissions",
+      link: "/admissions",
       subMenu: [
         { name: "Admissions List", link: "/admission-list" },
         { name: "Engineering", link: "/admissions/engineering" },

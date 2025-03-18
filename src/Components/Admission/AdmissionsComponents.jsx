@@ -6,7 +6,7 @@ const AdmissionsComponents = () => {
     <div className="flex flex-col items-center w-full">
       {/* Title Section */}
       <div className="w-full bg-white py-6 text-center">
-        <h1 className="text-5xl font-bold text-black uppercase">Admissions</h1>
+        <h1 className="text-6xl font-bold text-black uppercase mt-6 mb-4">Admissions</h1>
       </div>
 
       {/* Image Section with Background */}

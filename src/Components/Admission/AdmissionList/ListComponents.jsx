@@ -2,180 +2,286 @@ import React from "react";
 
 const ListComponents = () => {
   return (
-    <div className="flex flex-col items-center justify-start w-full bg-gray-100 px-4 pt-6">
-      <div className="w-full max-w-6xl bg-white p-8 shadow-lg rounded-lg mb-6">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">USA</h2>
-        <div className="grid grid-cols-2 gap-6 text-lg text-gray-800">
-          <ul className="list-disc pl-5 space-y-2">
-            <li>Adelphi</li>
-            <li>Arizona State University</li>
-            <li>California State University</li>
-            <li>East Bay and CAL State - Riverside</li>
-            <li>Eastern Illinois</li>
-            <li>Findlay, Johnson and Wales</li>
-            <li>Florida Atlantic University</li>
-            <li>George Mason University</li>
-            <li>PACE University</li>
-            <li>Purdue University</li>
-            <li>Texas A & M University Corpus Cristy</li>
-          </ul>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>UM-Dearborn</li>
-            <li>Univ of Cincinnati</li>
-            <li>University of Alabama at Birmingham</li>
-            <li>University of Arlington</li>
-            <li>University of Central Missouri</li>
-            <li>University of Colorado, Denver</li>
-            <li>University of Houston</li>
-            <li>University of Massachusetts Boston (UMass Boston)</li>
-            <li>University of New Haven</li>
-            <li>University of North Texas University of South Florida</li>
-          </ul>
-        </div>
+    <div className="flex flex-col items-center w-full bg-gray-100 px-6 py-8">
+      <div className="grid gap-8 w-full max-w-6xl">
+        
+        {/* USA Section */}
+        <div className="bg-white p-4 rounded-lg shadow">
+  <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">USA</h2>
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 text-lg text-gray-800">
+    {[
+      "Adelphi",
+      "Arizona State University",
+      "California State University",
+      "East Bay and CAL State - Riverside",
+      "Eastern Illinois",
+      "Findlay, Johnson and Wales",
+      "Florida Atlantic University",
+      "George Mason University",
+      "PACE University",
+      "Purdue University",
+      "Texas A & M University Corpus Cristy",
+      "UM-Dearborn",
+      "University of Cincinnati",
+      "University of Alabama at Birmingham",
+      "University of Arlington",
+      "University of Central Missouri",
+      "University of Colorado, Denver",
+      "University of Houston",
+      "UMass Boston",
+      "University of New Haven",
+      "University of North Texas",
+      "University of South Florida",
+    ].map((university, index) => (
+      <div key={index} className="bg-gray-100 p-3 rounded shadow">
+        <ul className="list-disc pl-5">
+          <li>{university}</li>
+        </ul>
       </div>
-
-      <div className="w-full max-w-6xl bg-white p-8 shadow-lg rounded-lg">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">UK</h2>
-        <div className="grid grid-cols-2 gap-6 text-lg text-gray-800">
-          <ul className="list-disc pl-5 space-y-2">
-            <li>Anglia Ruskin</li>
-            <li>Aston University</li>
-            <li>Brunel University London</li>
-            <li>Coventry University (London Campus)</li>
-            <li>Durham University</li>
-            <li>Leeds International Study Center</li>
-            <li>Manchester Metropolitan University</li>
-            <li>New Castle</li>
-            <li>Northumbria University</li>
-            <li>Queen Mary University of London</li>
-          </ul>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>Teesside University</li>
-            <li>The University of Sheffield</li>
-            <li>University College London</li>
-            <li>University of Central Lancashire</li>
-            <li>University of Dundee</li>
-            <li>University of Hertfordshire</li>
-            <li>University of Leeds</li>
-            <li>University of North London</li>
-            <li>University of Nottingham</li>
-            <li>University of Strathclyde</li>
-            <li>Queen’s University Belfast</li>
-            <li>Swansea University</li>
-          </ul>
-        </div>
-      </div>
-
-
-      <div className="w-full max-w-6xl bg-white p-8 shadow-lg rounded-lg mt-6">
-  <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">Germany</h2>
-  <div className="grid grid-cols-2 gap-6 text-lg text-gray-800">
-    <ul className="list-disc pl-5 space-y-2">
-      <li>Darmstadt Business School</li>
-      <li>Fachhochschule des Mittelstands (FHM)</li>
-      <li>FH Aachen University of Applied Science</li>
-      <li>Frankfurt University of Applied Sciences</li>
-      <li>Hochschule Aalen</li>
-      <li>Hochschule Karlsruhe University of Applied Sciences</li>
-    </ul>
-    <ul className="list-disc pl-5 space-y-2">
-      <li>ISM – International School of Management</li>
-      <li>IUBH</li>
-      <li>RWTH International Academy</li>
-      <li>SRH Heidelberg University of Kiel</li>
-      <li>TU Dresden</li>
-      <li>TUM</li>
-      <li>University of Bonn</li>
-      <li>University of Siegen</li>
-    </ul>
+    ))}
   </div>
 </div>
 
-<div className="w-full max-w-6xl bg-white p-8 shadow-lg rounded-lg mt-6 mb-10">
-<h2 className="text-3xl font-bold text-center text-gray-900 mt-2 mb-6">Others</h2>
-      <div className="grid grid-cols-2 gap-6 text-lg text-gray-800">
-        <div>
-          <h3 className="font-semibold">Canada :</h3>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Canadore College</li>
-            <li>University of Ottawa</li>
-            <li>Cambrian College</li>
-            <li>Algonquin</li>
-            <li>Centennial</li>
-            <li>Lambton</li>
-            <li>Evergreen College</li>
-          </ul>
 
-          <h3 className="font-semibold mt-2">Italy :</h3>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>University of Padua</li>
-            <li>Universita Di Siena</li>
-            <li>Vesuvio International School of Hospitality</li>
-          </ul>
-
-          <h3 className="font-semibold mt-2">France :</h3>
-          <p>College De Paris</p>
-
-          <h3 className="font-semibold mt-2">Hungary :</h3>
-          <p>International Business School</p>
-
-          <h3 className="font-semibold mt-2">Ireland :</h3>
-          <p>Dundalk Institute, UCD.</p>
-
-          <h3 className="font-semibold mt-2">Estonia :</h3>
-          <p>Tallinn University of Technology</p>
-
-          <h3 className="font-semibold mt-2">Philippines :</h3>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Our Lady Fatima University</li>
-            <li>AMA</li>
-            <li>Angeles Foundation University</li>
-            <li>Perpetual Help</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="font-semibold">Australia :</h3>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Monash University</li>
-            <li>Deakin University</li>
-          </ul>
-
-          <h3 className="font-semibold mt-2">Netherlands :</h3>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Radboud University</li>
-            <li>University of Groningen</li>
-            <li>University of Twente</li>
-            <li>Enschede</li>
-          </ul>
-
-          <h3 className="font-semibold mt-2">Dubai :</h3>
-          <p>BITS Pilani - Dubai Campus</p>
-          <p>Manipal University</p>
-
-          <h3 className="font-semibold mt-2">China :</h3>
-          <p>China Medical University</p>
-          <p>Sichuan University</p>
-
-          <h3 className="font-semibold mt-2">Lithuania :</h3>
-          <p>VGTU</p>
-
-          <h3 className="font-semibold mt-2">Singapore :</h3>
-          <p>Raffles, Amity University</p>
-
-          <h3 className="font-semibold mt-2">Ukraine :</h3>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Ivano Frankivisk NMU</li>
-            <li>Kharkiv National Medical University NMU</li>
-            <li>Bogomolets National Medical University</li>
-            <li>Vinnytsia National Medical University</li>
-            <li>LVIV</li>
-          </ul>
-        </div>
+        {/* UK Section */}
+        <div className="bg-white p-4 rounded-lg shadow">
+  <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">UK</h2>
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 text-lg text-gray-800">
+    {[
+      "Anglia Ruskin",
+      "Aston University",
+      "Brunel University London",
+      "Coventry University (London Campus)",
+      "Durham University",
+      "Leeds International Study Center",
+      "Manchester Metropolitan University",
+      "New Castle",
+      "Northumbria University",
+      "Queen Mary University of London",
+      "Teesside University",
+      "The University of Sheffield",
+      "University College London",
+      "University of Central Lancashire",
+      "University of Dundee",
+      "University of Hertfordshire",
+      "University of Leeds",
+      "University of North London",
+      "University of Nottingham",
+      "University of Strathclyde",
+      "Queen’s University Belfast",
+      "Swansea University",
+    ].map((university, index) => (
+      <div key={index} className="bg-gray-100 p-3 rounded shadow">
+        <ul className="list-disc pl-5 ">
+          <li>{university}</li>
+        </ul>
       </div>
-      </div>
+    ))}
+  </div>
+</div>
 
-      
+
+
+        {/* Germany Section */}
+        <div className="bg-white p-4 rounded-lg shadow">
+  <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Germany</h2>
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 text-lg text-gray-800">
+    <div className="bg-gray-100 p-3 rounded shadow">
+      <ul className="list-disc pl-5">
+        <li>RWTH Aachen University</li>
+      </ul>
+    </div>
+    <div className="bg-gray-100 p-3 rounded shadow">
+      <ul className="list-disc pl-5">
+        <li>Technical University of Munich (TUM)</li>
+      </ul>
+    </div>
+    <div className="bg-gray-100 p-3 rounded shadow">
+      <ul className="list-disc pl-5">
+        <li>University of Stuttgart</li>
+      </ul>
+    </div>
+    <div className="bg-gray-100 p-3 rounded shadow">
+      <ul className="list-disc pl-5">
+        <li>Humboldt University of Berlin</li>
+      </ul>
+    </div>
+    <div className="bg-gray-100 p-3 rounded shadow">
+      <ul className="list-disc pl-5">
+        <li>University of Freiburg</li>
+      </ul>
+    </div>
+    <div className="bg-gray-100 p-3 rounded shadow">
+      <ul className="list-disc pl-5">
+        <li>University of Mannheim</li>
+      </ul>
+    </div>
+    <div className="bg-gray-100 p-3 rounded shadow">
+      <ul className="list-disc pl-5">
+        <li>Karlsruhe Institute of Technology (KIT)</li>
+      </ul>
+    </div>
+    <div className="bg-gray-100 p-3 rounded shadow">
+      <ul className="list-disc pl-5">
+        <li>Ludwig Maximilian University of Munich</li>
+      </ul>
+    </div>
+    <div className="bg-gray-100 p-3 rounded shadow">
+      <ul className="list-disc pl-5">
+        <li>TU Berlin</li>
+      </ul>
+    </div>
+    <div className="bg-gray-100 p-3 rounded shadow">
+      <ul className="list-disc pl-5">
+        <li>University of Hamburg</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+        {/* Other Countries Section */}
+        <div className="bg-white p-4 rounded-lg shadow">
+  <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Others</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-lg text-gray-800">
+    
+    {/* Canada */}
+    <div className="bg-white p-4 rounded-lg shadow">
+      <h3 className="font-semibold text-gray-900">Canada</h3>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Canadore College</li>
+        <li>University of Ottawa</li>
+        <li>Cambrian College</li>
+        <li>Algonquin</li>
+        <li>Centennial</li>
+        <li>Lambton</li>
+        <li>Evergreen College</li>
+      </ul>
+    </div>
+
+    {/* Italy */}
+    <div className="bg-white p-4 rounded-lg shadow">
+      <h3 className="font-semibold text-gray-900">Italy</h3>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>University of Padua</li>
+        <li>Universita Di Siena</li>
+        <li>Vesuvio International School of Hospitality</li>
+      </ul>
+    </div>
+
+    {/* France */}
+    <div className="bg-white p-4 rounded-lg shadow">
+      <h3 className="font-semibold text-gray-900">France</h3>
+      <ul className="list-disc pl-5 space-y-1">
+      <li className="list-disc">College De Paris</li>
+      </ul>
+    </div>
+
+    {/* Hungary */}
+    <div className="bg-white p-4 rounded-lg shadow">
+      <h3 className="font-semibold text-gray-900">Hungary</h3>
+      <ul className="list-disc pl-5 space-y-1">
+      <li>International Business School</li>
+    </ul>
+    </div>
+
+    {/* Ireland */}
+    <div className="bg-white p-4 rounded-lg shadow">
+      <h3 className="font-semibold text-gray-900">Ireland</h3>
+      <ul className="list-disc pl-5 space-y-1">
+      <li>Dundalk Institute, UCD</li>
+      </ul>
+    </div>
+
+    {/* Estonia */}
+    <div className="bg-white p-4 rounded-lg shadow">
+      <h3 className="font-semibold text-gray-900">Estonia</h3>
+      <ul className="list-disc pl-5 space-y-1">
+      <li>Tallinn University of Technology</li>
+      </ul>
+    </div>
+
+    {/* Philippines */}
+    <div className="bg-white p-4 rounded-lg shadow">
+      <h3 className="font-semibold text-gray-900">Philippines</h3>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Our Lady Fatima University</li>
+        <li>AMA</li>
+        <li>Angeles Foundation University</li>
+        <li>Perpetual Help</li>
+      </ul>
+    </div>
+
+    {/* Australia */}
+    <div className="bg-white p-4 rounded-lg shadow">
+      <h3 className="font-semibold text-gray-900">Australia</h3>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Monash University</li>
+        <li>Deakin University</li>
+      </ul>
+    </div>
+
+    {/* Netherlands */}
+    <div className="bg-white p-4 rounded-lg shadow">
+      <h3 className="font-semibold text-gray-900">Netherlands</h3>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Radboud University</li>
+        <li>University of Groningen</li>
+        <li>University of Twente</li>
+        <li>Enschede</li>
+      </ul>
+    </div>
+
+    {/* Dubai */}
+    <div className="bg-white p-4 rounded-lg shadow">
+      <h3 className="font-semibold text-gray-900">Dubai</h3>
+      <ul className="list-disc pl-5 space-y-1">
+      <li>BITS Pilani - Dubai Campus</li>
+      <li>Manipal University</li>
+      </ul>
+    </div>
+
+    {/* China */}
+    <div className="bg-white p-4 rounded-lg shadow">
+      <h3 className="font-semibold text-gray-900">China</h3>
+      <ul className="list-disc pl-5 space-y-1">
+      <li>China Medical University</li>
+      <li>Sichuan University</li>
+    </ul>
+    </div>
+
+    {/* Lithuania */}
+    <div className="bg-white p-4 rounded-lg shadow">
+    <ul className="list-disc pl-5 space-y-1">
+      <h3 className="font-semibold text-gray-900">Lithuania</h3>
+      <li>VGTU</li>
+      </ul>
+    </div>
+
+    {/* Singapore */}
+    <div className="bg-white p-4 rounded-lg shadow">
+      <h3 className="font-semibold text-gray-900">Singapore</h3>
+      <ul className="list-disc pl-5 space-y-1">
+      <li>Raffles, Amity University</li>
+      </ul>
+    </div>
+
+    {/* Ukraine */}
+    <div className="bg-white p-4 rounded-lg shadow">
+      <h3 className="font-semibold text-gray-900">Ukraine</h3>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Ivano Frankivisk NMU</li>
+        <li>Kharkiv National Medical University NMU</li>
+        <li>Bogomolets National Medical University</li>
+        <li>Vinnytsia National Medical University</li>
+        <li>LVIV</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      </div>
     </div>
   );
 };

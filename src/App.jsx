@@ -29,6 +29,8 @@ import Students from './Routes/Students';
 import Admission from './Routes/Admission';
 import AdmissionList from './Routes/AdmissionList';
 import Engineering from './Routes/Engineering';
+import MedicineComponents from './Components/Admission/MedicineComponents';
+import Medical from './Routes/Medical';
 
 function App() {
   return (
@@ -63,6 +65,8 @@ function App() {
         <Route path="/admissions" element={<Admission />}/>
         <Route path="/admission-list" element={<AdmissionList />}/>
         <Route path="/engineering" element={<Engineering />}/>
+        <Route path="/medical" element={<MedicineComponents />}/>
+        <Route path="/medicine-pg" element={<Medical />}/>
 
 
       </Routes>
