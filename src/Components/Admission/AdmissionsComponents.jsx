@@ -27,7 +27,7 @@ const AdmissionsComponents = () => {
               Engineering
             </button>
           </Link>
-          <Link to="/arts-sciences-humanities">
+          <Link to="/arts-sciences">
             <button className="bg-indigo-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-indigo-600 transition">
               Arts, Sciences, Humanities
             </button>

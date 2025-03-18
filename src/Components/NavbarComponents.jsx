@@ -88,11 +88,11 @@ const NavbarComponents = () => {
       link: "/admissions",
       subMenu: [
         { name: "Admissions List", link: "/admission-list" },
-        { name: "Engineering", link: "/admissions/engineering" },
-        { name: "Medical", link: "/admissions/medical" },
-        { name: "Medicine PG (UK, USA)", link: "/admissions/medicine-pg" },
-        { name: "Management", link: "/admissions/management" },
-        { name: "Arts, Sciences, Humanities", link: "/admissions/arts-sciences" },
+        { name: "Engineering", link: "/engineering" },
+        { name: "Medical", link: "/medical" },
+        { name: "Medicine PG (UK, USA)", link: "/medicine-pg" },
+        { name: "Management", link: "/management" },
+        { name: "Arts, Sciences, Humanities", link: "/arts-sciences" },
       ],
     },
     {
@@ -121,7 +121,7 @@ const NavbarComponents = () => {
     {
       name: "Applications and Admissions | Svvidesh",
       description: "Get comprehensive guidance for university applications and admissions abroad with SV Videsh Vidya. Our experienced education consultants help you stand out. Visit our page to learn more! Applications and Admissions Documentation and Application Processing Documents are subject to country and course applying for in most cases. Two major points students must understand is that, Timely Submission of Documents is required and that the Documents submitted are in the prescribed format as per the University/Visa guidelines. At S V Videsh Vidya, we provide list of documents based on the guidelines and go through those documents once procured from students and suggest changes if necessary. We also correct and polish the documents based on structure, format, relevance, grammar and objective of the document. Some of the documents that hold critical importance and must not be overlooked are: SOP- Statement of Purpose LOR- Letter of Recommendation Resume/CV Academic Essay or Goals Portfolio Building Application Processing starts as soon as students select the university/course/country and have submitted the documents. S V Videsh Vidya does not charge application fee for the universities represented. Generally, the application processing starts 8-10 months in advance of the intake chosen and can go as less as 1-2 months(depending on all documents ready). We suggest earlier the better as it gives us enough time to apply for Study Abroad Scholarships( which have early deadlines). Turn around time for Universities to make a decision once the application is submitted varies and depends on the volume of application received. It’s always advised to apply early but late applications aren’t necessary at a disadvantage. It takes about 2-4 weeks and in some cases 6-8 weeks to confirm the admission. Interview Preparation In USA/ Germany/ Canada/ Europe/ Australia/ New Zealand, many universities prefer to interview students as part of their Study Abroad Student Admission Process or as an extra step to ensure the right candidature for a particular course applied during university admissions. At S V Videsh Vidya, our team informs the student in advance and coordinate with the universities on students behalf to organize these interviews. These interviews may be telephonic or Skype based and are facilitated in S V Videsh Vidya Office. We help our students with the requisite preparation and provide them significant inputs based on their profle. Internships ( CPT ) Earn while you Learn : Curricular Practical Training ( CPT ) , is the best opportunity for International students. Which will help them to understand the required skill and become job ready. Students can be a part of a community of their profession. The knowledge they gain from the University and CPT, the experience they gain from being part of the community will help them build a strong profile which will attract future employers.",
-      link: "/"
+      link: "/applications"
     },
 
     {
@@ -133,13 +133,13 @@ const NavbarComponents = () => {
     {
       name: "Training Time Table | Svvidesh",
       description: "S V Videsh Vidya Enterprises is dedicated to helping students from all over India to realize their dream of getting their qualification from an institute that is best suited for their requirements, skills and knowledge they strive to acquire. Mission, Vision & Values YOUR TRUST IS OUR STRENGTH Our Mission : To use our technical skills and provide best solutions to our clients. To help understand individual needs and take a holistic view of clients requirements. To provide seamless integration of services from Training through Admission and all the way till client settles in. To help our clients comprehend the nuances of Overseas Higher Education and save them from any pitfalls. To guide our students at every step of their admission process and educate them about the right choices. Our Values : Focusing on Quality based solutions Keeping flexible approach & support during training Offering examm oriented learning techniques Handing admission process with utmost sincerity and integrity Ensuring high rate of success in study abroad consultancy Your Success Is Our Pride ! At S V Videsh Vidya, we don’t leave any stone unturned when it comes to servicing our clients. Patience is our Virtue and Knowledge is Power. We believe overseas education has to be customized to individual needs and hence we ensure best fit for our clients. Study abroad options are plenty but we know what suits your profile. We ensure almost 100% success till date. We take pride in your success. Hear it from our students who know us! All Videos student of svvideshvdya 01:26 student of svvideshvdya MBBS IN PHILIPPINES OUR LADY FATHIMA UNIVERSITY Is recognized as one of the leading university in the field of medicine. It's located in Manila, Philippines and is Recognized by MCI(Medical Council of India). Since, lot of Indian students are unaware of MBBS Abroad options we at SV Videsh Vidya, guide our students and help them to get successful admission and visa in Philippines. We also provide USMLE training. For free Counseling, visit: www.svvideshvidya.com\MedicalAbroad Hear it from our Parents who know us! Dr. Grover Freshman Program in FH Aachen- Germany It was really a great accidental finding on the net through which we came in touch with SVV. Right from day one , Abhishek Tiwari sir’s online coaching was specially oriented towards the Freshman entrance test & it played the most pivotal role in cracking the test. My son got through in the very first attempt. We will always remember the late night classes taken by Abhishek sir sacrificing his own comfort. Veena ma’am was always keen to find time from her busy schedule to reply to our queries and guide us to our satisfaction , from starting the application process till my son took the test her team was always there with their full team spirit. SVV deserves a pat N I’m sure in future also they will enable more n more students to shine more n give their parents a sense of satisfaction! Sincere thanks n All the very best to SVV . - View our complete list of Student reviews and ratings - Our Students say",
-      link: "/about/mission"
+      link: "/training-time-table"
     },
 
     {
       name: "Admissions | Svvidesh",
       description: "SV Videsh Vidya offers comprehensive admissions services to help you secure a place in your dream university abroad. Our consultants provide personalized guidance throughout the application process, ensuring your success. Visit our Admissions page and take the first step towards a brighter future! ADMISSIONS Categories Engineering Arts, Sciences, Humanities Management Check out where our students have joined ! : Admissions List S V Videsh Vidya Enterprises, Study Abroad Consultant is centrally located at BTM layout 2nd Stage, caters to the need of students from all the fields: MBBS, MEDICAL PG ( MS in non Clinical), Engineering, Arts &amp; Humanities, Sciences, MBA etc. Most of the study abroad courses need tests like SAT, IELTS, TOEFL, DUOLINGO, GRE, German and French Language. At S V Videsh Vidya we train students and make them ready and eligible to apply for overseas education. We plan the time line of the students and track the progress of their application and send timely reminders at every step of the admission process. Among various benefits as listed above, you will find our study abroad consulting charges very reasonable. Among others we offer free counseling and profile shortlisting. We also provide free Visa Guidance* to our students. We listen to your individual requirements and give you customized solutions for your needs. This ensures higher selection of our students.",
-      link: "/students"
+      link: "/admissions"
     },
 
     {
@@ -375,7 +375,7 @@ const NavbarComponents = () => {
                 <>
                   <hr className="border-gray-300 my-1" />
                   <li
-                    onClick={() => navigate(`/abc?query=${encodeURIComponent(query)}`)}
+                    onClick={() => navigate(`/search?query=${encodeURIComponent(query)}`)}
                     className="flex items-center gap-2 px-4 py-3 text-indigo-600 cursor-pointer hover:bg-gray-100 font-semibold text-center"
                   >
                     <Search className="text-indigo-500 w-4 h-4" /> {/* Search Icon */}
