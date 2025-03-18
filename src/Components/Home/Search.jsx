@@ -216,7 +216,7 @@ const Search = () => {
             key={tab}
             className={`py-2 px-6 text-lg font-medium ${
               activeTab === tab
-                ? "border-b-4 border-purple-500 text-purple-600"
+                ? "border-b-4 border-indigo-500 text-indigo-600"
                 : "text-gray-500"
             }`}
             onClick={() => setActiveTab(tab)}
@@ -236,7 +236,7 @@ const Search = () => {
             className="bg-white p-4 rounded-lg shadow-md cursor-pointer hover:bg-gray-100"
             onClick={() => navigate(item.link)} // Ensure item.link is correct
           >
-            <h2 className="text-xl font-semibold text-purple-700 hover:underline">
+            <h2 className="text-xl font-semibold text-indigo-700 hover:underline">
               {item.name}
             </h2>
             <p className="text-gray-600 mt-2">
@@ -254,7 +254,7 @@ const Search = () => {
           className={`px-4 py-2 text-white rounded-md ${
             currentPage === 1
               ? "bg-gray-300 cursor-not-allowed"
-              : "bg-purple-600 hover:bg-purple-700"
+              : "bg-indigo-600 hover:bg-indigo-700"
           }`}
           disabled={currentPage === 1}
           onClick={() => setCurrentPage((prev) => prev - 1)}
@@ -267,7 +267,7 @@ const Search = () => {
             key={page}
             className={`px-4 py-2 rounded-md ${
               currentPage === page
-                ? "bg-purple-600 text-white"
+                ? "bg-indigo-600 text-white"
                 : "bg-gray-200 text-gray-800"
             }`}
             onClick={() => setCurrentPage(page)}
@@ -280,7 +280,7 @@ const Search = () => {
           className={`px-4 py-2 text-white rounded-md ${
             currentPage === totalPages
               ? "bg-gray-300 cursor-not-allowed"
-              : "bg-purple-600 hover:bg-purple-700"
+              : "bg-indigo-600 hover:bg-indigo-700"
           }`}
           disabled={currentPage === totalPages}
           onClick={() => setCurrentPage((prev) => prev + 1)}
