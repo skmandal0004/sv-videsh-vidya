@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 
 const Search = () => {
   const [activeTab, setActiveTab] = useState("Other Pages");
-  const navigate = useNavigate(); // 👈 React Router navigation
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10; // Set how many items per page
+  const itemsPerPage = 10;
+  const [searchTerm, setSearchTerm] = useState("");
+  
 
   const searchItems = [
     {
@@ -180,20 +182,49 @@ const Search = () => {
   ];
 
   const totalPages = Math.ceil(searchItems.length / itemsPerPage);
-
-  // Pagination logic
   const paginatedItems = searchItems.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
 
-  // Debugging logs
-  console.log("Paginated Items:", paginatedItems);
-  console.log("Current Page:", currentPage);
-  console.log("Total Pages:", totalPages);
+  // Function to highlight search term
+  const highlightText = (text, search) => {
+    if (!search.trim()) return text;
+    const regex = new RegExp(`(${search})`, "gi");
+    return text.split(regex).map((part, i) =>
+      part.toLowerCase() === search.toLowerCase() ? (
+        <span key={i} className="bg-yellow-300 text-black px-1 rounded">
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
+
+  // Function to truncate description to 3-4 lines
+  const truncateDescription = (text, search) => {
+    const words = text.split(" ");
+    const limitedText = words.slice(0, 30).join(" "); // Approx. 3-4 lines
+    const isTruncated = words.length > 30;
+    return (
+      <>
+        {highlightText(limitedText, search)}
+        {isTruncated && <span className="text-gray-500"> ...</span>}
+      </>
+    );
+  };
+
+  // Filtering items based on search term
+  const filteredItems = searchItems.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
 
   return (
-      <div className="max-w-5xl mx-auto px-6 py-12">
+    <div className="max-w-5xl mx-auto px-6 py-12">
       {/* Heading */}
       <h1 className="text-4xl font-bold text-center text-gray-900">
         SEARCH RESULTS
@@ -205,6 +236,8 @@ const Search = () => {
         <input
           type="text"
           placeholder="Search..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full outline-none bg-transparent"
         />
       </div>
@@ -221,76 +254,83 @@ const Search = () => {
             }`}
             onClick={() => setActiveTab(tab)}
           >
-            {tab} (33)
+            {tab} ({filteredItems.length})
           </button>
         ))}
       </div>
 
       {/* Search Results */}
-      <p className="mt-4 text-gray-500">33 items found for " "</p>
+      <p className="mt-4 text-gray-500">
+        {filteredItems.length} items found for "{searchTerm}"
+      </p>
 
       <div className="mt-6 space-y-6">
-        {paginatedItems.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white p-4 rounded-lg shadow-md cursor-pointer hover:bg-gray-100"
-            onClick={() => navigate(item.link)} // Ensure item.link is correct
-          >
-            <h2 className="text-xl font-semibold text-indigo-700 hover:underline">
-              {item.name}
-            </h2>
-            <p className="text-gray-600 mt-2">
-              {item.description.length > 100
-                ? item.description.substring(0, 100) + "..."
-                : item.description}
-            </p>
-          </div>
-        ))}
+        {filteredItems.length > 0 ? (
+          filteredItems
+            .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+            .map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-4 rounded-lg shadow-md cursor-pointer hover:bg-gray-100"
+                onClick={() => navigate(item.link)}
+              >
+                <h2 className="text-xl font-semibold text-purple-700 hover:underline">
+                  {highlightText(item.name, searchTerm)}
+                </h2>
+                <p className="text-gray-600 mt-2">
+                  {truncateDescription(item.description, searchTerm)}
+                </p>
+              </div>
+            ))
+        ) : (
+          <p className="text-gray-500">No results found.</p>
+        )}
       </div>
 
       {/* Pagination Controls */}
-      <div className="mt-6 flex justify-center items-center space-x-4">
-        <button
-          className={`px-4 py-2 text-white rounded-md ${
-            currentPage === 1
-              ? "bg-gray-300 cursor-not-allowed"
-              : "bg-indigo-600 hover:bg-indigo-700"
-          }`}
-          disabled={currentPage === 1}
-          onClick={() => setCurrentPage((prev) => prev - 1)}
-        >
-          Prev
-        </button>
-
-        {[1, 2, 3].map((page) => (
+      {filteredItems.length > itemsPerPage && (
+        <div className="mt-6 flex justify-center items-center space-x-4">
           <button
-            key={page}
-            className={`px-4 py-2 rounded-md ${
-              currentPage === page
-                ? "bg-indigo-600 text-white"
-                : "bg-gray-200 text-gray-800"
+            className={`px-4 py-2 text-white rounded-md ${
+              currentPage === 1
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-indigo-600 hover:bg-indigo-700"
             }`}
-            onClick={() => setCurrentPage(page)}
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage((prev) => prev - 1)}
           >
-            {page}
+            Prev
           </button>
-        ))}
 
-        <button
-          className={`px-4 py-2 text-white rounded-md ${
-            currentPage === totalPages
-              ? "bg-gray-300 cursor-not-allowed"
-              : "bg-indigo-600 hover:bg-indigo-700"
-          }`}
-          disabled={currentPage === totalPages}
-          onClick={() => setCurrentPage((prev) => prev + 1)}
-        >
-          Next
-        </button>
-      </div>
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              className={`px-4 py-2 rounded-md ${
+                currentPage === page
+                  ? "bg-indigo-600 text-white"
+                  : "bg-gray-200 text-gray-800"
+              }`}
+              onClick={() => setCurrentPage(page)}
+            >
+              {page}
+            </button>
+          ))}
+
+          <button
+            className={`px-4 py-2 text-white rounded-md ${
+              currentPage === totalPages
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-indigo-600 hover:bg-indigo-700"
+            }`}
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage((prev) => prev + 1)}
+          >
+            Next
+          </button>
+        </div>
+      )}
     </div>
-    );
-
+  );
 };
 
 export default Search;

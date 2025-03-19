@@ -1,6 +1,22 @@
 import React from 'react'
 
 const ManageComponents = () => {
+
+  const subjects = [
+    { name: "Business Management", gradient: "from-red-500 to-red-700" },
+    { name: "Business Administration", gradient: "from-teal-400 to-teal-600" },
+    { name: "Finance Studies", gradient: "from-green-400 to-green-600" },
+    { name: "Business Analytics", gradient: "from-blue-500 to-blue-700" },
+    { name: "Investment Banking", gradient: "from-purple-500 to-purple-700" },
+    { name: "International Trade", gradient: "from-gray-900 to-gray-700" },
+    { name: "Management Studies", gradient: "from-gray-800 to-gray-600" },
+    { name: "Project Management", gradient: "from-purple-400 to-purple-600" },
+    { name: "Human Resource", gradient: "from-blue-400 to-blue-600" },
+    { name: "Product Development", gradient: "from-green-500 to-green-700" },
+    { name: "Marketing Management", gradient: "from-teal-300 to-teal-500" },
+    { name: "International Business", gradient: "from-orange-400 to-orange-600" },
+  ];
+
   return (
     <div className="flex flex-col items-center w-full bg-white">
       {/* Heading */}
@@ -27,14 +43,24 @@ const ManageComponents = () => {
         </p>
         </div>
 
-        <div className="w-full  flex justify-center py-2">
-        <img
-          src="https://static.wixstatic.com/media/edbce3_7fda3d38e8234ba8bf7fc059cd13e811~mv2.png/v1/fill/w_869,h_167,al_c,lg_1,q_85,enc_avif,quality_auto/Picture1.png"
-          className="rounded-lg shadow-lg max-w-full h-auto"
-        />
-      </div>
 
-      <h2 className="text-3xl font-medium tracking-wide text-gray-900 py-4 mt-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 p-16 -mt-8">
+  {subjects.map((subject, index) => (
+   <div
+   key={index}
+   className={`relative flex items-center justify-center p-6 text-white text-center font-bold rounded-lg shadow-lg transition-all duration-300 transform bg-gradient-to-r ${subject.gradient} hover:scale-105 hover:shadow-2xl hover:brightness-125 hover:contrast-125 active:scale-95`}
+ >
+   <p className="text-lg md:text-xl lg:text-2xl drop-shadow-md">{subject.name}</p>
+   {/* Highlight Effect on Hover */}
+   <div className="absolute inset-0 bg-white/5 rounded-lg opacity-0 hover:opacity-20 transition-opacity"></div>
+ </div>
+ 
+  ))}
+</div>
+
+
+
+      <h2 className="text-3xl font-medium tracking-wide text-gray-900 ">
            Study Abroad Options for Business and Management:
      </h2>
     
