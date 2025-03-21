@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation, useNavigate, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate, Navigate } from 'react-router-dom';
 import NavbarComponents from "./Components/NavbarComponents";
 import AboutComponents from "./Routes/About.jsx"
 import Home from "./Routes/Home.jsx"
@@ -51,7 +51,7 @@ function App() {
         <Route path="/post-landing" element={<LandingComponents/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/faq" element={<FAQ/>}/>
-        <Route path="/admin-panel" element={<AdminPanel/>}/>
+        <Route path="/admin" element={<AdminPanel/>}/>
         <Route path="/training" element={<Trainings/>}/>
         <Route path="/online" element={<Online/>}/>
         <Route path="/spoken-english" element={<SpokenComponents/>}/>

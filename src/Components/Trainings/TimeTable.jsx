@@ -5,7 +5,7 @@ const TimeTable = () => {
   const [title, setTitle] = useState("Loading..."); // Default text while loading
 
   useEffect(() => {
-    fetch("http://localhost/image-upload-api/get-files.php", {
+    fetch("https://sphpvt.com/SVvideshApi/get-files.php", {
       mode: "cors", // Ensure CORS is enabled
     })
       .then((res) => res.json())
@@ -33,13 +33,14 @@ const TimeTable = () => {
               {isPDF ? (
                 <iframe
                   src={file}
+                  alt={`Nothing`}
                   title={`PDF Preview ${index + 1}`}
                   className="w-full h-[400px] border rounded-lg"
                 />
               ) : (
                 <img
                   src={file}
-                  alt={`Uploaded Image ${index + 1}`}
+                  alt={`Nothing`}
                   className="w-full h-auto max-h-screen object-contain rounded-lg"
                 />
               )}
