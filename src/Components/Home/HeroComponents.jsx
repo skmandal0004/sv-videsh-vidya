@@ -23,9 +23,14 @@ const HeroComponents = () => {
           <p className="mt-2 text-lg md:text-xl font-semibold text-yellow-300">
             Exclusive Online Training
           </p>
-          <button className="mt-6 px-8 py-3 bg-yellow-400 text-black text-lg font-bold rounded-full hover:bg-yellow-500 transition">
+          <div className="mt-12">
+          <Link
+          to="/contact"
+           className="mt-6 px-8 py-3 bg-yellow-400 text-black text-lg font-bold rounded-full hover:bg-yellow-500 transition">
             Start Today
-          </button>
+          </Link>
+          </div>
+
         </motion.div>
       </div>
 
