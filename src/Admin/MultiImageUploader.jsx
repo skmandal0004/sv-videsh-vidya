@@ -1,62 +1,111 @@
 import React, { useState } from "react";
+import { FilePlus, UploadCloud, AlertCircle, Loader2 } from "lucide-react"; // Icons
 
 const MultiImageUploader = () => {
   const [files, setFiles] = useState([]);
   const [textInput, setTextInput] = useState("");
   const [uploadStatus, setUploadStatus] = useState("");
+  const [previewFiles, setPreviewFiles] = useState([]);
+  const [loading, setLoading] = useState(false); // Added loading state
 
   const handleFileChange = (e) => {
-    setFiles([...e.target.files]); // Store selected files (both images & PDFs)
+    const selectedFiles = Array.from(e.target.files);
+    setFiles(selectedFiles);
+
+    // Generate preview URLs for images
+    const previewUrls = selectedFiles.map((file) =>
+      file.type.startsWith("image") ? URL.createObjectURL(file) : null
+    );
+    setPreviewFiles(previewUrls);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true); // Show loading state
+    setUploadStatus("Uploading...");
+  
     if (files.length === 0) {
       setUploadStatus("Please select at least one file (Image or PDF).");
+      setLoading(false);
       return;
     }
-
+  
     const formData = new FormData();
-
-    
     files.forEach((file) => {
-      formData.append("files[]", file); // Append files array (both images & PDFs)
+      formData.append("files[]", file);
     });
-    formData.append("textInput", textInput); // Append text input
-
+    formData.append("textInput", textInput);
+  
     try {
       const response = await fetch("https://sphpvt.com/SVvideshApi/upload.php", {
         method: "POST",
         body: formData,
+        headers: { "Accept": "application/json" },
       });
-
-      const data = await response.json();
-      if (data.success) {
-        setUploadStatus("Files uploaded successfully!");
-        setTimeout(() => {
-          window.location.reload(); // Refresh the page after 1 second
-        }, 1000);
-      } else {
-        setUploadStatus("Upload failed: " + data.message);
+  
+      // Ensure response is valid JSON
+      const text = await response.text();
+      try {
+        const data = JSON.parse(text);
+  
+        if (data.success) {
+          setUploadStatus("Files uploaded successfully!");
+          setTimeout(() => window.location.reload(), 1000);
+        } else {
+          setUploadStatus("Upload failed: " + data.message);
+        }
+      } catch (jsonError) {
+        console.error("Invalid JSON response:", text);
+        setUploadStatus("Server Error: Invalid response received!");
       }
     } catch (error) {
-      setUploadStatus("Error uploading files.");
+      setUploadStatus("Error uploading files. " + error.message);
+    } finally {
+      setLoading(false);
     }
   };
+  
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-xl font-bold mb-4">Upload Images or PDF</h2>
+    <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg border">
+      <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+        <FilePlus size={20} className="text-blue-500" />
+        Upload Images or PDF
+      </h2>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input
-          type="file"
-          multiple
-          accept="image/*, application/pdf"
-          onChange={handleFileChange}
-          className="p-2 border rounded"
-        />
+        <label className="flex items-center gap-2 cursor-pointer border p-3 rounded bg-gray-100">
+          <UploadCloud className="text-blue-500" />
+          <input
+            type="file"
+            multiple
+            accept="image/*, application/pdf"
+            onChange={handleFileChange}
+            className="hidden"
+          />
+          <span>Select Files</span>
+        </label>
+
+        {/* Show previews for images */}
+        {previewFiles.length > 0 && (
+          <div className="flex gap-2 flex-wrap mt-2">
+            {previewFiles.map((preview, index) =>
+              preview ? (
+                <img
+                  key={index}
+                  src={preview}
+                  alt="Preview"
+                  className="w-16 h-16 object-cover rounded border"
+                />
+              ) : (
+                <span key={index} className="text-sm text-gray-500">
+                  📄 PDF {index + 1}
+                </span>
+              )
+            )}
+          </div>
+        )}
+
         <input
           type="text"
           placeholder="Enter Month & Year"
@@ -64,12 +113,32 @@ const MultiImageUploader = () => {
           onChange={(e) => setTextInput(e.target.value)}
           className="p-2 border rounded"
         />
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
-          Upload
+
+        <button
+          type="submit"
+          className={`px-4 py-2 rounded flex items-center gap-2 justify-center ${
+            loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
+          } text-white`}
+          disabled={loading} // Disable button when loading
+        >
+          {loading ? (
+            <>
+              <Loader2 size={18} className="animate-spin" /> Uploading...
+            </>
+          ) : (
+            <>
+              <UploadCloud size={18} /> Upload
+            </>
+          )}
         </button>
       </form>
 
-      {uploadStatus && <p className="mt-4 text-gray-700">{uploadStatus}</p>}
+      {uploadStatus && (
+        <p className="mt-4 text-gray-700 flex items-center gap-2">
+          <AlertCircle size={16} className="text-red-500" />
+          {uploadStatus}
+        </p>
+      )}
     </div>
   );
 };
