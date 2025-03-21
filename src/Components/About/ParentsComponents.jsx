@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const testimonials = [
   {
@@ -89,11 +90,11 @@ const ParentsComponents = () => {
       </p>
 
         {/* Button */}
-             <a href="#" className="mt-6 inline-block">
-                <button className="mt-5 px-6 py-3 bg-white text-black font-semibold text-lg rounded-lg hover:opacity-90 transition duration-300">
-                   Our Students Say
-                </button>
-      </a>
+        <Link to="/students" className="mt-6 inline-block">
+  <button className="mt-5 px-6 py-3 bg-white text-black font-semibold text-lg rounded-lg hover:opacity-90 transition duration-300">
+    Our Students Say
+  </button>
+</Link>
 
     </div>
   );

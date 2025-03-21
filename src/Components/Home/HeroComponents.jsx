@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HeroComponents = () => {
+
   return (
     <section className="relative w-full">
       {/* Hero Section 1 */}
@@ -21,9 +23,14 @@ const HeroComponents = () => {
           <p className="mt-2 text-lg md:text-xl font-semibold text-yellow-300">
             Exclusive Online Training
           </p>
-          <button className="mt-6 px-8 py-3 bg-yellow-400 text-black text-lg font-bold rounded-full hover:bg-yellow-500 transition">
+          <div className="mt-12">
+          <Link
+          to="/contact"
+           className="mt-6 px-8 py-3 bg-yellow-400 text-black text-lg font-bold rounded-full hover:bg-yellow-500 transition">
             Start Today
-          </button>
+          </Link>
+          </div>
+
         </motion.div>
       </div>
 
@@ -42,9 +49,14 @@ const HeroComponents = () => {
           <p className="mt-4 text-lg md:text-xl max-w-lg mx-auto md:mx-0">
             Discover top-ranked universities worldwide and fulfill your dream of studying abroad.
           </p>
-          <button className="mt-6 px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition">
-            Contact Us
-          </button>
+          <div className="mt-12">
+          <Link
+          to="/contact"
+          className="px-6 py-2 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition inline-block"
+        >
+          Contact Us
+        </Link>
+        </div>
         </div>
 
         {/* Image Section */}
@@ -66,16 +78,26 @@ const HeroComponents = () => {
 
   {/* Course List with Auto Sizing */}
   <div className="mt-6 flex flex-wrap justify-center gap-4">
-    {["IELTS", "DUOLINGO", "GRE", "French", "German", "English", "TOEFL", "SAT"].map((course) => (
-      <span
-        key={course}
-        className="bg-white text-[#1A152D] px-5 py-3 rounded-full shadow-lg text-sm md:text-lg font-semibold 
-                   flex items-center justify-center w-[140px] md:w-[160px] hover:bg-gray-200 transition"
-      >
-        {course}
-      </span>
-    ))}
-  </div>
+  {[
+    { name: "IELTS", link: "/ielts" },
+    { name: "DUOLINGO", link: "/duolingo" },
+    { name: "GRE", link: "/gre" },
+    { name: "French", link: "/french" },
+    { name: "German", link: "/german" },
+    { name: "English", link: "/spoken-english" },
+    { name: "TOEFL", link: "/toefl" },
+    { name: "SAT", link: "/sat" },
+  ].map((course) => (
+    <Link
+      key={course.name}
+      to={course.link}
+      className="bg-white text-[#1A152D] px-5 py-3 rounded-full shadow-lg text-sm md:text-lg font-semibold 
+                 flex items-center justify-center w-[140px] md:w-[160px] hover:bg-gray-200 transition"
+    >
+      {course.name}
+    </Link>
+  ))}
+</div>
 
   <p className="mt-6 text-xl md:text-2xl font-semibold text-yellow-300">
     Join GRE + TOEFL Combo Offer Today!

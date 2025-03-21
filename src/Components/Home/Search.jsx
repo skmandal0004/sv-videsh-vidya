@@ -1,121 +1,17 @@
-import React, { useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-// import { Search, FileSearch, Inbox } from "lucide-react";
-import {
-  FaSearch,
-  FaBars,
-  FaTimes,
-} from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { FaSearch } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-const NavbarComponents = () => {
+const Search = () => {
+  const [activeTab, setActiveTab] = useState("Other Pages");
   const navigate = useNavigate();
-  const location = useLocation()
-
-  const [openDropdown, setOpenDropdown] = useState(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileDropdown, setMobileDropdown] = useState(null);
-  const [query, setQuery] = useState(""); // Search input state
-  const [filteredResults, setFilteredResults] = useState([]); // Search results
-
-  const handleGalleryClick = (e) => {
-    e.preventDefault(); // Prevent default link behavior
-
-    if (location.pathname === "/gallery") {
-      // Scroll immediately if already on About page
-      document.getElementById("gallery-section")?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      // Navigate first, then scroll after a short delay
-      navigate("/about");
-
-      setTimeout(() => {
-        const galleryElement = document.getElementById("gallery-section");
-        if (galleryElement) {
-          galleryElement.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 500); // Adjust delay if necessary
-    }
-  };
-
-  const handleTestimonialsClick = (e) => {
-    e.preventDefault();
-
-    if (location.pathname === "/testimonials") {
-      // Scroll immediately if already on About page
-      document.getElementById("testimonials-section")?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      // Navigate first, then scroll after a short delay
-      navigate("/about");
-
-      setTimeout(() => {
-        const galleryElement = document.getElementById("testimonials-section");
-        if (galleryElement) {
-          galleryElement.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 500); // Adjust delay if necessary
-    };
-
-  }
-
-  // Menu Items
-  const menuItems = [
-    { name: "Home", link: "/" },
-    {
-      name: "About Us",
-      link: "/about",
-      subMenu: [
-        { name: "Our Mission, Vision and Values", link: "/about" },
-        { name: "Our Students Say", link: "/students" },
-        { name: "Testimonials", link: "/testimonials", onClick: handleTestimonialsClick, },
-        { name: "Gallery", link: "/gallery", onClick: handleGalleryClick, },
-      ],
-    },
-    {
-      name: "Services",
-      link: "/service",
-      subMenu: [
-        { name: "Virtual Coaching", link: "/virtual-coaching" },
-        { name: "Counselling and Shortlisting", link: "/counselling" },
-        { name: "Applications and Admissions", link: "/applications" },
-        { name: "Internships (CPT)", link: "/internships" },
-        { name: "Scholarships and Loans", link: "/scholarships" },
-        { name: "VISA Guidance", link: "/visa" },
-        { name: "Post Landing Services", link: "/post-landing" },
-      ],
-    },
-    {
-      name: "Admissions",
-      link: "/admissions",
-      subMenu: [
-        { name: "Admissions List", link: "/admission-list" },
-        { name: "Engineering", link: "/engineering" },
-        { name: "Medical", link: "/medical" },
-        { name: "Medicine PG (UK, USA)", link: "/medicine-pg" },
-        { name: "Management", link: "/management" },
-        { name: "Arts, Sciences, Humanities", link: "/arts-sciences" },
-      ],
-    },
-    {
-      name: "Trainings",
-      link: "/training",
-      subMenu: [
-        { name: "Online Training", link: "https://training.svvideshvidya.com/" },
-        { name: "Training Time Table", link: "/training-time-table" },
-        { name: "Spoken English", link: "/spoken-english" },
-        { name: "Duolingo", link: "/duolingo" },
-        { name: "IELTS (Academic & General)", link: "/ielts" },
-        { name: "TOEFL", link: "/toefl" },
-        { name: "SAT", link: "/sat" },
-        { name: "GRE", link: "/gre" },
-        { name: "German Language", link: "/german" },
-        { name: "French Language", link: "/french" },
-        { name: "PUC - Computer Science ( Offline )", link: "/puc" },
-      ],
-    },
-    { name: "Contact", link: "/contact" },
-    { name: "FAQ", link: "/faq" },
-  ];
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+  const [searchTerm, setSearchTerm] = useState("");
+  const location = useLocation();
+  
+  
 
   const searchItems = [
     {
@@ -288,225 +184,163 @@ const NavbarComponents = () => {
 
   ];
 
-  // Handle Search Input
-  const handleSearch = (e) => {
-    const input = e.target.value;
-    setQuery(input);
+  const totalPages = Math.ceil(searchItems.length / itemsPerPage);
+  const paginatedItems = searchItems.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
-    if (input.trim() === "") {
-      setFilteredResults([]);
-      return;
+  // Function to highlight search term
+  const highlightText = (text, search) => {
+    if (!search.trim()) return text;
+    const regex = new RegExp(`(${search})`, "gi");
+    return text.split(regex).map((part, i) =>
+      part.toLowerCase() === search.toLowerCase() ? (
+        <span key={i} className="bg-yellow-300 text-black px-1 rounded">
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
+
+  // Function to truncate description to 3-4 lines
+  const truncateDescription = (text, search) => {
+    const words = text.split(" ");
+    const limitedText = words.slice(0, 30).join(" "); // Approx. 3-4 lines
+    const isTruncated = words.length > 30;
+    return (
+      <>
+        {highlightText(limitedText, search)}
+        {isTruncated && <span className="text-gray-500"> ...</span>}
+      </>
+    );
+  };
+
+  // Filtering items based on search term
+  const filteredItems = searchItems.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const query = params.get("query");
+    if (query) {
+      setSearchTerm(query); // Set the search term from URL
     }
-
-    // Filter menu items and submenus based on name and description
-    const results = searchItems.filter((item) =>
-      item.name.toLowerCase().includes(input.toLowerCase())
-    ).map(item => ({ name: item.name, link: item.link }));
-
-    setFilteredResults(results);
-  };
-
-
-  // Handle Search Selection
-  const handleSelect = (link) => {
-    navigate(link);
-    setQuery("");
-    setFilteredResults([]);
-  };
-
-  // Hover Handlers for Desktop Dropdown
-  const handleMouseEnter = (index) => setOpenDropdown(index);
-  const handleMouseLeave = () => setOpenDropdown(null);
+  }, [location.search]);
 
   return (
-    <header className="w-full bg-white sticky top-0 z-50">
-      <div className="flex items-center justify-between px-6 py-4 relative">
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden text-gray-700"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle navigation"
-        >
-          {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </button>
+    <div className="max-w-5xl mx-auto px-6 py-12">
+      {/* Heading */}
+      <h1 className="text-4xl font-bold text-center text-gray-900">
+        SEARCH RESULTS
+      </h1>
 
-        {/* Search Bar */}
-        <div className="hidden md:flex flex-grow max-w-sm relative">
-          <div className="flex items-center border-b border-gray-400 w-56 ml-4">
-            <FaSearch className="text-gray-500 mx-2" />
-            <input
-              type="text"
-              placeholder="Search..."
-              value={query}
-              onChange={handleSearch}
-              className="w-full py-2 px-2 outline-none bg-transparent text-gray-700"
-            />
-          </div>
+      {/* Search Bar */}
+      <div className="mt-6 flex items-center border border-gray-300 rounded-md p-3 bg-white shadow-sm">
+      <FaSearch className="text-gray-500 mr-3" />
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="w-full outline-none bg-transparent"
+      />
+    </div>
 
-          {(filteredResults.length > 0 || query.trim() !== "") && (
-            <ul className="absolute text-sm top-full left-0 mt-2 w-64 bg-white border border-gray-300 shadow-xl rounded-lg z-10 
-                 max-h-[250px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 
-                 backdrop-blur-md bg-opacity-90">
-
-              {/* Show results if available */}
-              {filteredResults.length > 0 ? (
-                filteredResults.map((result, index) => (
-                  <li
-                  key={index}
-                  onClick={() => handleSelect(result.link)}
-                  className="flex items-center gap-2 px-4 py-3 cursor-pointer 
-                             hover:bg-gradient-to-r from-[#1A152D] to-[#4e60ff] hover:text-white 
-                             whitespace-nowrap overflow-hidden text-ellipsis transition-all duration-300 ease-in-out"
-                >
-                  <FileSearch className="text-gray-500 w-4 h-4" /> {/* Document Search Icon */}
-                  {result.name}
-                </li>
-                
-
-                ))
-              ) : (
-                <li className="flex items-center gap-2 px-4 py-3 text-gray-500 bg-gray-100 cursor-default text-center font-semibold">
-                  <Inbox className="text-gray-400 w-5 h-5" /> {/* Empty Inbox Icon */}
-                  No Content
-                </li>
-              )}
-
-              {/* Show "Search for {query}" only if results exist */}
-              {filteredResults.length > 0 && (
-                <>
-                  <hr className="border-gray-300 my-1" />
-                  <li
-              onClick={() => {
-                navigate(`/search?query=${encodeURIComponent(query)}`);
-                setQuery(""); // Clear search input
-                setFilteredResults([]); // Hide dropdown
-              }}
-              className="flex items-center gap-2 px-4 py-3 text-indigo-600 cursor-pointer hover:bg-gray-100 font-semibold text-center"
-            >
-              <Search className="text-indigo-500 w-4 h-4" /> {/* Search Icon */}
-              Search for "<span className="font-bold">{query}</span>"
-            </li>
-
-                </>
-              )}
-            </ul>
-          )}
-        </div>
-
-
-        {/* Logo Section */}
-        <div className="flex items-center space-x-2 ml-40">
-          <a href="/">
-            <img
-              src="https://static.wixstatic.com/media/edbce3_7aacc3e198e747b5ab6e7a81308ec95e~mv2.png/v1/fill/w_179,h_86/logo.png"
-              alt="SV Videsh Vidya Logo"
-              className="w-40 h-auto"
-            />
-          </a>
-          <div className="flex flex-col">
-            <h1 className="text-lg font-extrabold bg-gradient-to-r from-[#1A152D] to-[#4e60ff] text-transparent bg-clip-text">
-              SV Videsh Vidya
-            </h1>
-            <p className="text-xs font-semibold text-gray-500">
-              Study Abroad Experts
-            </p>
-          </div>
-        </div>
+      {/* Tabs */}
+      <div className="mt-6 flex border-b">
+        {["Other Pages"].map((tab) => (
+          <button
+            key={tab}
+            className={`py-2 px-6 text-lg font-medium ${
+              activeTab === tab
+                ? "border-b-4 border-indigo-500 text-indigo-600"
+                : "text-gray-500"
+            }`}
+            onClick={() => setActiveTab(tab)}
+          >
+            {tab} ({filteredItems.length})
+          </button>
+        ))}
       </div>
 
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <nav className="lg:hidden absolute top-full left-0 w-full bg-[#1A152D] text-white shadow-lg">
-          <div className="flex flex-col py-4 px-6 space-y-2">
-            {menuItems.map((item, index) => (
-              <div key={index} className="relative">
-                <button
-                  onClick={() =>
-                    setMobileDropdown(mobileDropdown === index ? null : index)
-                  }
-                  className="flex justify-between w-full text-left py-2 font-semibold text-white hover:text-yellow-300"
-                >
-                  {item.name}
-                  {item.subMenu && (
-                    <span>{mobileDropdown === index ? "▲" : "▼"}</span>
-                  )}
-                </button>
+      {/* Search Results */}
+      <p className="mt-4 text-gray-500">
+        {filteredItems.length} items found for "{searchTerm}"
+      </p>
 
-                {/* Mobile Dropdown Menu */}
-                <AnimatePresence>
-                  {item.subMenu && mobileDropdown === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="pl-4 space-y-2 overflow-hidden"
-                    >
-                      {item.subMenu.map((subItem, subIndex) => (
-                        <Link
-                          key={subIndex}
-                          to={subItem.link}
-                          className="block text-gray-300 hover:text-yellow-300 transition"
-                        >
-                          {subItem.name}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+      <div className="mt-6 space-y-6">
+        {filteredItems.length > 0 ? (
+          filteredItems
+            .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+            .map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-4 rounded-lg shadow-md cursor-pointer hover:bg-gray-100"
+                onClick={() => navigate(item.link)}
+              >
+                <h2 className="text-xl font-semibold text-purple-700 hover:underline">
+                  {highlightText(item.name, searchTerm)}
+                </h2>
+                <p className="text-gray-600 mt-2">
+                  {truncateDescription(item.description, searchTerm)}
+                </p>
               </div>
-            ))}
-          </div>
-        </nav>
-      )}
+            ))
+        ) : (
+          <p className="text-gray-500">No results found.</p>
+        )}
+      </div>
 
-      {/* Desktop Navigation */}
-      <nav className="hidden lg:flex bg-gradient-to-r from-[#1A152D] to-[#6B4EFF] text-white">
-        <div className="max-w-7xl mx-auto flex justify-between items-center py-3 px-6">
-          {menuItems.map((item, index) => (
-            <div
-              key={index}
-              className="relative group"
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
+      {/* Pagination Controls */}
+      {filteredItems.length > itemsPerPage && (
+        <div className="mt-6 flex justify-center items-center space-x-4">
+          <button
+            className={`px-4 py-2 text-white rounded-md ${
+              currentPage === 1
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-indigo-600 hover:bg-indigo-700"
+            }`}
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage((prev) => prev - 1)}
+          >
+            Prev
+          </button>
+
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              className={`px-4 py-2 rounded-md ${
+                currentPage === page
+                  ? "bg-indigo-600 text-white"
+                  : "bg-gray-200 text-gray-800"
+              }`}
+              onClick={() => setCurrentPage(page)}
             >
-              <Link to={item.link || "#"} className="hover:text-[#1A152D] px-4 py-2 block hover:bg-yellow-300 font-semibold transition">
-                {item.name}
-              </Link>
-
-              {/* Dropdown */}
-              <AnimatePresence>
-                {item.subMenu && openDropdown === index && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute left-0 top-full bg-[#1A152D] text-white shadow-lg rounded-lg mt-1 min-w-[200px] z-50"
-                  >
-                    {item.subMenu.map((subItem, subIndex) => (
-                      <Link
-                        key={subIndex}
-                        to={subItem.link}
-                        onClick={subItem.onClick}
-                        className="block px-4 py-2 hover:bg-yellow-300 hover:text-[#1A152D] hover:font-semibold hover:scale-105 transition-transform ease-in-out duration-300 whitespace-nowrap"
-                      >
-                        {subItem.name}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-
-            </div>
+              {page}
+            </button>
           ))}
 
-
+          <button
+            className={`px-4 py-2 text-white rounded-md ${
+              currentPage === totalPages
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-indigo-600 hover:bg-indigo-700"
+            }`}
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage((prev) => prev + 1)}
+          >
+            Next
+          </button>
         </div>
-      </nav>
-    </header>
+      )}
+    </div>
   );
 };
 
-export default NavbarComponents;
+export default Search;

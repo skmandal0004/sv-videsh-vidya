@@ -31,6 +31,9 @@ import AdmissionList from './Routes/AdmissionList';
 import Engineering from './Routes/Engineering';
 import MedicineComponents from './Components/Admission/MedicineComponents';
 import Medical from './Routes/Medical';
+import Search from "./Components/Home/Search";
+import Management from './Routes/Management';
+import Arts from './Routes/Arts';
 
 function App() {
   return (
@@ -67,6 +70,9 @@ function App() {
         <Route path="/engineering" element={<Engineering />}/>
         <Route path="/medical" element={<MedicineComponents />}/>
         <Route path="/medicine-pg" element={<Medical />}/>
+        <Route path="/search" element={<Search />}/>
+        <Route path="/management" element={<Management />}/>
+        <Route path="/arts-sciences" element={<Arts />}/>
 
 
       </Routes>
