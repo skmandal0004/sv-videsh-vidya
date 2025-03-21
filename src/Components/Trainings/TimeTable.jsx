@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const TimeTable = () => {
   const [files, setFiles] = useState([]);
   const [title, setTitle] = useState("Loading..."); // Default text while loading
+  const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
     fetch("https://sphpvt.com/SVvideshApi/get-files.php", {
@@ -11,37 +12,52 @@ const TimeTable = () => {
       .then((res) => res.json())
       .then((data) => {
         setFiles(data.files || []);
-        setTitle(data.textInput + " Live Classes Schedule" || "Live Classes Schedule"); // Use fetched text or default
+        setTitle(data.textInput ? `${data.textInput} Live Classes Schedule` : "");
       })
-      .catch((err) => console.error("Error fetching files:", err));
+      .catch((err) => console.error("Error fetching files:", err))
+      .finally(() => setLoading(false)); // Stop loading
   }, []);
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4 md:p-6">
-      <h2 className="text-4xl font-extrabold text-indigo-600 mb-6">
+      <h2 className="text-3xl font-bold text-indigo-600 mb-6 text-center">
         {title} {/* Dynamic title from API */}
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-4 w-full">
+      {/* Loading Spinner */}
+      {loading && (
+        <div className="flex items-center justify-center my-6">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"></div>
+        </div>
+      )}
+
+      {/* No Files Message */}
+      {!loading && files.length === 0 && (
+        <p className="text-lg text-gray-500">No files available at the moment.</p>
+      )}
+
+      {/* Display Files in One Column */}
+      <div className="w-full max-w-7xl flex flex-col items-center gap-6">
         {files.map((file, index) => {
           const isPDF = file.toLowerCase().endsWith(".pdf");
           return (
-            <div
-              key={index}
-              className="flex justify-center items-center bg-gray-100 p-2 rounded-lg transition-all duration-500 ease-in-out transform hover:bg-white px-10 py-5"
-            >
+            <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden p-4 w-full">
               {isPDF ? (
-                <iframe
-                  src={file}
-                  alt={`Nothing`}
-                  title={`PDF Preview ${index + 1}`}
-                  className="w-full h-[400px] border rounded-lg"
-                />
+                <div className="w-full">
+                  <iframe
+                    src={file}
+                    title={`PDF ${index + 1}`}
+                    className="w-full h-[500px] border rounded-lg"
+                  />
+                  <div className="mt-4 flex justify-center">
+                    
+                  </div>
+                </div>
               ) : (
                 <img
                   src={file}
-                  alt={`Nothing`}
-                  className="w-full h-auto max-h-screen object-contain rounded-lg"
+                  alt={`Image ${index + 1}`}
+                  className="w-full max-h-[600px] object-contain rounded-lg"
                 />
               )}
             </div>
