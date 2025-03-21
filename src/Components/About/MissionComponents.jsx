@@ -48,10 +48,7 @@ const MissionComponents = () => {
         />
       </div>
 
-      {/* Floating Contact Button */}
-      <button className="fixed bottom-5 right-5 bg-[#6B4EFF] dark:bg-[#A89CFF] text-white py-2 px-6 rounded-full shadow-lg hover:bg-[#5746E6] dark:hover:bg-[#928AFF] transition">
-        Contact Us
-      </button>
+      
     </div>
   );
 };

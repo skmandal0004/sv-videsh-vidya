@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const WhyComponents = () => {
   return (
@@ -73,9 +74,11 @@ const WhyComponents = () => {
           transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <button className="px-8 py-3 bg-yellow-300 hover:bg-yellow-400 text-[#1A152D] text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-yellow-500/20">
+          <Link
+          to="/admission-list"
+          className="px-8 py-3 bg-yellow-300 hover:bg-yellow-400 text-[#1A152D] text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-yellow-500/20">
             Admissions List
-          </button>
+          </Link>
         </motion.div>
       </div>
     </div>
