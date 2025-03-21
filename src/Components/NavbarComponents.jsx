@@ -17,6 +17,7 @@ const NavbarComponents = () => {
   const [mobileDropdown, setMobileDropdown] = useState(null);
   const [query, setQuery] = useState(""); // Search input state
   const [filteredResults, setFilteredResults] = useState([]); // Search results
+  
 
   const handleGalleryClick = (e) => {
     e.preventDefault(); // Prevent default link behavior
@@ -438,12 +439,17 @@ const NavbarComponents = () => {
                     >
                       {item.subMenu.map((subItem, subIndex) => (
                         <Link
-                          key={subIndex}
-                          to={subItem.link}
-                          className="block text-gray-300 hover:text-yellow-300 transition"
-                        >
-                          {subItem.name}
-                        </Link>
+                        key={subIndex}
+                        to={subItem.link}
+                        className="block text-gray-300 hover:text-yellow-300 transition"
+                        onClick={() => {
+                          setMobileMenuOpen(false); // Closes mobile menu
+                          setMobileDropdown(null);  // Closes the dropdown
+                        }}
+                      >
+                        {subItem.name}
+                      </Link>
+                      
                       ))}
                     </motion.div>
                   )}
