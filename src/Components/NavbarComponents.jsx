@@ -308,8 +308,8 @@ const NavbarComponents = () => {
 
 
   // Handle Search Selection
-  const handleSelect = (path) => {
-    navigate(path);
+  const handleSelect = (link) => {
+    navigate(link);
     setQuery("");
     setFilteredResults([]);
   };
@@ -352,15 +352,17 @@ const NavbarComponents = () => {
               {filteredResults.length > 0 ? (
                 filteredResults.map((result, index) => (
                   <li
-                    key={index}
-                    onClick={() => handleSelect(result.link)}
-                    className="flex items-center gap-2 px-4 py-3 cursor-pointer 
-                     hover:bg-gradient-to-r from-[#1A152D] to-[#4e60ff] hover:text-white 
-                     whitespace-nowrap overflow-hidden text-ellipsis transition-all duration-300 ease-in-out"
-                  >
-                    <FileSearch className="text-gray-500 w-4 h-4" /> {/* Document Search Icon */}
-                    {result.name}
-                  </li>
+                  key={index}
+                  onClick={() => handleSelect(result.link)}
+                  className="flex items-center gap-2 px-4 py-3 cursor-pointer 
+                             hover:bg-gradient-to-r from-[#1A152D] to-[#4e60ff] hover:text-white 
+                             whitespace-nowrap overflow-hidden text-ellipsis transition-all duration-300 ease-in-out"
+                >
+                  <FileSearch className="text-gray-500 w-4 h-4" /> {/* Document Search Icon */}
+                  {result.name}
+                </li>
+                
+
                 ))
               ) : (
                 <li className="flex items-center gap-2 px-4 py-3 text-gray-500 bg-gray-100 cursor-default text-center font-semibold">
@@ -374,12 +376,17 @@ const NavbarComponents = () => {
                 <>
                   <hr className="border-gray-300 my-1" />
                   <li
-                    onClick={() => navigate(`/search?query=${encodeURIComponent(query)}`)}
-                    className="flex items-center gap-2 px-4 py-3 text-indigo-600 cursor-pointer hover:bg-gray-100 font-semibold text-center"
-                  >
-                    <Search className="text-indigo-500 w-4 h-4" /> {/* Search Icon */}
-                    Search for "<span className="font-bold">{query}</span>"
-                  </li>
+              onClick={() => {
+                navigate(`/search?query=${encodeURIComponent(query)}`);
+                setQuery(""); // Clear search input
+                setFilteredResults([]); // Hide dropdown
+              }}
+              className="flex items-center gap-2 px-4 py-3 text-indigo-600 cursor-pointer hover:bg-gray-100 font-semibold text-center"
+            >
+              <Search className="text-indigo-500 w-4 h-4" /> {/* Search Icon */}
+              Search for "<span className="font-bold">{query}</span>"
+            </li>
+
                 </>
               )}
             </ul>
