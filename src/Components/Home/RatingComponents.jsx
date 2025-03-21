@@ -1,4 +1,4 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const reviews = [
@@ -20,6 +20,8 @@ const reviews = [
 ];
 
 const RatingComponents = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full">
       {/* Header Section */}
@@ -36,13 +38,15 @@ const RatingComponents = () => {
 
         {/* Feedback Button */}
         <div className="flex justify-center">
-          <motion.button
-            className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg transition"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View More Feedback
-          </motion.button>
+        <motion.button
+      className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg transition"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={() => navigate("/students")} // Navigate on click
+    >
+      View More Feedback
+    </motion.button>
+
         </div>
       </div>
 

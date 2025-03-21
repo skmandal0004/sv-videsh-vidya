@@ -11,7 +11,7 @@ const StudyComponents = () => {
         "https://static.wixstatic.com/media/2e2a49_c8de1e6e955d459aa01defe9f5971dad~mv2.jpg",
       courses: ["Medical PG", "Nursing", "Dentistry"],
       gradient: "from-orange-500 to-red-600",
-      link: "/admissions/medical", // Route path
+      link: "/medical", // Route path
     },
     {
       title: "Engineering",
@@ -19,7 +19,7 @@ const StudyComponents = () => {
         "https://static.wixstatic.com/media/2e2a49_aa886e73007945ad8869ba20d9771c41~mv2.jpg",
       courses: ["B.Tech", "MS", "Masters", "PDGM", "Other Engineering", "Courses"],
       gradient: "from-blue-500 to-indigo-600",
-      link: "/admissions/engineering",
+      link: "/engineering",
     },
     {
       title: "Business & Management",
@@ -27,7 +27,7 @@ const StudyComponents = () => {
         "https://static.wixstatic.com/media/2e2a49_c8de1e6e955d459aa01defe9f5971dad~mv2.jpg",
       courses: ["MBA", "Arts", "Commerce", "Finance"],
       gradient: "from-green-500 to-teal-600",
-      link: "/admissions/management",
+      link: "/management",
     },
   ];
 
