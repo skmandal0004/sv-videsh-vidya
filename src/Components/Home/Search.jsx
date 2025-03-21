@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Search = () => {
   const [activeTab, setActiveTab] = useState("Other Pages");
@@ -8,6 +9,8 @@ const Search = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
   const [searchTerm, setSearchTerm] = useState("");
+  const location = useLocation();
+  
   
 
   const searchItems = [
@@ -222,6 +225,13 @@ const Search = () => {
       item.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const query = params.get("query");
+    if (query) {
+      setSearchTerm(query); // Set the search term from URL
+    }
+  }, [location.search]);
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-12">
@@ -232,15 +242,15 @@ const Search = () => {
 
       {/* Search Bar */}
       <div className="mt-6 flex items-center border border-gray-300 rounded-md p-3 bg-white shadow-sm">
-        <FaSearch className="text-gray-500 mr-3" />
-        <input
-          type="text"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full outline-none bg-transparent"
-        />
-      </div>
+      <FaSearch className="text-gray-500 mr-3" />
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="w-full outline-none bg-transparent"
+      />
+    </div>
 
       {/* Tabs */}
       <div className="mt-6 flex border-b">
