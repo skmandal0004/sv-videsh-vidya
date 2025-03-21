@@ -300,8 +300,7 @@ const NavbarComponents = () => {
 
     // Filter menu items and submenus based on name and description
     const results = searchItems.filter((item) =>
-      item.name.toLowerCase().includes(input.toLowerCase()) ||
-      item.description.toLowerCase().includes(input.toLowerCase())
+      item.name.toLowerCase().includes(input.toLowerCase())
     ).map(item => ({ name: item.name, link: item.link }));
 
     setFilteredResults(results);
