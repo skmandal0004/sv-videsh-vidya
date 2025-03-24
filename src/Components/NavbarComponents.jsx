@@ -17,7 +17,7 @@ const NavbarComponents = () => {
   const [mobileDropdown, setMobileDropdown] = useState(null);
   const [query, setQuery] = useState(""); // Search input state
   const [filteredResults, setFilteredResults] = useState([]); // Search results
-  
+
 
   const handleGalleryClick = (e) => {
     e.preventDefault(); // Prevent default link behavior
@@ -89,11 +89,11 @@ const NavbarComponents = () => {
       link: "/admissions",
       subMenu: [
         { name: "Admissions List", link: "/admission-list" },
-        { name: "Engineering", link: "/admissions/engineering" },
-        { name: "Medical", link: "/admissions/medical" },
-        { name: "Medicine PG (UK, USA)", link: "/admissions/medicine-pg" },
-        { name: "Management", link: "/admissions/management" },
-        { name: "Arts, Sciences, Humanities", link: "/admissions/arts-sciences" },
+        { name: "Engineering", link: "/engineering" },
+        { name: "Medical", link: "/medical" },
+        { name: "Medicine PG (UK, USA)", link: "/medicine-pg" },
+        { name: "Management", link: "/management" },
+        { name: "Arts, Sciences, Humanities", link: "/arts-sciences" },
       ],
     },
     {
@@ -301,8 +301,7 @@ const NavbarComponents = () => {
 
     // Filter menu items and submenus based on name and description
     const results = searchItems.filter((item) =>
-      item.name.toLowerCase().includes(input.toLowerCase()) ||
-      item.description.toLowerCase().includes(input.toLowerCase())
+      item.name.toLowerCase().includes(input.toLowerCase())
     ).map(item => ({ name: item.name, link: item.link }));
 
     setFilteredResults(results);
@@ -376,7 +375,7 @@ const NavbarComponents = () => {
                 <>
                   <hr className="border-gray-300 my-1" />
                   <li
-                    onClick={() => navigate(`/abc?query=${encodeURIComponent(query)}`)}
+                    onClick={() => navigate(`/search?query=${encodeURIComponent(query)}`)}
                     className="flex items-center gap-2 px-4 py-3 text-indigo-600 cursor-pointer hover:bg-gray-100 font-semibold text-center"
                   >
                     <Search className="text-indigo-500 w-4 h-4" /> {/* Search Icon */}
@@ -415,17 +414,32 @@ const NavbarComponents = () => {
           <div className="flex flex-col py-4 px-6 space-y-2">
             {menuItems.map((item, index) => (
               <div key={index} className="relative">
-                <button
-                  onClick={() =>
-                    setMobileDropdown(mobileDropdown === index ? null : index)
-                  }
-                  className="flex justify-between w-full text-left py-2 font-semibold text-white hover:text-yellow-300"
-                >
-                  {item.name}
-                  {item.subMenu && (
+                {/* If item has a submenu, render a button */}
+                {item.subMenu ? (
+                  <button
+                    onClick={() =>
+                      setMobileDropdown(mobileDropdown === index ? null : index)
+                    }
+                    className="flex justify-between w-full text-left py-2 font-semibold text-white hover:text-yellow-300"
+                  >
+                    {item.name}
                     <span>{mobileDropdown === index ? "▲" : "▼"}</span>
-                  )}
-                </button>
+                  </button>
+                ) : (
+                  // If no submenu, render a Link instead of a button
+                  <Link
+                    to={item.link}
+                    className="block py-2 font-semibold text-white hover:text-yellow-300"
+                    onClick={(e) => {
+                      if (item.onClick) {
+                        item.onClick(e); // Call function if defined
+                      }
+                      setMobileMenuOpen(false); // Close menu
+                    }}
+                  >
+                    {item.name}
+                  </Link>
+                )}
 
                 {/* Mobile Dropdown Menu */}
                 <AnimatePresence>
@@ -439,17 +453,19 @@ const NavbarComponents = () => {
                     >
                       {item.subMenu.map((subItem, subIndex) => (
                         <Link
-                        key={subIndex}
-                        to={subItem.link}
-                        className="block text-gray-300 hover:text-yellow-300 transition"
-                        onClick={() => {
-                          setMobileMenuOpen(false); // Closes mobile menu
-                          setMobileDropdown(null);  // Closes the dropdown
-                        }}
-                      >
-                        {subItem.name}
-                      </Link>
-                      
+                          key={subIndex}
+                          to={subItem.link}
+                          className="block text-gray-300 hover:text-yellow-300 transition"
+                          onClick={(e) => {
+                            if (subItem.onClick) {
+                              subItem.onClick(e); // Call function if defined
+                            }
+                            setMobileMenuOpen(false); // Close menu
+                            setMobileDropdown(null); // Close dropdown
+                          }}
+                        >
+                          {subItem.name}
+                        </Link>
                       ))}
                     </motion.div>
                   )}
@@ -459,6 +475,8 @@ const NavbarComponents = () => {
           </div>
         </nav>
       )}
+
+
 
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex bg-gradient-to-r from-[#1A152D] to-[#6B4EFF] text-white">
