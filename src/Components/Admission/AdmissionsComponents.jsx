@@ -53,7 +53,7 @@ const AdmissionsComponents = () => {
       {/* Categories Section */}
       <div className="w-full text-center  my-10">
         <h2 className="text-4xl font-semibold text-gray-900 dark:text-white ">Categories</h2>
-        <div className="flex text-center gap-6 mt-6">
+        <div className="flex text-center justify-center gap-6 mt-6">
           <Link to="/engineering">
             <button className="bg-indigo-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-indigo-600 transition">
               Engineering
