@@ -49,14 +49,16 @@ const HeroComponents = () => {
           <p className="mt-4 text-lg md:text-xl max-w-lg mx-auto md:mx-0">
             Discover top-ranked universities worldwide and fulfill your dream of studying abroad.
           </p>
-          <div className="mt-12">
-          <Link
-          to="/contact"
-          className="px-6 py-2 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition inline-block"
-        >
-          Contact Us
-        </Link>
-        </div>
+          <div className="mt-12 mb-6 flex justify-center">
+  <Link
+    to="/contact"
+    className="w-full sm:w-auto px-6 py-2 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition text-center"
+  >
+    Contact Us
+  </Link>
+</div>
+
+
         </div>
 
         {/* Image Section */}
