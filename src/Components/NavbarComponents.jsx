@@ -301,8 +301,7 @@ const NavbarComponents = () => {
 
     // Filter menu items and submenus based on name and description
     const results = searchItems.filter((item) =>
-      item.name.toLowerCase().includes(input.toLowerCase()) ||
-      item.description.toLowerCase().includes(input.toLowerCase())
+      item.name.toLowerCase().includes(input.toLowerCase())
     ).map(item => ({ name: item.name, link: item.link }));
 
     setFilteredResults(results);
@@ -376,7 +375,7 @@ const NavbarComponents = () => {
                 <>
                   <hr className="border-gray-300 my-1" />
                   <li
-                    onClick={() => navigate(`/abc?query=${encodeURIComponent(query)}`)}
+                    onClick={() => navigate(`/search?query=${encodeURIComponent(query)}`)}
                     className="flex items-center gap-2 px-4 py-3 text-indigo-600 cursor-pointer hover:bg-gray-100 font-semibold text-center"
                   >
                     <Search className="text-indigo-500 w-4 h-4" /> {/* Search Icon */}
@@ -442,10 +441,7 @@ const NavbarComponents = () => {
                         key={subIndex}
                         to={subItem.link}
                         className="block text-gray-300 hover:text-yellow-300 transition"
-                        onClick={() => {
-                          setMobileMenuOpen(false); // Closes mobile menu
-                          setMobileDropdown(null);  // Closes the dropdown
-                        }}
+                        onClick={subItem.onClick}
                       >
                         {subItem.name}
                       </Link>
