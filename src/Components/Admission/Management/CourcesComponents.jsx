@@ -35,14 +35,14 @@ const CoursesComponent = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center w-full bg-gray-100 px-6 py-12">
+    <div className="flex flex-col items-center w-full bg-gray-100 dark:bg-gray-900 px-6 py-12">
       {/* Heading */}
-      <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center uppercase tracking-wide">
+      <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center uppercase tracking-wide">
         Explore Our Courses
       </h1>
 
       {/* Description */}
-      <p className="text-lg text-gray-700 text-center max-w-2xl mb-10">
+      <p className="text-lg text-gray-700 dark:text-gray-400 text-center max-w-2xl mb-10">
         Discover a wide range of Business & Management courses tailored for students seeking bachelor's and master's programs abroad. Choose from various specializations to shape your future.
       </p>
 
@@ -93,8 +93,8 @@ const CoursesComponent = () => {
 
       {/* Duration Section */}
       <div className="max-w-4xl w-full mt-12 text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">Duration of Education</h2>
-        <p className="text-lg text-gray-700 leading-loose">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Duration of Education</h2>
+        <p className="text-lg text-gray-700 dark:text-gray-400 leading-loose">
           Most programs in Business Management range from 1 to 3 years. Postgraduate students typically pursue 1-2 year programs, while undergraduate students enroll in 2-3 year courses, often complemented by internships at renowned companies.
         </p>
       </div>

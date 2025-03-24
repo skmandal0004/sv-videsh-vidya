@@ -2,7 +2,7 @@ import React from 'react';
 
 const CollegeComponents = () => {
   return (
-    <div className="flex flex-col items-center w-full bg-white">
+    <div className="flex flex-col items-center w-full bg-white dark:bg-gray-900">
       {/* Header Section with Image */}
       <div className="relative w-full">
         <img
@@ -17,7 +17,7 @@ const CollegeComponents = () => {
 
       {/* Subheading */}
       <div className="text-center mt-6">
-        <p className="text-xl text-gray-700 font-semibold">That we help with</p>
+        <p className="text-xl text-gray-700 dark:text-gray-400 font-semibold">That we help with</p>
       </div>
 
       {/* Content Section */}

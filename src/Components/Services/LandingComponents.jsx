@@ -2,9 +2,9 @@ import React from "react";
 
 const LandingComponents = () => {
   return (
-    <div className="w-full bg-white text-black py-10">
+    <div className="w-full bg-white dark:bg-gray-900  text-black py-10">
       {/* Heading */}
-      <h2 className="text-5xl font-bold text-center text-gray-900 mb-6">
+      <h2 className="text-5xl font-bold text-center text-gray-900 dark:text-white mb-6">
         Post Landing Services
       </h2>
 

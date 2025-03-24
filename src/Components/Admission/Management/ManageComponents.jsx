@@ -17,9 +17,9 @@ const ManageComponents = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center w-full bg-gray-100 py-12 px-6 md:px-16 lg:px-24 xl:px-40">
+    <div className="flex flex-col items-center w-full bg-gray-100 dark:bg-gray-900 py-12 px-6 md:px-16 lg:px-24 xl:px-40">
       {/* Heading */}
-      <h1 className="text-5xl font-extrabold text-gray-900 mb-10 text-center uppercase tracking-wide">
+      <h1 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-10 text-center uppercase tracking-wide">
         Management Studies
       </h1>
 
@@ -52,9 +52,9 @@ const ManageComponents = () => {
       </div>
 
       {/* Study Abroad Options */}
-      <div className="max-w-5xl w-full text-center mt-10 bg-white shadow-lg rounded-lg p-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">Study Abroad Options</h2>
-        <p className="text-lg text-gray-700 leading-relaxed">
+      <div className="max-w-5xl w-full text-center mt-10 bg-white dark:bg-gray-900 shadow-lg rounded-lg p-8">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Study Abroad Options</h2>
+        <p className="text-lg text-gray-700 dark:text-gray-400 leading-relaxed">
           Top destinations for business & management studies among Indian students include New Zealand, UK, Canada, Australia, Singapore, USA, and various European countries. Students can choose their destination based on budget and course preferences.
         </p>
       </div>

@@ -2,17 +2,17 @@ import React from "react";
 
 const SaysComponents = () => {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <div className="w-full dark:bg-gray-900 mx-auto  px-12 py-12">
       {/* Heading */}
-      <h2 className="text-4xl font-bold text-center text-gray-900">
+      <h2 className="text-4xl dark:text-white font-bold text-center text-gray-900 ">
         Our Students say
       </h2>
       <div className="w-16 h-1 bg-purple-500 mx-auto mt-2"></div>
 
       {/* Testimonials */}
-      <div className="mt-10 grid md:grid-cols-2 gap-6">
+      <div className="mt-10 grid md:grid-cols-2 gap-6 dark:bg-gray-800">
         {/* Testimonial 1 */}
-        <div className="bg-gray-100 p-6 rounded-md">
+        <div className="bg-gray-100  p-6 rounded-md">
           <p className="text-gray-800">
             " Really good guidance and services provided. They have tie ups with various universities across the world. Trainings provided for exams like GRE IELTS are really good and worth paying the money.  Had a wonderful and very satisfying experience. i would totally suggest people to go for SVV if they are interested in foreign education. "
           </p>
@@ -385,37 +385,6 @@ const SaysComponents = () => {
           </p>
           <p className="mt-4 font-semibold text-gray-900">Jeetendra attended SAT Coaching</p>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       </div>
     </div>
