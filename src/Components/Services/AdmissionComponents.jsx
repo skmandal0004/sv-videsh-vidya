@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const AdmissionComponents = () => {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#internship-section") {
+      setTimeout(() => {
+        document.getElementById("internship-section")?.scrollIntoView({ behavior: "smooth" });
+      }, 500);
+    }
+  }, [location]);
+
   return (
     <div className="bg-gray-50 dark:bg-gray-900 py-16 px-6">
       <div className="max-w-6xl mx-auto">
@@ -45,7 +57,7 @@ const AdmissionComponents = () => {
           </div>
 
           {/* Interview Preparation */}
-          <div className="flex flex-col md:flex-row-reverse bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="flex flex-col md:flex-row-reverse bg-white shadow-lg rounded-lg overflow-hidden" >
             {/* Image */}
             <div className="w-full md:w-1/2">
               <img
@@ -63,7 +75,7 @@ const AdmissionComponents = () => {
               <p className="leading-relaxed text-lg">
                 Many universities in **USA, Canada, Germany, Europe, Australia, and New Zealand** require interviews as part of their admissions process.  
                 <br /><br />
-                Our team helps students **prepare thoroughly**, offering insights based on their profiles and coordinating **mock interviews** to ensure success.
+                <span id="internship-section"></span>Our team helps students **prepare thoroughly**, offering insights based on their profiles and coordinating **mock interviews** to ensure success.
               </p>
             </div>
           </div>
