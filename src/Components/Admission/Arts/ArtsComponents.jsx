@@ -75,7 +75,7 @@ const ArtsComponents = () => {
           <h2 className="text-2xl font-normal text-gray-900 dark:text-white mb-4">Cost of Education:</h2>
           <p className="text-lg leading-relaxed mb-6">
             The average cost of a one-year program ranges from INR 5 lacs to INR 12 lacs. Two-Three year programs can cost between INR 12 lacs to 30 lacs in total.
-          </p>
+          </p>  
         </motion.div>
 
         {/* Entry Requirements Section */}
