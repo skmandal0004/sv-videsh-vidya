@@ -58,6 +58,27 @@ const NavbarComponents = () => {
 
   }
 
+
+  const handleInternshipClick = (e) => {
+    e.preventDefault();
+
+    if (location.pathname === "/internships") {
+      // Scroll immediately if already on About page
+      document.getElementById("internship-section")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate first, then scroll after a short delay
+      navigate("/applications");
+
+      setTimeout(() => {
+        const galleryElement = document.getElementById("internship-section");
+        if (galleryElement) {
+          galleryElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 500); // Adjust delay if necessary
+    };
+
+  }
+
   // Menu Items
   const menuItems = [
     { name: "Home", link: "/" },
@@ -78,7 +99,7 @@ const NavbarComponents = () => {
         { name: "Virtual Coaching", link: "/virtual-coaching" },
         { name: "Counselling and Shortlisting", link: "/counselling" },
         { name: "Applications and Admissions", link: "/applications" },
-        { name: "Internships (CPT)", link: "/internships" },
+        { name: "Internships (CPT)", link: "/internships", onClick: handleInternshipClick, },
         { name: "Scholarships and Loans", link: "/scholarships" },
         { name: "VISA Guidance", link: "/visa" },
         { name: "Post Landing Services", link: "/post-landing" },

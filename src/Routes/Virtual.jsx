@@ -6,9 +6,9 @@ import LangComponents from '../Components/Services/Virtual/LangComponents'
 const Virtual = () => {
   return (
     <div>
-    <VirtualComponents/>
-      <OnlineComponents/>
-      <LangComponents/>
+      <VirtualComponents />
+      <OnlineComponents />
+      <LangComponents />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import MissionComponents from "../Components/About/MissionComponents"; // Fixed the import path
 import AboutComponents from "../Components/About/AboutComponents";
@@ -32,7 +32,7 @@ const About = () => {
       <div id="testimonials-section">
       <ParentsComponents />
       </div>
-      <div id="gallery-section">  {/* Add this wrapper */}
+      <div id="gallery-section">
         <GalleryComponents />
       </div>
     </div>
