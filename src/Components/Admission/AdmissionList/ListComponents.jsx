@@ -2,13 +2,13 @@ import React from "react";
 
 const ListComponents = () => {
   return (
-    <div className="flex flex-col items-center w-full bg-gray-100 px-6 py-8">
+    <div className="flex flex-col items-center w-full bg-gray-100 dark:bg-gray-900  px-6 py-8">
       <div className="grid gap-8 w-full max-w-6xl">
         
         {/* USA Section */}
-        <div className="bg-white p-4 rounded-lg shadow">
-  <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">USA</h2>
-  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 text-lg text-gray-800">
+        <div className=" p-4 ">
+  <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-4">USA</h2>
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4  text-lg text-gray-800">
     {[
       "Adelphi",
       "Arizona State University",
@@ -44,8 +44,8 @@ const ListComponents = () => {
 
 
         {/* UK Section */}
-        <div className="bg-white p-4 rounded-lg shadow">
-  <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">UK</h2>
+        <div className=" p-4 ">
+  <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-4">UK</h2>
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 text-lg text-gray-800">
     {[
       "Anglia Ruskin",
@@ -83,8 +83,8 @@ const ListComponents = () => {
 
 
         {/* Germany Section */}
-        <div className="bg-white p-4 rounded-lg shadow">
-  <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Germany</h2>
+        <div className="p-4 ">
+  <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-4">Germany</h2>
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 text-lg text-gray-800">
     <div className="bg-gray-100 p-3 rounded shadow">
       <ul className="list-disc pl-5">
@@ -141,8 +141,8 @@ const ListComponents = () => {
 
 
         {/* Other Countries Section */}
-        <div className="bg-white p-4 rounded-lg shadow">
-  <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Others</h2>
+        <div className=" p-4">
+  <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-4">Others</h2>
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-lg text-gray-800">
     
     {/* Canada */}

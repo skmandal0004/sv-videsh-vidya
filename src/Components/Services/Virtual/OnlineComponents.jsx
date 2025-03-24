@@ -2,12 +2,12 @@ import React from "react";
 
 const OnlineComponents = () => {
   return (
-    <div className="bg-gray-100 py-16 px-6">
+    <div className="bg-gray-100 dark:bg-gray-900 py-16 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-gray-900">Online Training</h2>
-          <p className="text-gray-600 mt-3 text-lg max-w-2xl mx-auto">
+          <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white">Online Training</h2>
+          <p className="text-gray-600 dark:text-gray-400 mt-3 text-lg max-w-2xl mx-auto">
             Get expert coaching with proven success strategies for GRE, TOEFL, and IELTS.  
             Join our interactive sessions and boost your scores.
           </p>
@@ -26,14 +26,14 @@ const OnlineComponents = () => {
           </div>
 
           {/* Right - Text Content */}
-          <div className="bg-white p-8 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900">Why Choose Us?</h3>
-            <p className="text-gray-700 mt-4">
+          <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg ">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Why Choose Us?</h3>
+            <p className="text-gray-700 dark:text-gray-400 mt-4">
               Our professional training sessions are tailored to maximize your performance. 
               Get access to the best resources, personalized feedback, and expert strategies.
             </p>
 
-            <ul className="mt-6 space-y-3 text-gray-700">
+            <ul className="mt-6 space-y-3 text-gray-700 dark:text-gray-400">
               <li>✅ Individualized attention with small batch sizes</li>
               <li>✅ Internationally recognized curriculum</li>
               <li>✅ Regular monitoring and performance feedback</li>

@@ -50,15 +50,15 @@ const LanguageComponents = () => {
       ];
     
       return (
-        <div className="bg-white py-10">
+        <div className="bg-white  dark:bg-gray-900 py-10">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
             {languages.map((lang, index) => (
               <div
                 key={index}
-                className="bg-gray-200 p-6 rounded-lg shadow-md"
+                className="bg-gray-200  dark:bg-gray-800 p-6 rounded-lg shadow-md"
               >
-                <h2 className="text-xl font-bold text-gray-900 text-center">{lang.title}</h2>
-                <p className="text-gray-700 mt-4 leading-loose">{lang.description}</p>
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white text-center">{lang.title}</h2>
+                <p className="text-gray-700 dark:text-gray-400 mt-4 leading-loose">{lang.description}</p>
     
               </div>
             ))}

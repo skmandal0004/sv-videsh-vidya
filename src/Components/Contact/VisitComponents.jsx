@@ -2,8 +2,8 @@ import React from "react";
 
 const VisitComponents = () => {
   return (
-    <div className="w-full bg-white text-black py-10">
-          <h1 className="text-7xl font-bold  text-center tracking-wide text-black mb-6">
+    <div className="w-full bg-white dark:bg-gray-900  text-black py-10">
+          <h1 className="text-7xl font-bold  text-center tracking-wide text-black dark:text-white mb-6">
           CONTACT <span className="text-indigo-500">US</span>
           </h1>
 

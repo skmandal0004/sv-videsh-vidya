@@ -23,8 +23,8 @@ const GalleryComponents = () => {
   };
 
   return (
-    <div className="bg-gray-100 py-12 px-6 md:px-12 text-center">
-      <h1 className="text-3xl font-semibold text-black mb-8">Gallery</h1>
+    <div className="bg-gray-100 dark:bg-gray-900  py-12 px-6 md:px-12 text-center">
+      <h1 className="text-3xl font-semibold text-black dark:text-white mb-8">Gallery</h1>
 
       
 

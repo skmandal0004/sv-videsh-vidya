@@ -186,14 +186,14 @@ const areasData = [
 
 const AreasComponents = () => {
   return (
-    <div className="bg-indigo-100 p-6 rounded-lg shadow-md">
-  <h2 className="text-2xl font-semibold text-black text-center mb-4">
+    <div className="bg-indigo-100 dark:bg-gray-900 p-6 rounded-lg shadow-md">
+  <h2 className="text-2xl font-semibold text-black dark:text-white text-center mb-4">
     Subjects in these Areas:
   </h2>
 
   <div className="space-y-6">
     {areasData.map((area, index) => (
-      <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+      <div key={index} className="bg-white  p-6 rounded-lg shadow-md">
         <h3 className="text-xl font-semibold text-black text-center mb-4">
           {area.category}
         </h3>
