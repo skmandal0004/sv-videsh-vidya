@@ -62,11 +62,25 @@ const TrainingComponents = () => {
 
         {/* Button for Free Demo */}
         <div className="mt-6 text-center">
-          <button className="bg-white text-indigo-500 font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-indigo-100 transition duration-300">
-            Click Here for Free Demo !
+  <motion.div
+    className="flex justify-center"
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.5, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.3 }}
+  >
+    <a
+      href="tel:+91 9739799996" // Replace with your actual phone number
+      className="flex items-center space-x-3  text-white px-5 py-4 rounded-full shadow-xl hover:scale-110 transition-all transform"
+    >
+      <button className="bg-white text-indigo-500 font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-indigo-100 transition duration-300">
+        Call us for Free Demo !
+      </button>
+    </a>
+  </motion.div>
+</div>
 
-          </button>
-        </div>
+        
       </div>
     </div>
   )
