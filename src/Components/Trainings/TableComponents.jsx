@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const TableComponents = () => {
   return (
@@ -13,17 +14,20 @@ const TableComponents = () => {
               Check out our online training portal where we have a variety of materials to make your preparation hassle-free.
             </p>
 
-            <button className="mt-6 bg-indigo-500 text-white px-6 py-3 rounded-md border-2  hover:border-black hover:bg-white hover:text-black transition duration-300">
+            <Link to="https://training.svvideshvidya.com/">
+            <button className="mt-6 bg-indigo-500 text-white px-6 py-3 rounded-md border-2 hover:border-black hover:bg-white hover:text-black transition duration-300">
               Online Training
             </button>
+          </Link>
 
             <p className="text-gray-700 dark:text-gray-400  mt-5 max-w-md">
               Keep yourself up to date with our training timetable for the best preparation for your exams!
             </p>
-
+            <Link to="/training-time-table">
             <button className="mt-6 bg-indigo-500 text-white px-6 py-3 rounded-md border-2 hover:border-black hover:bg-white hover:text-black transition duration-300">
               Training Time Table
             </button>
+            </Link>
           </div>
 
           {/* Right Side - Image */}

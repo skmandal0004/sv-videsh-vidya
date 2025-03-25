@@ -56,24 +56,25 @@ const FooterComponents = () => {
         >
           <h3 className="text-purple-400 font-semibold mb-3">QUICK NAVIGATION</h3>
           <div className="grid grid-cols-2 gap-2">
-            {[
-              "Home",
-              "About Us",
-              "Services",
-              "Admissions",
-              "Trainings",
-              "Contact us",
-              "Forum",
-            ].map((link, index) => (
-              <a
-                key={index}
-                href="#"
-                className="text-gray-300 hover:text-white transition"
-              >
-                {link}
-              </a>
-            ))}
-          </div>
+  {[
+    { name: "Home", url: "/" },
+    { name: "About Us", url: "/about" },
+    { name: "Services", url: "/service" },
+    { name: "Admissions", url: "/admissions" },
+    { name: "Trainings", url: "/training" },
+    { name: "Contact Us", url: "/contact" },
+    
+  ].map((link, index) => (
+    <a
+      key={index}
+      href={link.url}
+      className="text-gray-300 hover:text-white transition"
+    >
+      {link.name}
+    </a>
+  ))}
+</div>
+
         </motion.div>
 
         {/* Right Section - Map & Address */}
