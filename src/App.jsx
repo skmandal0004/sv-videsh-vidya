@@ -34,6 +34,7 @@ import Search from "./Components/Home/Search";
 import Management from './Routes/Management';
 import Arts from './Routes/Arts';
 import ScrollToTop from './Components/ScrollToTop.jsx'
+import CallComponents from './Components/CallComponents';
 
 function App() {
   return (
@@ -77,6 +78,7 @@ function App() {
 
 
         </Routes>
+        <CallComponents/>
         <FooterComponents />
       </Router>
     </>

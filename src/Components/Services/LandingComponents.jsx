@@ -39,10 +39,6 @@ const LandingComponents = () => {
         </div>
       </div>
 
-      {/* Floating Contact Button */}
-      <button className="fixed bottom-5 right-5 bg-purple-600 text-white flex items-center px-5 py-2 rounded-full shadow-lg">
-        <span className="mr-2">💬</span> Contact Us
-      </button>
     </div>
   );
 };
