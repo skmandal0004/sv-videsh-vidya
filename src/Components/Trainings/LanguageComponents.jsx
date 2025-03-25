@@ -21,7 +21,7 @@ const LanguageComponents = () => {
     <div className="bg-gray-50 dark:bg-gray-900 py-16 px-6">
       <div className="max-w-7xl mx-auto text-center">
         <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">
-          Explore Language & Test Prep Courses
+        Test Prep and Foreign Language Courses
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-400">
           Learn globally recognized languages and test preparation courses to boost your academic and career success.

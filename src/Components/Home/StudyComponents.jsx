@@ -17,7 +17,7 @@ const StudyComponents = () => {
       title: "Engineering",
       image:
         "https://static.wixstatic.com/media/2e2a49_aa886e73007945ad8869ba20d9771c41~mv2.jpg",
-      courses: ["B.Tech", "MS", "Masters", "PDGM", "Other Engineering", "Courses"],
+      courses: ["B.Tech", "MS", "Masters", "PDGM", "Other Engineering Courses"],
       gradient: "from-blue-500 to-indigo-600",
       link: "/engineering",
     },

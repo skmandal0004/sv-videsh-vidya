@@ -13,9 +13,11 @@ const ListComponents = () => {
       "Adelphi",
       "Arizona State University",
       "California State University",
-      "East Bay and CAL State - Riverside",
+      "CAL State  - Riverside",
+      "CAL State – East Bay",
       "Eastern Illinois",
-      "Findlay, Johnson and Wales",
+      "Findlay",
+      "Johnson and Wales",
       "Florida Atlantic University",
       "George Mason University",
       "PACE University",
@@ -80,66 +82,36 @@ const ListComponents = () => {
   </div>
 </div>
 
-
-
-        {/* Germany Section */}
-        <div className="p-4 ">
+{/* Germany Section */}
+<div className=" p-4 ">
   <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-4">Germany</h2>
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 text-lg text-gray-800">
-    <div className="bg-gray-100 p-3 rounded shadow">
-      <ul className="list-disc pl-5">
-        <li>RWTH Aachen University</li>
-      </ul>
-    </div>
-    <div className="bg-gray-100 p-3 rounded shadow">
-      <ul className="list-disc pl-5">
-        <li>Technical University of Munich (TUM)</li>
-      </ul>
-    </div>
-    <div className="bg-gray-100 p-3 rounded shadow">
-      <ul className="list-disc pl-5">
-        <li>University of Stuttgart</li>
-      </ul>
-    </div>
-    <div className="bg-gray-100 p-3 rounded shadow">
-      <ul className="list-disc pl-5">
-        <li>Humboldt University of Berlin</li>
-      </ul>
-    </div>
-    <div className="bg-gray-100 p-3 rounded shadow">
-      <ul className="list-disc pl-5">
-        <li>University of Freiburg</li>
-      </ul>
-    </div>
-    <div className="bg-gray-100 p-3 rounded shadow">
-      <ul className="list-disc pl-5">
-        <li>University of Mannheim</li>
-      </ul>
-    </div>
-    <div className="bg-gray-100 p-3 rounded shadow">
-      <ul className="list-disc pl-5">
-        <li>Karlsruhe Institute of Technology (KIT)</li>
-      </ul>
-    </div>
-    <div className="bg-gray-100 p-3 rounded shadow">
-      <ul className="list-disc pl-5">
-        <li>Ludwig Maximilian University of Munich</li>
-      </ul>
-    </div>
-    <div className="bg-gray-100 p-3 rounded shadow">
-      <ul className="list-disc pl-5">
-        <li>TU Berlin</li>
-      </ul>
-    </div>
-    <div className="bg-gray-100 p-3 rounded shadow">
-      <ul className="list-disc pl-5">
-        <li>University of Hamburg</li>
-      </ul>
-    </div>
-  </div>
-</div>
+    {[
+      "RWTH Aachen University",
+      "Fachhochschule des Mittelstands (FHM)",
+      "FH Aachen University of applied Science",
+      "Frankfurt University of Applied Sciences",
+      "Hochschule Aalen",
+      "Hochschule Karlsruhe University of Applied Sciences",
+      "ISM – International School of Management",
+      "IUBH",
+      "University of Siegen",
+      "University of Bonn",
+      "TUM",
+      "TU Dresden",
+      "SRH Heidelberg University of Kiel",
+      "RWTH International Academy",
+      ].map((university, index) => (
+        <div key={index} className="bg-gray-100 p-3 rounded shadow">
+          <ul className="list-disc pl-5 ">
+            <li>{university}</li>
+          </ul>
+        </div>
+      ))}
+      </div>
+      </div>
 
-
+        
         {/* Other Countries Section */}
         <div className=" p-4">
   <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-4">Others</h2>
@@ -254,7 +226,7 @@ const ListComponents = () => {
     <div className="bg-white p-4 rounded-lg shadow">
     <ul className="list-disc pl-5 space-y-1">
       <h3 className="font-semibold text-gray-900">Lithuania</h3>
-      <li>VGTU</li>
+      <li>Vilnius Gediminas Technical University</li>
       </ul>
     </div>
 
