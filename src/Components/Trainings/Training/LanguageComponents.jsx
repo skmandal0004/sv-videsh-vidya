@@ -39,12 +39,14 @@ const LanguageComponents = () => {
             </div>
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">{lang.title}</h2>
             <p className="text-gray-700 dark:text-gray-400 mt-4">{lang.description}</p>
+            {lang.title !== "PUC - Computer Science" && (
             <button
               onClick={() => navigate(lang.route)}
               className="mt-6 px-4 py-2 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700 transition"
             >
               Learn More
             </button>
+          )}
           </div>
         ))}
       </div>

@@ -18,7 +18,7 @@ const ScholarComponents = () => {
           viewport={{ once: true }}
           className="text-center font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-8"
         >
-          Scholarships & Loans
+          Scholarships & <span className="text-indigo-500">Loans</span>
         </motion.h1>
 
         {/* Scholarships Section */}

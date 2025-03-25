@@ -5,7 +5,7 @@ const LandingComponents = () => {
     <div className="w-full bg-white dark:bg-gray-900  text-black py-10">
       {/* Heading */}
       <h2 className="text-5xl font-bold text-center text-gray-900 dark:text-white mb-6">
-        Post Landing Services
+        <span className="text-indigo-500">Post Landing</span> Services
       </h2>
 
       {/* Content Section */}

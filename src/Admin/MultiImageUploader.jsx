@@ -1,12 +1,36 @@
-import React, { useState } from "react";
-import { FilePlus, UploadCloud, AlertCircle, Loader2 } from "lucide-react"; // Icons
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { FilePlus, UploadCloud, Loader2 } from "lucide-react"; // Icons
 
 const MultiImageUploader = () => {
+  const navigate = useNavigate();
+  const correctPassword = "MySecureAdmin123"; // Change this to your password
+
+  const [isVerified, setIsVerified] = useState(false);
+  const [isChecking, setIsChecking] = useState(true);
   const [files, setFiles] = useState([]);
   const [textInput, setTextInput] = useState("");
   const [uploadStatus, setUploadStatus] = useState("");
   const [previewFiles, setPreviewFiles] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const checkPassword = () => {
+      const userInput = window.prompt("Enter Admin Password:");
+      if (userInput === correctPassword) {
+        setIsVerified(true);
+      } else {
+        alert("Incorrect password! Redirecting...");
+        navigate("/"); // Redirect to home or 404 page
+      }
+      setIsChecking(false);
+    };
+
+    checkPassword();
+  }, [navigate]);
+
+  if (isChecking) return null; // Hide content while verifying
+  if (!isVerified) return null; // Ensure page is hidden if not verified
 
   const handleFileChange = (e) => {
     const selectedFiles = Array.from(e.target.files);
@@ -40,7 +64,7 @@ const MultiImageUploader = () => {
       const response = await fetch("https://sphpvt.com/SVvideshApi/upload.php", {
         method: "POST",
         body: formData,
-        headers: { "Accept": "application/json" },
+        headers: { Accept: "application/json" },
       });
 
       const text = await response.text();
@@ -136,7 +160,6 @@ const MultiImageUploader = () => {
 
       {uploadStatus && (
         <p className="mt-4 text-gray-700 flex items-center gap-2">
-          {/* <AlertCircle size={16} className="text-red-500" /> */}
           {uploadStatus}
         </p>
       )}

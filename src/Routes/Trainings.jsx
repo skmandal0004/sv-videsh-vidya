@@ -1,7 +1,7 @@
 import React from 'react'
-import TrainingComponents from '../Components/Trainings/TrainingComponents'
-import TableComponents from '../Components/Trainings/TableComponents'
-import LanguageComponents from '../Components/Trainings/LanguageComponents'
+import TrainingComponents from '../Components/Trainings/Training/TrainingComponents'
+import TableComponents from '../Components/Trainings/Training/TableComponents'
+import LanguageComponents from '../Components/Trainings/Training/LanguageComponents'
 
 const Trainings = () => {
   return (
