@@ -1,8 +1,18 @@
 import React from "react";
 import { FaGraduationCap } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const FooterComponents = () => {
+
+  const links = [
+    {name:"Virtual Coaching and Counselling", link:"/counselling"},
+    {name:"Applications Filing, Admissions", link:"/applications"},
+    {name:"Scholarships and Study Loans", link:"/scholarships"},
+    {name:"VISA Guidance", link:"/visa"},
+    {name:"Post Landing Services", link:"post-landing"},
+  ]
+
   return (
     <footer className="bg-gradient-to-r from-[#1A152D] to-[#6B4EFF] text-white py-12 px-6 md:px-16">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
@@ -20,17 +30,11 @@ const FooterComponents = () => {
           </div>
           <p className="text-gray-400 mb-4">Vidya Enterprises</p>
           <ul className="space-y-2">
-            {[
-              "Virtual Coaching and Counselling",
-              "Applications Filing, Admissions",
-              "Scholarships and Study Loans",
-              "VISA Guidance",
-              "Post Landing Services",
-            ].map((item, index) => (
+            {links.map((item, index) => (
               <li key={index}>
-                <a href="#" className="text-gray-300 hover:text-white transition">
-                  {item}
-                </a>
+                <Link to={item.link} className="text-gray-300 hover:text-white transition">
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
