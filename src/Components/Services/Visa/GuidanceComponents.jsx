@@ -3,7 +3,7 @@ import React from "react";
 const GuidanceComponents = () => {
   return (
     <div className="bg-white dark:bg-gray-900  py-10 px-20">
-            <h1 className="text-6xl font-bold text-center text-black dark:text-white mb-4">
+            <h1 className="text-6xl font-bold text-center text-yellow-400 mb-4">
                     VISA
             </h1>
             <h3 className="text-2xl font-bold text-center text-black dark:text-white mb-4">
