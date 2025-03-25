@@ -25,7 +25,7 @@ const reasons = [
 
 const ReasonComponents = () => {
 
-  const phoneNumber = "9523429869";
+  const phoneNumber = "9739722211";
 
   return (
     <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-16 px-6 md:px-20">
