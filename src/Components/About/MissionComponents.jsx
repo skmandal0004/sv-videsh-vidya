@@ -42,7 +42,7 @@ const MissionComponents = () => {
       {/* Right Section - Image */}
       <div className="md:w-1/2 p-4 flex justify-center items-center">
         <img
-          src="https://static.wixstatic.com/media/2e2a49_cc3a06d2ea134a79ab20602e3fd7caa3~mv2.jpg/v1/fill/w_512,h_660,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/2e2a49_cc3a06d2ea134a79ab20602e3fd7caa3~mv2.jpg"
+          src="https://images.pexels.com/photos/11022648/pexels-photo-11022648.jpeg?auto=compress&cs=tinysrgb&w=600"
           alt="Students smiling"
           className="w-full max-h-[400px] object-cover rounded-lg shadow-md"
         />

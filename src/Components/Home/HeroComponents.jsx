@@ -57,14 +57,12 @@ const HeroComponents = () => {
               Contact Us
             </Link>
           </div>
-
-
         </div>
 
         {/* Image Section */}
         <div className="w-full md:w-1/2 flex justify-center">
           <img
-            src="https://img.freepik.com/free-photo/tourist-park-ferris-wheel_23-2148570664.jpg?t=st=1740656064~exp=1740659664~hmac=6c762a9eda3baf7efa11c989800c98f1d8239f509bada3f79bc548232abc8d4a&w=1060"
+            src="https://images.pexels.com/photos/8472998/pexels-photo-8472998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="Global Education"
             className="w-full max-w-md md:max-w-lg rounded-lg shadow-lg"
           />

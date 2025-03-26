@@ -31,19 +31,21 @@ const MedicineComponents = () => {
           className="border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden shadow-lg flex flex-col md:flex-row"
         >
       <div className="flex flex-col md:flex-row items-center bg-indigo-500 py-12 px-6">
-  {/* Image Section */}
-  <div className="w-full md:w-1/2">
-    <img
-      src="https://static.wixstatic.com/media/2e2a49_f6a544efc1334927b6bdc2ca7ab5b8e1~mv2.jpg/v1/crop/x_0,y_255,w_5428,h_3110/fill/w_774,h_444,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-1171825923.jpg"
-      alt="Medical"
-      className="w-full h-full object-cover"
-      />
-    </div>
+        {/* Image Section */}
+         <div className="w-full md:w-1/2">
+        <img
+        src="https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=600"
+        className="w-full h-full object-cover"
+        />
+      </div>
 
   {/* Content Section */}
           <div className="w-full md:w-1/2 max-w-4xl px-6 md:px-12 py-10 text-gray-800">
             <p className="text-xl leading-normal mb-6">
               Studying medicine abroad offers Indian students a unique and enriching opportunity to receive a world-class education while experiencing new cultures and healthcare systems. With increasing competition for medical seats in India, pursuing a medical degree overseas has become an attractive option for many aspiring doctors.
+            </p>
+            <p className="text-xl leading-normal mb-6">
+              Countries like the <strong>USA, UK, Canada, Australia</strong>, and <strong>Philippines</strong> are renowned for their high standards of medical education, cutting-edge facilities, and comprehensive curricula. These programs often provide hands-on clinical training, exposure to advanced medical technologies, and the opportunity to learn from leading healthcare professionals.
             </p>
 
             
@@ -53,10 +55,7 @@ const MedicineComponents = () => {
 
 
       <div className=" w-full px-6 py-10 text-gray-800 dark:text-gray-400 text-center">
-      <p className="text-xl leading-loose mb-6">
-              Countries like the <strong>USA, UK, Canada, Australia</strong>, and <strong>Philippines</strong> are renowned for their high standards of medical education, cutting-edge facilities, and comprehensive curricula. These programs often provide hands-on clinical training, exposure to advanced medical technologies, and the opportunity to learn from leading healthcare professionals.
-            </p>
-
+      
         <p className="text-xl leading-loose mb-6">
         Furthermore, studying abroad can enhance a student's global perspective, improve language skills, and foster personal growth. The international exposure and diverse patient interactions gained during these programs are invaluable, preparing students to excel in a globalized medical field. Our consultancy is dedicated to guiding students through every step of this journey, from selecting the right university and navigating the application process to ensuring a smooth transition and successful adaptation in a foreign country.
         </p>

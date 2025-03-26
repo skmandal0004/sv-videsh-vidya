@@ -18,7 +18,7 @@ const OnlineComponents = () => {
           {/* Left - Image */}
           <div className="relative">
             <img
-              src="https://static.wixstatic.com/media/11062b_0a3b530212be445d8d3799c50adee2a8~mv2.jpg/v1/fill/w_721,h_445,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_0a3b530212be445d8d3799c50adee2a8~mv2.jpg"
+              src="https://images.pexels.com/photos/7570755/pexels-photo-7570755.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Online Training"
               className="rounded-lg shadow-xl w-full"
             />

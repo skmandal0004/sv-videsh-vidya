@@ -8,7 +8,7 @@ const StudyComponents = () => {
     {
       title: "Medicine",
       image:
-        "https://static.wixstatic.com/media/2e2a49_c8de1e6e955d459aa01defe9f5971dad~mv2.jpg",
+       "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=600",
       courses: ["Medical PG", "Nursing", "Dentistry"],
       gradient: "from-orange-500 to-red-600",
       link: "/medical", // Route path
@@ -24,7 +24,7 @@ const StudyComponents = () => {
     {
       title: "Business & Management",
       image:
-        "https://static.wixstatic.com/media/2e2a49_c8de1e6e955d459aa01defe9f5971dad~mv2.jpg",
+        "https://images.pexels.com/photos/7875996/pexels-photo-7875996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       courses: ["MBA", "Arts", "Commerce", "Finance"],
       gradient: "from-green-500 to-teal-600",
       link: "/management",

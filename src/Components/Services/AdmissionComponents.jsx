@@ -29,7 +29,7 @@ const AdmissionComponents = () => {
             {/* Image */}
             <div className="w-full md:w-1/2">
               <img
-                src="https://static.wixstatic.com/media/11062b_9459ad2901b64dbe97b48f2369402f7a~mv2.jpg/v1/fill/w_600,h_400,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_9459ad2901b64dbe97b48f2369402f7a~mv2.jpg"
+                src="https://images.pexels.com/photos/8052583/pexels-photo-8052583.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt="Admission Process"
                 className="w-full h-full object-cover"
               />
@@ -61,7 +61,7 @@ const AdmissionComponents = () => {
             {/* Image */}
             <div className="w-full md:w-1/2">
               <img
-                src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg"
+                src="https://images.pexels.com/photos/5439143/pexels-photo-5439143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="Interview Preparation"
                 className="w-full h-full object-cover"
               />

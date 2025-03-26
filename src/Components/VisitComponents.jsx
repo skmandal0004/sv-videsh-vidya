@@ -56,7 +56,7 @@ const VisitComponents = () => {
         {/* Right Image */}
         <div className="w-full lg:w-1/2">
           <img
-            src="https://static.wixstatic.com/media/2e2a49_bf9f0581892b429089f2ffcbb9c17f62~mv2.jpg/v1/fill/w_641,h_790,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2e2a49_bf9f0581892b429089f2ffcbb9c17f62~mv2.jpg"
+            src="https://img.freepik.com/free-photo/young-happy-businesswoman-using-cell-phone-making-phone-call-office_637285-5301.jpg?t=st=1742982832~exp=1742986432~hmac=6d1cc9f6d4d7ee4f8de59dac532f5e0ce22cf0a309803d361a280793f7260e87&w=996"
             alt="Office"
             className="w-full h-full object-cover"
           />
