@@ -14,7 +14,7 @@ const ShortlistComponents = () => {
           {/* Image */}
           <div className="w-full md:w-1/2">
             <img
-              src="https://static.wixstatic.com/media/11062b_8d76252c90c84036bd3336137408977c~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_8d76252c90c84036bd3336137408977c~mv2.jpg"
+              src="https://images.pexels.com/photos/7579302/pexels-photo-7579302.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="Counselling"
               className="w-full h-full object-cover"
             />
@@ -43,7 +43,7 @@ const ShortlistComponents = () => {
           {/* Image */}
           <div className="w-full md:w-1/2">
             <img
-              src="https://static.wixstatic.com/media/11062b_f1fe3ddd93164d239e705f5b07e7a2ef~mv2.jpeg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_f1fe3ddd93164d239e705f5b07e7a2ef~mv2.jpeg"
+              src="https://images.pexels.com/photos/31290545/pexels-photo-31290545/free-photo-of-graduation-day-celebration-with-students-tossing-caps.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="University Shortlisting"
               className="w-full h-full object-cover"
             />

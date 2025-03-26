@@ -34,7 +34,7 @@ const AdmissionsComponents = () => {
           {/* Image */}
           <div className="w-full md:w-1/2">
         <img
-          src="https://static.wixstatic.com/media/11062b_e8d73c6fbea94559b929801b42f17c75~mv2.jpg/v1/crop/x_0,y_235,w_5000,h_2865/fill/w_801,h_459,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/College%20Lecture.jpg"
+          src="https://images.pexels.com/photos/8199151/pexels-photo-8199151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="Admissions"
           className="w-full h-full object-cover"
             />

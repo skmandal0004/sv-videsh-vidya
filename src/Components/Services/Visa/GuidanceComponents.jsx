@@ -14,7 +14,7 @@ const GuidanceComponents = () => {
         {/* Left Side - Image */}
         <div className="w-full lg:w-1/2">
           <img
-            src="https://static.wixstatic.com/media/2e2a49_d4fcf8dd8ce44a5ba1e1b9d034d8a43e~mv2.jpg/v1/fill/w_512,h_606,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/2e2a49_d4fcf8dd8ce44a5ba1e1b9d034d8a43e~mv2.jpg"
+            src="https://images.pexels.com/photos/7010140/pexels-photo-7010140.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="Visa Guidance"
             className="w-full h-[550px] object-cover object-top"
           />
@@ -69,7 +69,7 @@ const GuidanceComponents = () => {
         {/* Right Side - Image */}
         <div className="w-full lg:w-1/2">
           <img
-            src="https://images.pexels.com/photos/6146970/pexels-photo-6146970.jpeg" // Replace with actual image URL
+            src="https://images.pexels.com/photos/7103109/pexels-photo-7103109.jpeg?auto=compress&cs=tinysrgb&w=600" // Replace with actual image URL
             alt="Understanding Visa Process"
             className="w-full h-[560px] object-cover object-top"
           />
