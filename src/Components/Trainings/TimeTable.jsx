@@ -19,7 +19,7 @@ const TimeTable = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4 md:p-6">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col items-center p-4 md:p-6">
       <h2 className="text-3xl font-bold text-indigo-600 mb-6 text-center">
         {title} {/* Dynamic title from API */}
       </h2>
@@ -41,7 +41,7 @@ const TimeTable = () => {
         {files.map((file, index) => {
           const isPDF = file.toLowerCase().endsWith(".pdf");
           return (
-            <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden p-4 w-full">
+            <div key={index} className="bg-white dark:bg-gray-700 shadow-md rounded-lg overflow-hidden p-4 w-full">
               {isPDF ? (
                 <div className="w-full">
                   <iframe

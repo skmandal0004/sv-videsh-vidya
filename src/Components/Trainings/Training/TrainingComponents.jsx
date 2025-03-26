@@ -32,7 +32,7 @@ const TrainingComponents = () => {
           {/* Image */}
           <div className="w-full md:w-1/2">
           <img
-            src="https://static.wixstatic.com/media/11062b_19cecd12d9d0417c99f1c18d7ba17d77~mv2.jpg/v1/crop/x_0,y_234,w_5000,h_2865/fill/w_791,h_453,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Online%20Learning.jpg"
+            src="https://images.pexels.com/photos/4144294/pexels-photo-4144294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt="Virtual Training"
             className="w-full h-full object-cover"
             />

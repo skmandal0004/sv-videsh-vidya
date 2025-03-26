@@ -8,7 +8,7 @@ import FooterComponents from './Components/FooterComponents';
 import Virtual from './Routes/Virtual.jsx';
 import Scholarships from './Routes/Scholarships.jsx';
 import Visa from './Routes/Visa.jsx';
-import VisitComponents from './Components/VisitComponents.jsx';
+import ContactUs from './Components/ContactUsComponent.jsx';
 import FAQ from './Components/FAQComponent.jsx';
 import AdminPanel from './Routes/AdminSide.jsx'
 import Trainings from './Routes/Trainings';
@@ -52,7 +52,7 @@ function App() {
           <Route path="/scholarships" element={<Scholarships />} />
           <Route path="/visa" element={<Visa />} />
           <Route path="/post-landing" element={<LandingComponents />} />
-          <Route path="/contact" element={<VisitComponents />} />
+          <Route path="/contact" element={<ContactUs />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/admin" element={<AdminPanel />} />
           <Route path="/training" element={<Trainings />} />

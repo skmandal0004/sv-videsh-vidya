@@ -29,7 +29,7 @@ const AdmissionComponents = () => {
             {/* Image */}
             <div className="w-full md:w-1/2">
               <img
-                src="https://images.pexels.com/photos/8052583/pexels-photo-8052583.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src="https://images.pexels.com/photos/7979436/pexels-photo-7979436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="Admission Process"
                 className="w-full h-full object-cover"
               />
@@ -85,7 +85,7 @@ const AdmissionComponents = () => {
             {/* Image */}
             <div className="w-full md:w-1/2">
               <img
-                src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg"
+                src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="Internships CPT"
                 className="w-full h-full object-cover"
               />

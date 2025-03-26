@@ -24,7 +24,7 @@ const StudyComponents = () => {
     {
       title: "Business & Management",
       image:
-        "https://images.pexels.com/photos/7875996/pexels-photo-7875996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/8553865/pexels-photo-8553865.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       courses: ["MBA", "Arts", "Commerce", "Finance"],
       gradient: "from-green-500 to-teal-600",
       link: "/management",

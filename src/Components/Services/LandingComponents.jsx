@@ -13,7 +13,7 @@ const LandingComponents = () => {
         {/* Left Image */}
         <div className="w-full lg:w-1/2 flex h-[400px]">
           <img
-            src="https://static.wixstatic.com/media/851d27183fd5433383580200fcc15dc4.jpg/v1/fill/w_512,h_638,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/851d27183fd5433383580200fcc15dc4.jpg"
+            src="https://images.pexels.com/photos/2767767/pexels-photo-2767767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt="Landing Image"
             className="w-full h-full object-cover"
           />

@@ -34,7 +34,7 @@ const ServiceComponents = () => {
         {/* Right Side - Image (Increased width) */}
         <div className="w-full lg:w-7/12">
           <img
-            src="https://www.bellac.fr/wp-content/uploads/2020/07/services-municipaux1.jpg"
+            src="https://images.pexels.com/photos/7551637/pexels-photo-7551637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt="Students in classroom"
             className="w-full h-full object-cover rounded-r-lg"
           />

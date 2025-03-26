@@ -1,6 +1,6 @@
 import React from "react";
 
-const VisitComponents = () => {
+const ContactUs = () => {
   return (
     <div className="w-full bg-white dark:bg-gray-900  text-black py-10">
           <h1 className="text-7xl font-bold  text-center tracking-wide text-black dark:text-white mb-6">
@@ -56,7 +56,7 @@ const VisitComponents = () => {
         {/* Right Image */}
         <div className="w-full lg:w-1/2">
           <img
-            src="https://img.freepik.com/free-photo/young-happy-businesswoman-using-cell-phone-making-phone-call-office_637285-5301.jpg?t=st=1742982832~exp=1742986432~hmac=6d1cc9f6d4d7ee4f8de59dac532f5e0ce22cf0a309803d361a280793f7260e87&w=996"
+            src="https://img.freepik.com/free-photo/top-view-smartphone-headphones-with-coffee-cup_1921-149.jpg?t=st=1742996486~exp=1743000086~hmac=f789b1c463399a1f5039bf86475932a824d9d25f3aeb0ffb587a94710c1435b7&w=1380"
             alt="Office"
             className="w-full h-full object-cover"
           />
@@ -123,4 +123,4 @@ const VisitComponents = () => {
   );
 };
 
-export default VisitComponents;
+export default ContactUs;

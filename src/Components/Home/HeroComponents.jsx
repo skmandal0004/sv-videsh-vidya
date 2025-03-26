@@ -62,7 +62,7 @@ const HeroComponents = () => {
         {/* Image Section */}
         <div className="w-full md:w-1/2 flex justify-center">
           <img
-            src="https://images.pexels.com/photos/8472998/pexels-photo-8472998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="https://img.freepik.com/free-photo/books-with-graduation-cap-digital-art-style-education-day_23-2151164326.jpg?t=st=1742993144~exp=1742996744~hmac=7a089f8fdfe01de3fb50156f9908f3d43ee5aad5dffd6c89920c61c2e20641de&w=1380"
             alt="Global Education"
             className="w-full max-w-md md:max-w-lg rounded-lg shadow-lg"
           />
