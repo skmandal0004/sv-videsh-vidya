@@ -21,8 +21,8 @@ const GalleryComponent = () => {
 
   const [images, setImages] = useState([...initialImages, ...initialImages]);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [scrolling, setScrolling] = useState(false);
   const galleryRef = useRef(null);
-  const scrollRef = useRef(null);
 
   // Infinite Scroll Effect (Horizontal)
   useEffect(() => {
@@ -41,28 +41,31 @@ const GalleryComponent = () => {
     return () => gallery.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Auto Scroll Effect with Smooth Animation
+  // Auto Scroll Effect
   useEffect(() => {
     const gallery = galleryRef.current;
     if (!gallery) return;
 
-    let scrollSpeed = 1.5; // Adjust for smoother scrolling
-    let animationFrameId;
+    const startScrolling = () => {
+      setScrolling(true);
+      const scrollInterval = setInterval(() => {
+        gallery.scrollLeft += 2;
+      }, 30);
 
-    const smoothScroll = () => {
-      gallery.scrollLeft += scrollSpeed;
-      animationFrameId = requestAnimationFrame(smoothScroll);
+      return () => {
+        clearInterval(scrollInterval);
+        setScrolling(false);
+      };
     };
 
-    animationFrameId = requestAnimationFrame(smoothScroll);
-
-    return () => cancelAnimationFrame(animationFrameId);
+    const stopScrolling = startScrolling();
+    return stopScrolling;
   }, []);
 
   return (
     <div className="bg-gray-100 dark:bg-gray-900 py-12 text-center">
       <h1 className="text-3xl font-semibold text-black dark:text-white mb-8">
-        Gallery
+        Horizontal Infinite Scroll Gallery
       </h1>
 
       {/* Horizontal Scrollable Gallery */}
@@ -80,7 +83,7 @@ const GalleryComponent = () => {
             <img
               src={src}
               alt={`Gallery Image ${index + 1}`}
-              className="w-full h-full object-cover hover:scale-105 transition-transform transform duration-300"
+              className="w-full h-full object-cover transition-transform transform duration-300"
             />
           </div>
         ))}
