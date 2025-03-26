@@ -64,8 +64,8 @@ const GalleryComponent = () => {
 
   return (
     <div className="bg-gray-100 dark:bg-gray-900 py-12 text-center">
-      <h1 className="text-3xl font-semibold text-black dark:text-white mb-8">
-        Horizontal Infinite Scroll Gallery
+      <h1 className="text-3xl font-semibold text-yellow-500 mb-8">
+        Gallery
       </h1>
 
       {/* Horizontal Scrollable Gallery */}
