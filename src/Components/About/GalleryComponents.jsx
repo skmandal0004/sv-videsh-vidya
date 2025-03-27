@@ -13,10 +13,23 @@ import img11 from "../../assets/gallary_images/11.png";
 import img12 from "../../assets/gallary_images/12.png";
 import img13 from "../../assets/gallary_images/13.png";
 import img14 from "../../assets/gallary_images/14.png";
+import img15 from "../../assets/gallary_images/15.jpg";
+import img16 from "../../assets/gallary_images/16.jpg";
+import img17 from "../../assets/gallary_images/17.jpg";
+import img18 from "../../assets/gallary_images/18.jpg";
+import img19 from "../../assets/gallary_images/19.jpg";
+import img20 from "../../assets/gallary_images/20.JPG";
+import img21 from "../../assets/gallary_images/21.jpg";
+import img22 from "../../assets/gallary_images/22.jpg";
+import img23 from "../../assets/gallary_images/23.jpg";
+import img24 from "../../assets/gallary_images/24.jpg";
+import img25 from "../../assets/gallary_images/25.jpg";
+import img26 from "../../assets/gallary_images/26.jpeg";
+import img27 from "../../assets/gallary_images/27.jpeg";
 
 const GalleryComponent = () => {
   const initialImages = [
-    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14,
+    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24, img25, img26, img27,
   ];
 
   const [images, setImages] = useState([...initialImages, ...initialImages]);
