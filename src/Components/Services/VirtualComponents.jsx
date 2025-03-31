@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const VirtualComponents = () => {
   return (
@@ -23,11 +24,19 @@ const VirtualComponents = () => {
         </p>
 
         {/* CTA Button */}
+        <motion.div
+    className="flex justify-center"
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.5, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.3 }}
+  >
         <div className="mt-8">
-          <button className="bg-indigo-600 text-white text-lg font-semibold px-6 py-3 rounded-full shadow-md transition-all hover:bg-indigo-700 hover:scale-105">
-            Get a Free Demo
-          </button>
+          <a href='tel:9739722211' className="bg-indigo-600 text-white text-lg font-semibold px-6 py-3 rounded-full shadow-md transition-all hover:bg-indigo-700 hover:scale-105">
+            Call for Free Demo
+          </a>
         </div>
+        </motion.div>
       </div>
     </div>
   );

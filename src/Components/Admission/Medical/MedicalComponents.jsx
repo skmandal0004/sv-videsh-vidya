@@ -83,7 +83,7 @@ const MedicalComponents = () => {
         </p>
 
         <p className="text-lg leading-relaxed mb-6">
-        2. Study Abroad destinations for Medicine must be recognized as a good/excellent study abroad destination by the medical councils in the world such as European Union, MCI and other international medical boards. <strong>S V Videsh Vidya</strong> procure admission for students in universities which are approved by one or more medical councils as mentioned above. WFME is the global organization concerned with education and training of medical doctors worldwide.
+        2. Study Abroad destinations for Medicine must be recognized as a good/excellent study abroad destination by the medical councils in the world such as European Union, NMC(National Medical College) and other international medical boards. <strong>S V Videsh Vidya</strong> procure admission for students in universities which are approved by one or more medical councils as mentioned above. WFME is the global organization concerned with education and training of medical doctors worldwide.
         </p>
 
         <p className="text-lg leading-relaxed mt-6">

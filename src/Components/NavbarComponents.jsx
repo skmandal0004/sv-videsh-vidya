@@ -96,7 +96,7 @@ const NavbarComponents = () => {
       name: "Services",
       link: "/service",
       subMenu: [
-        { name: "Virtual Coaching", link: "/virtual-coaching" },
+        { name: "Virtual Coaching", link: "/training" },
         { name: "Counselling and Shortlisting", link: "/counselling" },
         { name: "Applications and Admissions", link: "/applications" },
         { name: "Internships (CPT)", link: "/internships", onClick: handleInternshipClick, },

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const CallComponents = () => {
     
-    const phoneNumber = "9523429869";
+    const phoneNumber = "9739722211";
 
   return (
     <div>

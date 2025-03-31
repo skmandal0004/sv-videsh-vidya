@@ -1,12 +1,12 @@
 import React from 'react'
-import TrainingComponents from '../Components/Trainings/Training/TrainingComponents'
+import VirtualComponents from '../Components/Services/VirtualComponents'
 import TableComponents from '../Components/Trainings/Training/TableComponents'
 import LanguageComponents from '../Components/Trainings/Training/LanguageComponents'
 
 const Trainings = () => {
   return (
     <div>
-      <TrainingComponents/>
+      <VirtualComponents/>
       <TableComponents/>
       <LanguageComponents/>
     </div>

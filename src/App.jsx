@@ -5,7 +5,6 @@ import AboutComponents from "./Routes/About.jsx"
 import Home from "./Routes/Home.jsx"
 import ServiceComponents from "./Components/Services/ServiceComponents.jsx";
 import FooterComponents from './Components/FooterComponents';
-import Virtual from './Routes/Virtual.jsx';
 import Scholarships from './Routes/Scholarships.jsx';
 import Visa from './Routes/Visa.jsx';
 import ContactUs from './Components/ContactUsComponent.jsx';
@@ -37,6 +36,7 @@ import ScrollToTop from './Components/ScrollToTop.jsx'
 import CallComponents from './Components/CallComponents';
 
 function App() {
+  
   return (
     <>
       <Router>
@@ -46,7 +46,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutComponents />} />
           <Route path="/service" element={<ServiceComponents />} />
-          <Route path="/virtual-coaching" element={<Virtual />} />
           <Route path="/counselling" element={<ShortlistComponents />} />
           <Route path="/applications" element={<AdmissionComponents />} />
           <Route path="/scholarships" element={<Scholarships />} />
