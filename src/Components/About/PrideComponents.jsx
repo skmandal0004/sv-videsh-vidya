@@ -24,43 +24,43 @@ const PrideComponents = () => {
         </h3>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-start gap-3 w-full ml-6">
-        {/* Video 1 */}
-        <div>
-          <iframe 
-            className="w-full md:w-[470px] h-[280px] rounded-lg shadow-lg"
-            src="https://www.youtube.com/embed/MPwnQHPJHJE"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+      <div className="flex flex-col md:flex-row justify-start gap-4 w-full px-4 md:px-6">
+  {/* Video 1 */}
+  <div className="w-full md:w-[470px]">
+    <iframe 
+      className="w-full h-[200px] md:h-[280px] rounded-lg shadow-lg"
+      src="https://www.youtube.com/embed/MPwnQHPJHJE"
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
 
-          {/* Text Below Video 1 */}
-          <p className="text-xs font-medium text-gray-800 mt-3 text-left">
-            <span className="font-semibold text-black dark:text-white">Student of SV Videsh Vidya</span>  
-          </p>
-        </div>
+    {/* Text Below Video 1 */}
+    <p className="text-xs font-medium text-gray-800 mt-3 text-left">
+      <span className="font-semibold text-black dark:text-white">Student of SV Videsh Vidya</span>  
+    </p>
+  </div>
 
-        {/* Video 2 */}
-        <div>
-          <iframe 
-            className="w-full md:w-[470px] h-[280px] rounded-lg shadow-lg"
-            src="https://www.youtube.com/embed/No6Ea4gTnk4"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+  {/* Video 2 */}
+  <div className="w-full md:w-[470px]">
+    <iframe 
+      className="w-full h-[200px] md:h-[280px] rounded-lg shadow-lg"
+      src="https://www.youtube.com/embed/No6Ea4gTnk4"
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
 
-          {/* Text Below Video 2 */}
-          <p className="text-xs font-extralight dark:text-white text-gray-800 mt-3 text-left w-[460px] line-clamp-2 overflow-hidden">
-          <span className="font-bold mb-2 inline-block">MBBS IN PHILIPPINES</span>
-  <br />
-  OUR LADY FATHIMA UNIVERSITY is recognized as one of the leading universities in the field of medicine. 
-  It's located in Manila, Philippines, and is recognized by MCI (Medical Council of India). Since many Indian students...
-</p>
+    {/* Text Below Video 2 */}
+    <p className="text-xs font-extralight dark:text-white text-gray-800 mt-3 text-left line-clamp-2 overflow-hidden">
+      <span className="font-bold mb-2 inline-block">MBBS IN PHILIPPINES</span>
+      <br />
+      OUR LADY FATHIMA UNIVERSITY is recognized as one of the leading universities in the field of medicine. 
+      It's located in Manila, Philippines, and is recognized by MCI (Medical Council of India). Since many Indian students...
+    </p>
+  </div>
+</div>
 
-        </div>
-      </div>
     </div>
   );
 };
