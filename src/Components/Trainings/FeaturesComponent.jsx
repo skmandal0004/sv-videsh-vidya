@@ -20,7 +20,7 @@ const features = [
   },
   {
     icon: <Monitor size={40} className="text-purple-500" />,
-    title: "Kanan Prep Portal",
+    title: "SV Videsh Vidya Training",
     description: "Get access to course videos, study guides, and more – equipped with gamification features.",
   },
   {
