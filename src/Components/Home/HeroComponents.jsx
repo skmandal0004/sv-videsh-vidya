@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import gif from '../../assets/gif.png'
 
 const HeroComponents = () => {
 
@@ -35,7 +36,7 @@ const HeroComponents = () => {
       </div>
 
       {/* Hero Section 2 - Image & Text Side by Side */}
-      <div className="w-full flex flex-col md:flex-row items-center justify-center py-16 px-6 md:px-12">
+      <div className="w-full flex flex-col md:flex-row items-center justify-center py-16 px-6 md:px-12 bg-gray-100">
         {/* Text Content */}
         <div className="w-full md:w-1/2 text-center md:text-left">
           <motion.h2
@@ -60,11 +61,11 @@ const HeroComponents = () => {
         </div>
 
         {/* Image Section */}
-        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="">
           <img
-            src="https://img.freepik.com/free-photo/books-with-graduation-cap-digital-art-style-education-day_23-2151164326.jpg?t=st=1742993144~exp=1742996744~hmac=7a089f8fdfe01de3fb50156f9908f3d43ee5aad5dffd6c89920c61c2e20641de&w=1380"
+            src= {gif}
             alt="Global Education"
-            className="w-full max-w-md md:max-w-lg rounded-lg shadow-lg"
+            className=""
           />
         </div>
       </div>

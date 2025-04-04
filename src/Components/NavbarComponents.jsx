@@ -437,15 +437,29 @@ const NavbarComponents = () => {
               <div key={index} className="relative">
                 {/* If item has a submenu, render a button */}
                 {item.subMenu ? (
-                  <button
-                    onClick={() =>
-                      setMobileDropdown(mobileDropdown === index ? null : index)
-                    }
-                    className="flex justify-between w-full text-left py-2 font-semibold text-white hover:text-yellow-300"
-                  >
-                    {item.name}
-                    <span>{mobileDropdown === index ? "▲" : "▼"}</span>
-                  </button>
+                  <div className="flex">
+                    <Link
+                      to={item.link}
+                      className="flex justify-between w-full text-left py-2 font-semibold text-white hover:text-yellow-300"
+                      onClick={(e) => {
+                        if (item.onClick) {
+                          item.onClick(e); // Call function if defined
+                        }
+                        setMobileMenuOpen(false); // Close menu
+                      }}
+                    >
+                      {item.name}
+                    </Link>
+
+                    <span
+                      className="hover:text-yellow-400 cursor-pointer"
+                      onClick={() =>
+                        setMobileDropdown(mobileDropdown === index ? null : index)
+                      }
+                    >
+                      {mobileDropdown === index ? "▲" : "▼"}
+                    </span>
+                  </div>
                 ) : (
                   // If no submenu, render a Link instead of a button
                   <Link
