@@ -22,7 +22,7 @@ const HeroComponents = () => {
             Engineering | Arts & Management | Science
           </p>
           <p className="mt-2 text-lg md:text-xl font-semibold text-yellow-300">
-            Exclusive Online Training
+            Exclusive Online Test Preparation
           </p>
           <div className="mt-12">
             <Link

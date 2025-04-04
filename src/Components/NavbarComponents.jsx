@@ -440,7 +440,7 @@ const NavbarComponents = () => {
                   <div className="flex">
                     <Link
                       to={item.link}
-                      className="flex justify-between w-full text-left py-2 font-semibold text-white hover:text-yellow-300"
+                      className="flex justify-between text-left w-1/3 py-2 font-semibold text-white hover:text-yellow-300"
                       onClick={(e) => {
                         if (item.onClick) {
                           item.onClick(e); // Call function if defined
@@ -452,7 +452,7 @@ const NavbarComponents = () => {
                     </Link>
 
                     <span
-                      className="hover:text-yellow-400 cursor-pointer"
+                      className="hover:text-yellow-400 cursor-pointer w-2/3 text-right"
                       onClick={() =>
                         setMobileDropdown(mobileDropdown === index ? null : index)
                       }
