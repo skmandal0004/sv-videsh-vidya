@@ -61,7 +61,7 @@ const MultiImageUploader = () => {
     formData.append("textInput", textInput);
 
     try {
-      const response = await fetch("https://sphpvt.com/SVvideshApi/upload.php", {
+      const response = await fetch("https://svvideshvidya.com/upload.php", {
         method: "POST",
         body: formData,
         headers: { Accept: "application/json" },

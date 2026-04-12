@@ -6,7 +6,7 @@ const TimeTable = () => {
   const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
-    fetch("https://sphpvt.com/SVvideshApi/get-files.php", {
+    fetch("https://svvideshvidya.com/get-files.php", {
       mode: "cors", // Ensure CORS is enabled
     })
       .then((res) => res.json())
