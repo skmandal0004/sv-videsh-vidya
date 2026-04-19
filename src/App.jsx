@@ -34,15 +34,18 @@ import Management from './Routes/Management';
 import Arts from './Routes/Arts';
 import ScrollToTop from './Components/ScrollToTop.jsx'
 import CallComponents from './Components/CallComponents';
+import BookDemoPage from "./Components/Trainings/BookDemo/BookDemo.jsx";
+import NotFound from './Components/404Component.jsx';
 
 function App() {
-  
+
   return (
     <>
       <Router>
-      <ScrollToTop />
+        <ScrollToTop />
         <NavbarComponents />
         <Routes>
+          <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutComponents />} />
           <Route path="/service" element={<ServiceComponents />} />
@@ -74,10 +77,11 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/management" element={<Management />} />
           <Route path="/arts-sciences" element={<Arts />} />
+          <Route path="/book-demo-slot" element={<BookDemoPage />} />
 
 
         </Routes>
-        <CallComponents/>
+        <CallComponents />
         <FooterComponents />
       </Router>
     </>

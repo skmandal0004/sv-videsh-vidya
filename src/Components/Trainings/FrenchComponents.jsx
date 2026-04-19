@@ -170,7 +170,7 @@ export default function FrenchPage() {
               <strong style={{ color: YELLOW }}>DELF &amp; TEF</strong> — from absolute beginner to confident speaker.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              <Link to="/contact" style={{ background: YELLOW, color: NAVY, padding: "0.9rem 2rem", borderRadius: "8px", fontWeight: 800, fontSize: "1rem", textDecoration: "none" }}>
+              <Link to="https://wa.me/919739722211?text=Enquiry%20about%20French%20Language%20class%20Demo" style={{ background: YELLOW, color: NAVY, padding: "0.9rem 2rem", borderRadius: "8px", fontWeight: 800, fontSize: "1rem", textDecoration: "none" }}>
                 Book a Free Demo →
               </Link>
               <a href="#batches" style={{ border: "2px solid rgba(255,255,255,0.45)", color: "#fff", padding: "0.9rem 2rem", borderRadius: "8px", fontWeight: 600, fontSize: "1rem", textDecoration: "none" }}>
@@ -277,7 +277,7 @@ export default function FrenchPage() {
             </div>
 
             <Link
-              to="/contact"
+              to="https://wa.me/919739722211?text=Enquiry%20about%20French%20Language%20class%20Demo"
               className="inline-block bg-gradient-to-r from-[#1A152D] to-[#6B4EFF] text-white font-semibold px-6 py-3 rounded-lg"
             >
               Start with a Free Demo →
@@ -319,8 +319,8 @@ export default function FrenchPage() {
       {/* ══════════ LEARNING JOURNEY — dark bg + image ══════════ */}
       <section
         className={`py-16 px-4 ${dark
-            ? "bg-gradient-to-br from-[#0F0C1D] to-[#1a1527]"
-            : "bg-gradient-to-br from-[#1A152D] to-[#2D1B69]"
+          ? "bg-gradient-to-br from-[#0F0C1D] to-[#1a1527]"
+          : "bg-gradient-to-br from-[#1A152D] to-[#2D1B69]"
           }`}
       >
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
@@ -345,8 +345,8 @@ export default function FrenchPage() {
                   {/* Content */}
                   <div
                     className={`pl-4 ${i !== STEPS.length - 1
-                        ? "border-l border-white/10 pb-3"
-                        : ""
+                      ? "border-l border-white/10 pb-3"
+                      : ""
                       }`}
                   >
                     <div className="text-white font-semibold text-sm mb-1">
@@ -494,7 +494,7 @@ export default function FrenchPage() {
             </div>
 
             <Link
-              to="/contact"
+              to="https://wa.me/919739722211?text=Enquiry%20about%20French%20Language%20class%20Demo"
               className="bg-yellow-400 text-[#1A152D] font-bold px-6 py-2 rounded-lg whitespace-nowrap w-fit"
             >
               Book Free Demo →
@@ -691,7 +691,7 @@ export default function FrenchPage() {
             Book a free demo class and discover how French can open doors to Canada, Europe and global opportunities.
           </p>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-            <Link to="/contact" style={{ background: YELLOW, color: NAVY, padding: "0.95rem 2.25rem", borderRadius: "8px", fontWeight: 800, fontSize: "1rem", textDecoration: "none", display: "inline-block" }}>
+            <Link to="https://wa.me/919739722211?text=Enquiry%20about%20French%20Language%20class%20Demo" style={{ background: YELLOW, color: NAVY, padding: "0.95rem 2.25rem", borderRadius: "8px", fontWeight: 800, fontSize: "1rem", textDecoration: "none", display: "inline-block" }}>
               Book Free Demo →
             </Link>
             <Link to="/contact" style={{ border: "2px solid rgba(255,255,255,0.5)", color: "#fff", padding: "0.95rem 2.25rem", borderRadius: "8px", fontWeight: 600, fontSize: "1rem", textDecoration: "none", display: "inline-block" }}>

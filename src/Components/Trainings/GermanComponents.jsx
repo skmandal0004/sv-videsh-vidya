@@ -235,7 +235,7 @@ const FAQS = [
 // ─── Background image URLs (Unsplash, free) ──────────────────────────────────
 const BG = {
   hero: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1800&q=80", // Brandenburg Gate
-  benefits: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80", // students studying
+  benefits: "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=1600&q=80", // students studying
   goethe: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1600&q=80", // library books
   cta: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&q=80", // conference/success
 };
@@ -327,7 +327,7 @@ export default function GermanPage() {
                 </div>
 
                 <div className="flex flex-wrap gap-4">
-                  <PrimaryBtn href="/contact">Book Free Demo →</PrimaryBtn>
+                  <PrimaryBtn href="https://wa.me/919739722211?text=Enquiry%20about%20German%20Language%20class%20Demo">Book Free Demo →</PrimaryBtn>
                   <GhostBtn href="#enroll">View Courses</GhostBtn>
                 </div>
               </div>
@@ -430,8 +430,8 @@ export default function GermanPage() {
             <div className="absolute inset-0"
               style={{
                 background: dark
-                  ? "linear-gradient(90deg, rgba(15,12,29,0.98) 50%, rgba(15,12,29,0.75) 100%)"
-                  : "linear-gradient(90deg, rgba(255,255,255,0.98) 50%, rgba(255,255,255,0.70) 100%)"
+                  ? "linear-gradient(90deg, rgba(15,12,29,0.98) 1%, rgba(15,12,29,0.75) 100%)"
+                  : "linear-gradient(90deg, rgba(255,255,255,0.98) 1%, rgba(255,255,255,0.70) 100%)"
               }} />
           </div>
           <div className="relative max-w-7xl mx-auto px-6">
@@ -463,7 +463,7 @@ export default function GermanPage() {
                 ))}
               </div>
               <div className="mt-10">
-                <PrimaryBtn href="/contact">Book a Free Demo →</PrimaryBtn>
+                <PrimaryBtn href="https://wa.me/919739722211?text=Enquiry%20about%20German%20Language%20class%20Demo">Book a Free Demo →</PrimaryBtn>
               </div>
             </div>
           </div>
@@ -526,7 +526,7 @@ export default function GermanPage() {
             </div>
 
             <div className="text-center mt-12">
-              <PrimaryBtn href="/contact">Book a Free Demo →</PrimaryBtn>
+              <PrimaryBtn href="https://wa.me/919739722211?text=Enquiry%20about%20German%20Language%20class%20Demo">Book a Free Demo →</PrimaryBtn>
             </div>
           </div>
         </Section>
@@ -578,7 +578,12 @@ export default function GermanPage() {
                     ))}
                   </ul>
 
-                  <a href="/contact"
+                  <a
+                    onClick={() =>
+                      window.open(
+                        "https://wa.me/919739722211?text=Enquiry%20about%20German%20Language%20class%20Demo",
+                        "_blank"
+                      )}
                     className={`block text-center font-bold py-3.5 rounded-xl active:scale-95 transition-all text-sm
                       ${pkg.popular
                         ? "bg-yellow-300 text-[#1A152D] hover:bg-yellow-400 shadow-lg shadow-yellow-300/20"
@@ -685,32 +690,32 @@ export default function GermanPage() {
 
               {/* ✅ Demo Class Row */}
               <div
-  className={`grid grid-cols-4 items-center px-6 py-4 border-b text-sm transition-colors
+                className={`grid grid-cols-4 items-center px-6 py-4 border-b text-sm transition-colors
     ${dark
-      ? "bg-green-700 border-green-400/30 text-green-100"
-      : "bg-green-200 border-green-200 text-green-900"}`}
->
-  <span className="font-bold">Demo Class</span>
-  <span>11:30 – 12:30 PM IST</span>
-  <span className={`${dark ? "text-green-200" : "text-green-700"}`}>—</span>
-  <span>
-    <span
-      className={`text-xs font-bold px-3 py-1 rounded-full
+                    ? "bg-green-700 border-green-400/30 text-green-100"
+                    : "bg-green-200 border-green-200 text-green-900"}`}
+              >
+                <span className="font-bold">Demo Class</span>
+                <span>11:30 – 12:30 PM IST</span>
+                <span className={`${dark ? "text-green-200" : "text-green-700"}`}>—</span>
+                <span>
+                  <span
+                    className={`text-xs font-bold px-3 py-1 rounded-full
         ${dark
-          ? "bg-green-400/20 text-green-200"
-          : "bg-green-100 text-green-800"}`}
-    >
-      Free Demo
-    </span>
-  </span>
-</div>
+                        ? "bg-green-400/20 text-green-200"
+                        : "bg-green-100 text-green-800"}`}
+                  >
+                    Free Demo
+                  </span>
+                </span>
+              </div>
             </div>
 
             <p className={`text-center text-sm mt-6 ${dm.muted}`}>
               New batches start regularly — contact us to confirm the next available slot.
             </p>
             <div className="text-center mt-6">
-              <PrimaryBtn href="/contact">Book a Free Demo →</PrimaryBtn>
+              <PrimaryBtn href="https://wa.me/919739722211?text=Enquiry%20about%20German%20Language%20class%20Demo">Book a Free Demo →</PrimaryBtn>
             </div>
           </div>
         </Section>
@@ -768,7 +773,7 @@ export default function GermanPage() {
               Join our next batch today. Free demo session available — no commitment required.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <PrimaryBtn href="/contact" className="text-base px-10 py-4">Book Free Demo →</PrimaryBtn>
+              <PrimaryBtn href="https://wa.me/919739722211?text=Enquiry%20about%20German%20Language%20class%20Demo" className="text-base px-10 py-4">Book Free Demo →</PrimaryBtn>
               <a href="tel:+919739722211"
                 className="inline-block border-2 border-white/60 text-white font-semibold px-10 py-4 rounded-xl hover:bg-white/10 hover:border-white active:scale-95 transition-all text-base">
                 Call Us
