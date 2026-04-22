@@ -267,7 +267,22 @@ export default function ContactUs() {
             <div style={{ position: "absolute", bottom: -40, right: -40, width: 160, height: 160, borderRadius: "50%", background: `${PURPLE}33`, pointerEvents: "none" }} />
 
             <div>
-              <SectionLabel light>Our Office</SectionLabel>
+              <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                <span>
+                  <SectionLabel light>Our Office</SectionLabel>
+                </span>
+                <span style={{ opacity: 0.5 }}> </span>
+                <span>
+                  <SectionLabel light>
+                    <a
+                      href="https://wa.me/919739722211?text=Hi%2C%20I%20have%20an%20enquiry%20about%20your%20courses"
+                      target="_blank" rel="noreferrer"
+                    >
+                      💬 Chat on WhatsApp
+                    </a>
+                  </SectionLabel>
+                </span>
+              </div>
               <h2 style={{ color: "#fff", fontWeight: 800, fontSize: "1.4rem", margin: "0.5rem 0 0", lineHeight: 1.3 }}>
                 Visit or Call Us Anytime
               </h2>
@@ -278,18 +293,7 @@ export default function ContactUs() {
             <InfoBlock icon="📧" title="Email Us" lines={["enquiry@svvideshvidya.com"]} />
             <InfoBlock icon="🕐" title="Office Hours" lines={["Monday – Saturday", "10:30 AM – 6:00 PM", "Lunch: 1 PM – 2 PM  ·  Closed Sundays"]} />
 
-            <a
-              href="https://wa.me/919739722211?text=Hi%2C%20I%20have%20an%20enquiry%20about%20your%20courses"
-              target="_blank" rel="noreferrer"
-              style={{
-                display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem",
-                background: YELLOW, color: NAVY, borderRadius: 10,
-                padding: "0.85rem 1.5rem", fontWeight: 800, fontSize: "0.9rem",
-                textDecoration: "none", marginTop: "0.5rem",
-              }}
-            >
-              💬 Chat on WhatsApp
-            </a>
+
           </div>
 
           {/* ── CONTACT FORM ── */}

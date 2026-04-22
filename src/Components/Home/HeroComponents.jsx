@@ -26,11 +26,11 @@ const HeroComponents = () => {
           initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
 
           {/* Live badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-sm font-medium"
+          {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-sm font-medium"
             style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)" }}>
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
             Enrollments Open
-          </div>
+          </div> */}
 
           {/* Heading */}
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-3">
@@ -53,9 +53,20 @@ const HeroComponents = () => {
               className="px-8 py-3 bg-yellow-400 text-black font-semibold text-base rounded-full hover:bg-yellow-300 transition shadow-lg">
               Start Today
             </Link>
-            <div className="flex items-center gap-2 text-white/70 font-medium text-sm">
-              <span className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-xs">↗</span>
-              Book for Free Demo
+            <div className="relative flex items-center gap-2 text-yellow-400 font-medium text-lg cursor-pointer group">
+              <span className="text-yellow-300">✦</span>
+              <span className="tracking-wide">Book for Free Demo</span>
+
+              {/* Shimmer line underneath */}
+              <div className="absolute -bottom-2 left-0 w-full h-[2.5px] rounded-full bg-yellow-400/20 overflow-hidden">
+                <div
+                  className="absolute top-0 left-0 h-full w-[45%] rounded-full"
+                  style={{
+                    background: "linear-gradient(90deg, transparent, #FFD600, #fff8c0, #FFD600, transparent)",
+                    animation: "shimmerMove 2s ease-in-out infinite",
+                  }}
+                />
+              </div>
             </div>
           </div>
 
